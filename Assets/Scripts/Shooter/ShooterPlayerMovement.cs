@@ -25,8 +25,8 @@ public class ShooterPlayerMovement : MonoBehaviour
     private void Update()
     {
         //leer el input de movimiento y guardarlo para que lo lea el fixed update
-        _movementInput.x = Input.GetAxisRaw("Horizontal");
-        _movementInput.y = Input.GetAxisRaw("Vertical");
+        _movementInput.x = Mathf.RoundToInt(Input.GetAxisRaw("Horizontal"));
+        _movementInput.y = Mathf.RoundToInt(Input.GetAxisRaw("Vertical"));
 
         //actualizar la dirección e invocar el evento cuando se cambia de dirección
         if (_movementInput.magnitude > 0f && _movementInput != _direction)
