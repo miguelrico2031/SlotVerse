@@ -165,5 +165,5 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _speed: 8
-  _damage: 2
+  _damage: 1
   _lifetime: 3
