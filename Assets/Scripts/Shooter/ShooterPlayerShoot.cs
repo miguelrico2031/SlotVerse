@@ -15,6 +15,7 @@ public class ShooterPlayerShoot : MonoBehaviour
     {
         _playerMovement = GetComponent<ShooterPlayerMovement>();
 
+        //añadimos el observador para el evento de cambio de direccion del script de movimiento
         _playerMovement.DirectionChanged?.AddListener(OnDirectionChanged);
 
         _currentDirection = Vector2.right;
@@ -23,7 +24,9 @@ public class ShooterPlayerShoot : MonoBehaviour
     private void Update()
     {
         //Codigo temporal para disparar balas
-        if(Input.GetKeyDown(KeyCode.Space)) CreateBullet();
+        if (Input.GetKeyDown(KeyCode.Space))
+            //Creamos una bala con el spawner (object pooling) con la direccion y posicion
+            BulletSpawner.Instance.CreateBullet(_firePoint.position, _currentDirection);
     }
 
     void OnDirectionChanged(Vector2 newDirection)
@@ -34,15 +37,6 @@ public class ShooterPlayerShoot : MonoBehaviour
         _firePoint.RotateAround(transform.position, Vector3.forward, angle);
 
         _currentDirection = newDirection; //actualizar la ultima direccion
-    }
-
-    private Bullet CreateBullet()
-    {
-        //instancia una bala en la posicion del firepoint
-        Bullet bullet = Instantiate(_bulletPrefab, _firePoint.position, Quaternion.identity);
-
-        bullet.FireBullet(_currentDirection); //dispara la bala asignandole la direccion actual
-        return bullet;
     }
 
     private void OnDisable()
