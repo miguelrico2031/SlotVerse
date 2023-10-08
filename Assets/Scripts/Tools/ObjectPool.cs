@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Unity.Burst.Intrinsics.X86.Avx;
 
 //Clase modificada a partir de esta: https://learn.unity.com/tutorial/introduction-to-object-pooling
 public class ObjectPool : MonoBehaviour
@@ -9,6 +10,7 @@ public class ObjectPool : MonoBehaviour
     [SerializeField] private GameObject _objectToPool;
     [SerializeField] private int _amountToPool;
     [SerializeField] private Transform _parent;
+    [SerializeField] private bool _instantiateOnEmptyPool;
 
     void Start()
     {
@@ -34,7 +36,12 @@ public class ObjectPool : MonoBehaviour
                 return _pooledObjects[i];
             }
         }
-        return null;
+        if(!_instantiateOnEmptyPool) return null;
+
+        var obj = Instantiate(_objectToPool);
+        _pooledObjects.Add(obj);
+        _amountToPool ++;
+        return obj;
     }
 
     //Devolver un objeto a la pool

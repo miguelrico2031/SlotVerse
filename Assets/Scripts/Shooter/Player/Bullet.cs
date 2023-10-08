@@ -10,6 +10,8 @@ public class Bullet : MonoBehaviour //Clase Monolítica de una bala disparada por
 {
     public UnityEvent<Bullet> BulletDestroyed; //Evento que se invoca cuando la bala se destruye
 
+    public int Damage { get { return _damage; } }
+
     [SerializeField] private float _speed; //velocidad de la bala
     [SerializeField] private int _damage; //daño que hace la bala a los enemigos
     [SerializeField] private float _lifetime; //segundos antes de que la bala se destruya sola
@@ -43,7 +45,7 @@ public class Bullet : MonoBehaviour //Clase Monolítica de una bala disparada por
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Comprueba si el objeto colisionado es interactuable con la bala (ITarget)
-        if (!collision.collider.TryGetComponent<ITarget>(out var target)) return;
+        if (!collision.collider.TryGetComponent<IBulletTarget>(out var target)) return;
 
         //metodo implementado por todos los objetos interactuables
         //al final de este método se llamará a DestroyBullet siempre 
@@ -56,7 +58,4 @@ public class Bullet : MonoBehaviour //Clase Monolítica de una bala disparada por
         StopCoroutine(DestroyAfterTime()); //Se detiene la corrutina para no destruir la bala 2 veces
         BulletDestroyed.Invoke(this); //Se invoca el evento 
     }
-
-    public int GetDamage() => _damage;
-
 }

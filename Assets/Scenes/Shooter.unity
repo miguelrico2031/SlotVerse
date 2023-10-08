@@ -567,7 +567,7 @@ GameObject:
   - component: {fileID: 1198157903}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -776,7 +776,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 0
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -1177,6 +1177,8 @@ GameObject:
   - component: {fileID: 1961069827}
   - component: {fileID: 1961069831}
   - component: {fileID: 1961069833}
+  - component: {fileID: 1961069835}
+  - component: {fileID: 1961069834}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -1327,10 +1329,10 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1.3
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 685f8a33e54782b44be3a5fb4023df6d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1353,7 +1355,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33a91647cbd80b46affffc32cbab8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0
+  _speed: 100
+  _nextWaypointDistance: 0.2
+--- !u!114 &1961069834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961069824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfcca479869ebe9488fa64290e158ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyDie:
+    m_PersistentCalls:
+      m_Calls: []
+  _health: 3
+--- !u!114 &1961069835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961069824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bff4bc1072da4445b728ea58b181c9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2047383103
 GameObject:
   m_ObjectHideFlags: 3
