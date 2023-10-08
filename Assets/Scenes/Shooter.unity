@@ -450,7 +450,7 @@ MonoBehaviour:
   m_ShowCameraFrustum: 1
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
+  m_UpdateMethod: 0
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
@@ -566,6 +566,7 @@ GameObject:
   - component: {fileID: 1198157899}
   - component: {fileID: 1198157898}
   - component: {fileID: 1198157903}
+  - component: {fileID: 1198157904}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -589,6 +590,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _moveSpeed: 100
+  _knockBackForce: 8
+  _knockBackDuration: 0.7
 --- !u!70 &1198157899
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -637,7 +640,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 3
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -733,6 +736,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _firePoint: {fileID: 188035706}
   _bulletPrefab: {fileID: 3943189877280996312, guid: 43e306daf854c694e8993bbcf34d4456, type: 3}
+--- !u!114 &1198157904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198157897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c598e10053522a3448943098effa168a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerHit:
+    m_PersistentCalls:
+      m_Calls: []
+  PlayerDie:
+    m_PersistentCalls:
+      m_Calls: []
+  _health: 10
 --- !u!1 &1641631767
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,7 +996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 821d59ab7d92cc64691032a64f6c240a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 0
+  _damage: 1
 --- !u!70 &1863822264
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1203,7 +1225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33a91647cbd80b46affffc32cbab8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 100
+  _speed: 75
   _nextWaypointDistance: 0.2
 --- !u!114 &1961069834
 MonoBehaviour:

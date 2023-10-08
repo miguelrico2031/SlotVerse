@@ -10,7 +10,9 @@ public class ShooterEnemyManager : MonoBehaviour, IBulletTarget, IEnemy
     public int Health { get { return _health; } } //getter de la health
     public bool IsAlive { get; private set; } //para saber si esta vivo
 
-    public UnityEvent EnemyDie, EnemyHit; //eventos que se lanzan al morir y ser golpeado
+    //eventos que se lanzan al morir y ser golpeado
+    public UnityEvent EnemyDie;
+    public UnityEvent EnemyHit;
 
     [SerializeField] private int _health; //salud
 
@@ -26,11 +28,13 @@ public class ShooterEnemyManager : MonoBehaviour, IBulletTarget, IEnemy
     //metodo llamado por la bala al detectar una colision con un IBulletTarget
     public void Hit(Bullet bullet)
     {
+        int damage = bullet.Damage;
+        bullet.DestroyBullet(); //destruir (devolver a la pool) la bala despues de usarla
+
+        TakeDamage(damage);
+
         EnemyHit?.Invoke(); //invocar al evento de ser golpeado
 
-        TakeDamage(bullet.Damage);
-
-        bullet.DestroyBullet(); //destruir (devolver a la pool) la bala despues de usarla
     }
 
     private void TakeDamage(int damage)
