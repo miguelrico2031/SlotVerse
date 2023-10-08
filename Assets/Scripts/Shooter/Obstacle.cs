@@ -10,12 +10,17 @@ public class Obstacle : MonoBehaviour, ITarget
 
     public void Hit(Bullet bullet)
     {
-        bullet.DestroyBullet();
-
-        if (!_destructible) return;
+        if (!_destructible)
+        {
+            bullet.DestroyBullet();
+            return;
+        }
         
         
         _health -= bullet.GetDamage();
-        if(_health <= 0) Destroy(gameObject);
+
+        bullet.DestroyBullet();
+
+        if (_health <= 0) Destroy(gameObject);
     }
 }
