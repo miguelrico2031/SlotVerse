@@ -5,24 +5,26 @@ using UnityEngine.Events;
 
 //clase que se encarga de gestionar la salud y estado del enemigo; recibir daño, morir, y lanzar
 //los eventos correspondientes para los otros scripts del enemigo
-public class ShooterEnemyManager : MonoBehaviour, IBulletTarget, IEnemy
+public class ShooterEnemyManager : MonoBehaviour, IBulletTarget, ISpawnableEnemy
 {
-    public int Health { get { return _health; } } //getter de la health
+    public int CurrentHealth { get { return _currentHealth; } } //getter de la health
     public bool IsAlive { get; private set; } //para saber si esta vivo
 
     //eventos que se lanzan al morir y ser golpeado
-    public UnityEvent EnemyDie;
-    public UnityEvent EnemyHit;
+    [HideInInspector] public UnityEvent EnemyDie;
+    [HideInInspector] public UnityEvent EnemyHit;
 
-    [SerializeField] private int _health; //salud
+    private int _currentHealth; //salud
 
-    private int _maxHealth; //salud máxima
+    private ShooterEnemy _enemy;
+
 
     private void Awake()
     {
-        IsAlive = true;
+        _enemy = GetComponent<ShooterEnemy>();
 
-        _maxHealth = _health;
+        _currentHealth = _enemy.Stats.Health;
+        IsAlive = true;
     }
 
     //metodo llamado por la bala al detectar una colision con un IBulletTarget
@@ -41,9 +43,9 @@ public class ShooterEnemyManager : MonoBehaviour, IBulletTarget, IEnemy
     {
         if (!IsAlive) return;
 
-        _health -= damage;
+        _currentHealth -= damage;
 
-        if (_health <= 0) Die();
+        if (_currentHealth <= 0) Die();
     }
 
     private void Die()
@@ -55,7 +57,7 @@ public class ShooterEnemyManager : MonoBehaviour, IBulletTarget, IEnemy
     //funcion para resetear estado del script cuando se spawnee con object pooling
     public void Reset()
     {
-        _health = _maxHealth;
+        _currentHealth = _enemy.Stats.Health;
         IsAlive = true;
     }
 }
