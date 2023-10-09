@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class ShooterSquirrelStats : ShooterEnemyStats
 {
-
+    public float BulletSpeed;
+    public float BulletLifeTime;
 }

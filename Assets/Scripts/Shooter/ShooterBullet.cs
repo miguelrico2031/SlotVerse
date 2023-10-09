@@ -3,23 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-//IMPORTANTE: para usar esta clase se debe instanciar una bala y justo después llamar al método
-//FireBullet para asignarle una dirección y una velocidad.
-
-public class Bullet : MonoBehaviour //Clase Monolítica de una bala disparada por el jugador
+public abstract class ShooterBullet : MonoBehaviour
 {
-    public UnityEvent<Bullet> BulletDestroyed; //Evento que se invoca cuando la bala se destruye
+    public UnityEvent<ShooterBullet> BulletDestroyed; //Evento que se invoca cuando la bala se destruye
 
     public int Damage { get { return _damage; } }
 
-    [SerializeField] private float _speed; //velocidad de la bala
-    [SerializeField] private int _damage; //daño que hace la bala a los enemigos
-    [SerializeField] private float _lifetime; //segundos antes de que la bala se destruya sola
+    protected float _speed; //velocidad de la bala
+    protected int _damage; //daño que hace la bala a los enemigos
+    protected float _lifetime; //segundos antes de que la bala se destruya sola
 
-    private Rigidbody2D _rb;
-    private Vector2 _direction; //dirección en la que se dispara la bala
+    protected Rigidbody2D _rb;
+    protected Vector2 _direction; //dirección en la que se dispara la bala
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
     }
@@ -44,12 +41,7 @@ public class Bullet : MonoBehaviour //Clase Monolítica de una bala disparada por
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Comprueba si el objeto colisionado es interactuable con la bala (ITarget)
-        if (!collision.collider.TryGetComponent<IBulletTarget>(out var target)) return;
-
-        //metodo implementado por todos los objetos interactuables
-        //al final de este método se llamará a DestroyBullet siempre 
-        target.Hit(this); 
+        OnCollision(collision);
     }
 
     public void DestroyBullet()
@@ -58,4 +50,6 @@ public class Bullet : MonoBehaviour //Clase Monolítica de una bala disparada por
         StopCoroutine(DestroyAfterTime()); //Se detiene la corrutina para no destruir la bala 2 veces
         BulletDestroyed.Invoke(this); //Se invoca el evento 
     }
+
+    protected abstract void OnCollision(Collision2D collision);
 }

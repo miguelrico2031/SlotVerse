@@ -37,7 +37,17 @@ public class ShooterEnemyMonkey : ShooterEnemy
             if (!c.TryGetComponent<IEnemyTarget>(out var t)) continue;
             if(t != target) continue;
 
-            target.Hit(Stats.Damage, _rb.position);
+            var info = new EnemyAttackInfo()
+            {
+                IsBullet = false,
+                Bullet = null,
+                Damage = Stats.Damage,
+                Position = _rb.position,
+                KnockbackForce = Stats.KnockbackForce,
+                KnockbackDuration = Stats.KnockbackDuration
+            };
+
+            target.Hit(info);
         }
 
         _movement.CanMove = true;

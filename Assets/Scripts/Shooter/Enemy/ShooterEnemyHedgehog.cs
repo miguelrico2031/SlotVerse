@@ -18,7 +18,16 @@ public class ShooterEnemyHedgehog : ShooterEnemy
     //Hace daño al jugador o a cualquier cosa que sea IEnemyTarget al entrar en su area de ataque
     protected override void OnTargetAtRange(IEnemyTarget target)
     {
-        target.Hit(Stats.Damage, _rb.position); //llama al metodo hit del target
+        var info = new EnemyAttackInfo()
+        {
+            IsBullet = false,
+            Bullet = null,
+            Damage = Stats.Damage,
+            Position = _rb.position,
+            KnockbackForce = Stats.KnockbackForce,
+            KnockbackDuration = Stats.KnockbackDuration
+        };
+        target.Hit(info); //llama al metodo hit del target
     }
 
 }

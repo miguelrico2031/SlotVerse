@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShooterPlayerShoot : MonoBehaviour
 {
     [SerializeField] private Transform _firePoint; //punto desde el que se instancian las balas
-    [SerializeField] private Bullet _bulletPrefab; //prefab para instanciar balas
+    [SerializeField] private BulletSpawner _bulletSpawner;
 
     private ShooterPlayerMovement _playerMovement; //referencia al script de movimiento
 
@@ -26,7 +26,7 @@ public class ShooterPlayerShoot : MonoBehaviour
         //Codigo temporal para disparar balas
         if (Input.GetKeyDown(KeyCode.Space))
             //Creamos una bala con el spawner (object pooling) con la direccion y posicion
-            BulletSpawner.Instance.CreateBullet(_firePoint.position, _currentDirection);
+            _bulletSpawner.CreateBullet(_firePoint.position, _currentDirection);
     }
 
     void OnDirectionChanged(Vector2 newDirection)

@@ -9,20 +9,18 @@ using UnityEngine;
 
 public class BulletSpawner : MonoBehaviour 
 {
-    public static BulletSpawner Instance;
 
     private ObjectPool _objectPool; //Componente que se encarga del object pooling
 
     private void Awake()
     {
-        Instance = this;
         _objectPool = GetComponent<ObjectPool>();
     }
 
-    public Bullet CreateBullet(Vector2 position, Vector2 direction)
+    public ShooterBullet CreateBullet(Vector2 position, Vector2 direction)
     {
         //crea una bala al sacarla del object pool
-        Bullet bullet = _objectPool.GetFromPool()?.GetComponent<Bullet>();
+        ShooterBullet bullet = _objectPool.GetFromPool()?.GetComponent<ShooterBullet>();
 
         //asigna la posicion y la dispara con la direccion
         bullet.transform.position = position;
@@ -34,7 +32,7 @@ public class BulletSpawner : MonoBehaviour
         return bullet;
     }
 
-    public void DestroyBullet(Bullet bullet)
+    public void DestroyBullet(ShooterBullet bullet)
     {
         //se desuscribe del evento de la bala y devuelve la bala a la pool
         bullet.BulletDestroyed?.RemoveListener(DestroyBullet);

@@ -29,3 +29,13 @@ public abstract class ShooterEnemy : MonoBehaviour
     }
 }
 
+public struct EnemyAttackInfo
+{
+    public bool IsBullet;
+    public EnemyBullet Bullet;
+    public int Damage;
+    public Vector2 Position;
+    public float KnockbackForce;
+    public float KnockbackDuration;
+}
+

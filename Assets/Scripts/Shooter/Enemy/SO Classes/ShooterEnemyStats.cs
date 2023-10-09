@@ -8,5 +8,7 @@ public abstract class ShooterEnemyStats : ScriptableObject
     public int Damage;
     public float MoveSpeed;
     public float NextWaypointDistance;
+    public float KnockbackForce;
+    public float KnockbackDuration;
     
 }

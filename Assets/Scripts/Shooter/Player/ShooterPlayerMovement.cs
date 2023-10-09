@@ -7,10 +7,6 @@ public class ShooterPlayerMovement : MonoBehaviour
 {
     public UnityEvent<Vector2> DirectionChanged; //Evento que se invoca cuando cambia de dirección
 
-    [SerializeField] private float _moveSpeed; //velocidad de movimiento en unidades /segundo
-    [SerializeField] private float _knockBackForce; //fuerza de retroceso al ser golpeado
-    [SerializeField] private float _knockBackDuration; //segundos en los que no se puede mover al ser golpeado
-
     private Rigidbody2D _rb; //rigidbody del jugador
     private ShooterPlayerManager _manager; //referencia al manager para eventos de ser golpeado y morir
 
@@ -51,27 +47,27 @@ public class ShooterPlayerMovement : MonoBehaviour
         if (!_canMove) return; //si no se puede mover no hacer nada
 
         //mover el rigidbody del jugador segun el input y la velocidad
-        _rb.velocity = _movementInput.normalized * _moveSpeed * Time.fixedDeltaTime;
+        _rb.velocity = _movementInput.normalized * _manager.Stats.MoveSpeed * Time.fixedDeltaTime;
     }
 
     //funcion llamada por el evento de jugador golpeado
-    private void OnPlayerHit(Vector2 enemyPosition)
+    private void OnPlayerHit(EnemyAttackInfo attackInfo)
     {
         //cuando lo golpeen no se podrá mover temporalmente, esto se hace para que
         //no se anule la fuerza de retroceso, porque al moverse se sobreescribe la velocidad por completo
         _canMove = false;
 
         //calcular la direccion de retroceso y aplicar la fuerza de retroceso como impulso
-        Vector2 knockbackDirection = (_rb.position - enemyPosition).normalized;
-        _rb.AddForce(knockbackDirection * _knockBackForce, ForceMode2D.Impulse);
+        Vector2 knockbackDirection = (_rb.position - attackInfo.Position).normalized;
+        _rb.AddForce(knockbackDirection * attackInfo.KnockbackForce, ForceMode2D.Impulse);
 
-        StartCoroutine(KnockbackTime());
+        StartCoroutine(KnockbackTime(attackInfo.KnockbackDuration));
     }
 
     //esperar y activar el movimiento de nuevo
-    private IEnumerator KnockbackTime()
+    private IEnumerator KnockbackTime(float duration)
     {
-        yield return new WaitForSeconds(_knockBackDuration);
+        yield return new WaitForSeconds(duration);
         _canMove = true;
     }
 

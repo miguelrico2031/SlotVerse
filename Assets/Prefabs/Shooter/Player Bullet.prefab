@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -3806453784737904969}
   - component: {fileID: 3943189877280996312}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Player Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -164,6 +164,4 @@ MonoBehaviour:
   BulletDestroyed:
     m_PersistentCalls:
       m_Calls: []
-  _speed: 8
-  _damage: 1
-  _lifetime: 3
+  _stats: {fileID: 11400000, guid: dc8f71d61220e6048968c442a1d405d0, type: 2}

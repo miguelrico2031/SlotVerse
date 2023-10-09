@@ -27,6 +27,7 @@ public class ShooterEnemyMovement : MonoBehaviour, ISpawnableEnemy
         
         _player = GameObject.FindWithTag("Player").transform;
 
+        _enemy.Manager.EnemyHit.AddListener(OnEnemyHit);
         _enemy.Manager.EnemyDie.AddListener(OnEnemyDie);
 
         CanMove = true;
@@ -80,6 +81,23 @@ public class ShooterEnemyMovement : MonoBehaviour, ISpawnableEnemy
         float distance = Vector2.Distance(_rb.position, _path.vectorPath[_currentWaypoint]);
         if (distance < _enemy.Stats.NextWaypointDistance) _currentWaypoint ++;
     }
+    
+    private void OnEnemyHit(PlayerAttackInfo attackInfo)
+    {
+        CanMove = false;
+        var force = _rb.velocity.normalized * attackInfo.KnockbackForce;
+        _rb.velocity = Vector2.zero;
+        _rb.AddForce(force, ForceMode2D.Impulse);
+
+        StartCoroutine(KnockbackTime(attackInfo.KnockbackDuration));
+    }
+
+    private IEnumerator KnockbackTime(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        CanMove = true;
+    }
+    
 
     //funcion llamada con el evento de muerte, para quitar el path y asi no moverse
     //y dejar de llamar al UpdatePath

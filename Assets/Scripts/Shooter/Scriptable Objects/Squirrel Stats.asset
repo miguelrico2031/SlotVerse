@@ -16,3 +16,7 @@ MonoBehaviour:
   Damage: 1
   MoveSpeed: 75
   NextWaypointDistance: 0.2
+  KnockbackForce: 8
+  KnockbackDuration: 0.7
+  BulletSpeed: 10
+  BulletLifeTime: 0

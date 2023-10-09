@@ -3,26 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ShooterPlayerManager : MonoBehaviour, IEnemyTarget
+public class ShooterPlayerManager : MonoBehaviour, IEnemyTarget, IEnemyBulletTarget
 {
     public bool IsAlive { get; private set; }
-    public int Health { get { return _health; } }
-    public UnityEvent<Vector2> PlayerHit; //evento de ser golpeado cuyo argumento es la posicion del enemigo
+    public PlayerStats Stats { get { return _stats; } }
+
+
+    public UnityEvent<EnemyAttackInfo> PlayerHit; //evento de ser golpeado
     public UnityEvent PlayerDie; //evneto de muerte
 
-    [SerializeField] private int _health;
+    [SerializeField] private PlayerStats _stats;
+
+    private int _health;
 
     private void Awake()
     {
         IsAlive = true;
+
+        _health = Stats.Health;
     }
 
-    public void Hit(int damage, Vector2 enemyPosition)
+    public void Hit(EnemyAttackInfo attackInfo)
     {
 
-        TakeDamage(damage);
+        TakeDamage(attackInfo.Damage);
 
-        PlayerHit?.Invoke(enemyPosition); //invocar evento de ser golpeado, con la posicion del enemigo
+        PlayerHit?.Invoke(attackInfo); //invocar evento de ser golpeado, con la posicion del enemigo
+    }
+
+    public void Hit(EnemyBullet bullet)
+    {
+        TakeDamage(bullet.Damage);
     }
 
     //recibir daño y cuando corresponda morir
@@ -40,4 +51,6 @@ public class ShooterPlayerManager : MonoBehaviour, IEnemyTarget
         IsAlive = false;
         PlayerDie?.Invoke();
     }
+
+
 }

@@ -5,14 +5,14 @@ using UnityEngine.Events;
 
 //clase que se encarga de gestionar la salud y estado del enemigo; recibir daño, morir, y lanzar
 //los eventos correspondientes para los otros scripts del enemigo
-public class ShooterEnemyManager : MonoBehaviour, IBulletTarget, ISpawnableEnemy
+public class ShooterEnemyManager : MonoBehaviour, IPlayerBulletTarget, ISpawnableEnemy
 {
     public int CurrentHealth { get { return _currentHealth; } } //getter de la health
     public bool IsAlive { get; private set; } //para saber si esta vivo
 
     //eventos que se lanzan al morir y ser golpeado
     [HideInInspector] public UnityEvent EnemyDie;
-    [HideInInspector] public UnityEvent EnemyHit;
+    [HideInInspector] public UnityEvent<PlayerAttackInfo> EnemyHit;
 
     private int _currentHealth; //salud
 
@@ -28,14 +28,14 @@ public class ShooterEnemyManager : MonoBehaviour, IBulletTarget, ISpawnableEnemy
     }
 
     //metodo llamado por la bala al detectar una colision con un IBulletTarget
-    public void Hit(Bullet bullet)
+    public void Hit(PlayerAttackInfo attackInfo)
     {
-        int damage = bullet.Damage;
-        bullet.DestroyBullet(); //destruir (devolver a la pool) la bala despues de usarla
+        int damage = attackInfo.Bullet.Damage;
+        attackInfo.Bullet.DestroyBullet(); //destruir (devolver a la pool) la bala despues de usarla
 
         TakeDamage(damage);
 
-        EnemyHit?.Invoke(); //invocar al evento de ser golpeado
+        EnemyHit?.Invoke(attackInfo); //invocar al evento de ser golpeado
 
     }
 
