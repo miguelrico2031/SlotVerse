@@ -19,4 +19,6 @@ MonoBehaviour:
   KnockbackForce: 8
   KnockbackDuration: 0.7
   BulletSpeed: 10
-  BulletLifeTime: 0
+  BulletLifeTime: 3
+  ShootDistance: 9
+  StopDistance: 5
