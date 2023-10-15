@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-//IMPORTANTE: para usar esta clase se debe instanciar una bala y justo después llamar al método
-//FireBullet para asignarle una dirección y una velocidad.
-
-public class PlayerBullet : ShooterBullet //Clase Monolítica de una bala disparada por el jugador
+//clase de las balas del jugador
+public class PlayerBullet : ShooterBullet
 {
-    [SerializeField] private PlayerStats _stats;
+    [SerializeField] private PlayerStats _stats; //referencia a los stats del jugador
 
     protected override void Awake()
     {
@@ -25,9 +23,7 @@ public class PlayerBullet : ShooterBullet //Clase Monolítica de una bala dispara
         //Comprueba si el objeto colisionado es interactuable con la bala
         if (!collision.collider.TryGetComponent<IPlayerBulletTarget>(out var target)) return;
 
-        //metodo implementado por todos los objetos interactuables
-        //al final de este método se llamará a DestroyBullet siempre
-
+        //objeto con toda la informacion del ataque que vaya a necesitar el impactado
         var info = new PlayerAttackInfo()
         {
             Bullet = this,
@@ -37,6 +33,8 @@ public class PlayerBullet : ShooterBullet //Clase Monolítica de una bala dispara
             KnockbackDuration = _stats.BulletKnockbackDuration
         };
 
+        //metodo implementado por todos los objetos interactuables
+        //al final de este método se llamará a DestroyBullet siempre
         target.Hit(info); 
     }
 }

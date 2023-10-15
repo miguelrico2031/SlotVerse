@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
+//bala del enemigo ardilla
 public class EnemyBullet : ShooterBullet
 {
-    [SerializeField] private ShooterSquirrelStats _stats;
+    [SerializeField] private ShooterSquirrelStats _stats; //referencia a los stats
 
     protected override void Awake()
     {
@@ -21,12 +22,10 @@ public class EnemyBullet : ShooterBullet
         //Comprueba si el objeto colisionado es interactuable con la bala
         if (!collision.collider.TryGetComponent<IEnemyBulletTarget>(out var target)) return;
 
-        //metodo implementado por todos los objetos interactuables
-        //al final de este método se llamará a DestroyBullet siempre 
+        //objeto con toda la informacion del ataque que vaya a necesitar el impactado
 
         var info = new EnemyAttackInfo()
         {
-            IsBullet = true,
             Bullet = this,
             Damage = _damage,
             Position = _rb.position,
@@ -34,6 +33,8 @@ public class EnemyBullet : ShooterBullet
             KnockbackDuration = _stats.KnockbackDuration
         };
 
+        //metodo implementado por todos los objetos interactuables
+        //al final de este método se llamará a DestroyBullet siempre 
         target.Hit(info);
     }
 }

@@ -12,15 +12,16 @@ public class ShooterEnemyHedgehog : ShooterEnemy
     protected override void Awake()
     {
         base.Awake();
-        _rb = GetComponentInParent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     //Hace daño al jugador o a cualquier cosa que sea IEnemyTarget al entrar en su area de ataque
     protected override void OnTargetAtRange(IEnemyTarget target)
     {
+        if(!Manager.IsAlive) return;
+        //crea un objeto con toda la info relevante del ataque
         var info = new EnemyAttackInfo()
         {
-            IsBullet = false,
             Bullet = null,
             Damage = Stats.Damage,
             Position = _rb.position,

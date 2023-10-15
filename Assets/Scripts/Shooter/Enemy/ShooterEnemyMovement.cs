@@ -4,6 +4,7 @@ using UnityEngine;
 using Pathfinding;
 
 //Script que mueve al enemigo hacia el jugador usando A* pathfinding y el rigidbody
+//Basado en el tutorial de Brackeys: https://www.youtube.com/watch?v=jvtFUfJ6CP8&t=1138s
 public class ShooterEnemyMovement : MonoBehaviour, ISpawnableEnemy
 {
     [HideInInspector] public bool CanMove = true;
@@ -27,14 +28,15 @@ public class ShooterEnemyMovement : MonoBehaviour, ISpawnableEnemy
         
         _player = GameObject.FindWithTag("Player").transform;
 
-        _enemy.Manager.EnemyHit.AddListener(OnEnemyHit);
-        _enemy.Manager.EnemyDie.AddListener(OnEnemyDie);
-
         CanMove = true;
     }
 
     private void Start()
     {
+        //se suscribe a los metodos de recibir daño (para el knockback) y de muerte (para desactivarse)
+        _enemy.Manager.EnemyHit.AddListener(OnEnemyHit);
+        _enemy.Manager.EnemyDie.AddListener(OnEnemyDie);
+
         //Llama cada 0.5 segundos a actualizar el path
         InvokeRepeating(nameof(UpdatePath), 0f, 0.5f);
     }
@@ -59,8 +61,10 @@ public class ShooterEnemyMovement : MonoBehaviour, ISpawnableEnemy
 
     private void FixedUpdate()
     {
+        //si no hay camino o no se puede mover, no entra
         if (_path == null || !CanMove) return;
 
+            //esto esta comentado porque no funciona realmente y tampoco se esta usando
         //si el indice del waypoint actual es (mayor o) igual al maximo
         //de waypoints es que ha terminado el path
         //if(_currentWaypoint >= _path.vectorPath.Count)
@@ -74,21 +78,25 @@ public class ShooterEnemyMovement : MonoBehaviour, ISpawnableEnemy
         Vector2 direction = ((Vector2)_path.vectorPath[_currentWaypoint] - _rb.position).normalized;
 
         _rb.AddForce(direction * _enemy.Stats.MoveSpeed * Time.fixedDeltaTime);
-        //_rb.MovePosition(_rb.position + direction * _speed * Time.fixedDeltaTime);
 
         //calcular la distancia con el waypoint para saber si estamos lo suficientemente
         //cerca para avanzar al siguiente waypoint
         float distance = Vector2.Distance(_rb.position, _path.vectorPath[_currentWaypoint]);
         if (distance < _enemy.Stats.NextWaypointDistance) _currentWaypoint ++;
     }
-    
+
+    //función que detiene el movimiento del enemigo por un tiempo cuando es golpeado, esto para 
+    //que la fuerza de knockback se aplique bien y no se contrarreste con la fuerza del movimiento
     private void OnEnemyHit(PlayerAttackInfo attackInfo)
     {
         CanMove = false;
-        var force = _rb.velocity.normalized * attackInfo.KnockbackForce;
-        _rb.velocity = Vector2.zero;
-        _rb.AddForce(force, ForceMode2D.Impulse);
 
+        //Se calcula la fuerza con la direccion a la bala y la fuerza de la bala
+        Vector2 force = (_rb.position - attackInfo.Position).normalized * attackInfo.KnockbackForce;
+        _rb.velocity = Vector2.zero; //se quita la velocidad previa
+        _rb.AddForce(force, ForceMode2D.Impulse); //se añade la fuerza
+
+        //espera un tiempo y habilita de nuevo el movimiento
         StartCoroutine(KnockbackTime(attackInfo.KnockbackDuration));
     }
 
@@ -104,6 +112,7 @@ public class ShooterEnemyMovement : MonoBehaviour, ISpawnableEnemy
     private void OnEnemyDie()
     {
         _path = null;
+        CanMove = false;
         CancelInvoke();
     }
 

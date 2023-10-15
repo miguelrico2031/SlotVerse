@@ -3,24 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+//script encargado de manejar la salud y estado del jugador (basicamente recibir daño y morir)
 public class ShooterPlayerManager : MonoBehaviour, IEnemyTarget, IEnemyBulletTarget
 {
+    public int CurrentHealth { get; private set; }
     public bool IsAlive { get; private set; }
-    public PlayerStats Stats { get { return _stats; } }
+    public PlayerStats Stats { get { return _stats; } } //getter de los stats para las demas clases
 
 
-    public UnityEvent<EnemyAttackInfo> PlayerHit; //evento de ser golpeado
-    public UnityEvent PlayerDie; //evneto de muerte
+    [HideInInspector] public UnityEvent<EnemyAttackInfo> PlayerHit; //evento de ser golpeado
+    [HideInInspector] public UnityEvent PlayerDie; //evneto de muerte
 
     [SerializeField] private PlayerStats _stats;
 
-    private int _health;
 
     private void Awake()
     {
         IsAlive = true;
 
-        _health = Stats.Health;
+        CurrentHealth = Stats.Health;
     }
 
     public void Hit(EnemyAttackInfo attackInfo)
@@ -31,19 +32,14 @@ public class ShooterPlayerManager : MonoBehaviour, IEnemyTarget, IEnemyBulletTar
         PlayerHit?.Invoke(attackInfo); //invocar evento de ser golpeado, con la posicion del enemigo
     }
 
-    public void Hit(EnemyBullet bullet)
-    {
-        TakeDamage(bullet.Damage);
-    }
-
     //recibir daño y cuando corresponda morir
     private void TakeDamage(int damage)
     {
         if (!IsAlive) return;
 
-        _health -= damage;
+        CurrentHealth -= damage;
 
-        if (_health <= 0) Die();
+        if (CurrentHealth <= 0) Die();
     }
 
     private void Die()

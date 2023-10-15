@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class ShooterMonkeyStats : ShooterEnemyStats
 {
-    public float AttackDelay;
+    public float AttackDelay; //tiempo antes de que ataque cuando esta a melee del jugador
 }

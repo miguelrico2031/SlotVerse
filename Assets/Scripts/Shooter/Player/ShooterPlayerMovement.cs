@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+//clase que mueve al jugador con el input
 public class ShooterPlayerMovement : MonoBehaviour
 {
-    public UnityEvent<Vector2> DirectionChanged; //Evento que se invoca cuando cambia de dirección
+    //Evento que se invoca cuando cambia de dirección
+    [HideInInspector] public UnityEvent<Vector2> DirectionChanged;
 
     private Rigidbody2D _rb; //rigidbody del jugador
     private ShooterPlayerManager _manager; //referencia al manager para eventos de ser golpeado y morir

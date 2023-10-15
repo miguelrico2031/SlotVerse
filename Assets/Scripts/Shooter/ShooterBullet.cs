@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+//clase abstracta para las balas, de la que hereda la bala del jugador y la de la adilla (enemybullet)
 public abstract class ShooterBullet : MonoBehaviour
 {
     public UnityEvent<ShooterBullet> BulletDestroyed; //Evento que se invoca cuando la bala se destruye
 
-    public int Damage { get { return _damage; } }
+    public int Damage { get { return _damage; } } //getter del daño
 
     protected float _speed; //velocidad de la bala
     protected int _damage; //daño que hace la bala a los enemigos
@@ -39,6 +40,7 @@ public abstract class ShooterBullet : MonoBehaviour
         DestroyBullet();
     }
 
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         OnCollision(collision);
@@ -51,5 +53,6 @@ public abstract class ShooterBullet : MonoBehaviour
         BulletDestroyed.Invoke(this); //Se invoca el evento 
     }
 
+    //funcion que implementan las clases hijas que se llama al colisionar por esta clase
     protected abstract void OnCollision(Collision2D collision);
 }
