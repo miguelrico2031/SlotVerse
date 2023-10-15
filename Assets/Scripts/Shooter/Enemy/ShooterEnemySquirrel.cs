@@ -85,8 +85,8 @@ public class ShooterEnemySquirrel : ShooterEnemy, ISpawnableEnemy
 
     private bool PlayerOnSight()
     {
-
-        var hit = Physics2D.Raycast(_firePoint.position, _player.position - _firePoint.position);
+        var mask = LayerMask.GetMask("Enemy");
+        var hit = Physics2D.Raycast(_rb.position, (Vector2)_player.position - _rb.position, 100f, ~mask);
 
         //if (hit.collider) Debug.Log(hit.collider.gameObject);
         return (hit.collider != null && hit.collider.CompareTag("Player"));
