@@ -5,9 +5,9 @@ using UnityEngine;
 public class ShooterEnemySquirrel : ShooterEnemy, ISpawnableEnemy
 {
     [SerializeField] private Transform _firePoint;
-    [SerializeField] private BulletSpawner _bulletSpawner;
 
 
+    private BulletSpawner _bulletSpawner;
     private ShooterSquirrelStats _squirrelStats; //stats casteados para facil acceso
     private Rigidbody2D _rb;
     private ShooterEnemyMovement _movement;
@@ -27,6 +27,7 @@ public class ShooterEnemySquirrel : ShooterEnemy, ISpawnableEnemy
         _rb = GetComponent<Rigidbody2D>();
         _movement = GetComponent<ShooterEnemyMovement>();
         _player = GameObject.FindWithTag("Player").transform;
+        _bulletSpawner = GameObject.Find("Enemy Bullet Spawner").GetComponent<BulletSpawner>();
 
         _state = SquirrelState.Walking;
     }
@@ -38,7 +39,11 @@ public class ShooterEnemySquirrel : ShooterEnemy, ISpawnableEnemy
 
     private void SetStateAndDirection()
     {
-        if (!Manager.IsAlive) return;
+        if (!Manager.IsAlive)
+        {
+            CancelInvoke(nameof(SetStateAndDirection));
+            return;
+        }
 
         SetState();
         SetDirection();
@@ -90,7 +95,7 @@ public class ShooterEnemySquirrel : ShooterEnemy, ISpawnableEnemy
                 if (!PlayerOnSight()) return;
                 //cambio a shooting desde walking
                 _state = SquirrelState.Shooting;
-                StartCoroutine(Shoot());
+                if (!_isShooting) StartCoroutine(Shoot());
             }
         }
 
@@ -112,13 +117,20 @@ public class ShooterEnemySquirrel : ShooterEnemy, ISpawnableEnemy
 
     private IEnumerator Shoot()
     {
-        if (_state == SquirrelState.Walking)
+        
+        if (_state == SquirrelState.Walking || !Manager.IsAlive)
         {
             _isShooting = false;
             yield break;
         }
         _isShooting = true;
-        yield return new WaitForSeconds(_squirrelStats.ShootCooldown);
+        yield return new WaitForSeconds(_squirrelStats.ShootCooldown + Random.Range(0f, 0.7f));
+
+        if (_state == SquirrelState.Walking || !Manager.IsAlive)
+        {
+            _isShooting = false;
+            yield break;
+        }
 
         //disparar
         _bulletSpawner.CreateBullet(_firePoint.position, _player.position - _firePoint.position);
@@ -161,6 +173,8 @@ public class ShooterEnemySquirrel : ShooterEnemy, ISpawnableEnemy
     public void Reset()
     {
         _state = SquirrelState.Walking;
+        _isShooting = false;
+        InvokeRepeating(nameof(SetStateAndDirection), 0.25f, 0.5f);
     }
 }
 

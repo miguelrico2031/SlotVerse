@@ -1139,10 +1139,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2967898053186576493, guid: 479370665ba78814cadaa338f0151d13, type: 3}
-      propertyPath: _bulletSpawner
-      value: 
-      objectReference: {fileID: 1467649596}
+    - target: {fileID: 952893313411587126, guid: 479370665ba78814cadaa338f0151d13, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346497438808729316, guid: 479370665ba78814cadaa338f0151d13, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346497438808729316, guid: 479370665ba78814cadaa338f0151d13, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7801212352054183194, guid: 479370665ba78814cadaa338f0151d13, type: 3}
       propertyPath: m_Name
       value: Squirrel

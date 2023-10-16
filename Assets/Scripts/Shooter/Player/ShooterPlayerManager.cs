@@ -16,6 +16,8 @@ public class ShooterPlayerManager : MonoBehaviour, IEnemyTarget, IEnemyBulletTar
 
     [SerializeField] private PlayerStats _stats;
 
+    private bool _invulnerable;
+
 
     private void Awake()
     {
@@ -26,12 +28,15 @@ public class ShooterPlayerManager : MonoBehaviour, IEnemyTarget, IEnemyBulletTar
 
     public void Hit(EnemyAttackInfo attackInfo)
     {
+        if (_invulnerable) return;
 
         TakeDamage(attackInfo.Damage);
 
         PlayerHit?.Invoke(attackInfo); //invocar evento de ser golpeado, con la posicion del enemigo
 
         if (attackInfo.Bullet) attackInfo.Bullet.DestroyBullet();
+
+        StartCoroutine(InvulnerabilityTime());
     }
 
     //recibir daño y cuando corresponda morir
@@ -48,6 +53,16 @@ public class ShooterPlayerManager : MonoBehaviour, IEnemyTarget, IEnemyBulletTar
     {
         IsAlive = false;
         PlayerDie?.Invoke();
+    }
+
+    private IEnumerator InvulnerabilityTime()
+    {
+        _invulnerable = true;
+        GetComponent<Rigidbody2D>().excludeLayers = LayerMask.GetMask("EnemyBullet");
+        yield return new WaitForSeconds(Stats.BulletKnockbackDuration);
+        _invulnerable = false;
+        GetComponent<Rigidbody2D>().excludeLayers = new LayerMask();
+
     }
 
 
