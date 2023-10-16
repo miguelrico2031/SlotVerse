@@ -8,4 +8,5 @@ public class ShooterSquirrelStats : ShooterEnemyStats
     public float BulletLifeTime; //tiempo que está la bala antes de destruirse sola
     public float ShootDistance; //distancia del jugador a partir de la que empieza a disparar
     public float StopDistance; //distancia del jugador a partir de la que deja de acercarse
+    public float ShootCooldown; //segundos entre cada disparo
 }

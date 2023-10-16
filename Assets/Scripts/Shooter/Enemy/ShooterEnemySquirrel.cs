@@ -5,6 +5,8 @@ using UnityEngine;
 public class ShooterEnemySquirrel : ShooterEnemy, ISpawnableEnemy
 {
     [SerializeField] private Transform _firePoint;
+    [SerializeField] private BulletSpawner _bulletSpawner;
+
 
     private ShooterSquirrelStats _squirrelStats; //stats casteados para facil acceso
     private Rigidbody2D _rb;
@@ -14,6 +16,8 @@ public class ShooterEnemySquirrel : ShooterEnemy, ISpawnableEnemy
 
     private Vector2 _firePointDirection = Vector2.right;
     private Vector2[] _firePointDirections = { Vector2.right, Vector2.up, Vector2.left, Vector2.down };
+
+    private bool _isShooting = false;
 
     protected override void Awake()
     {
@@ -29,14 +33,19 @@ public class ShooterEnemySquirrel : ShooterEnemy, ISpawnableEnemy
 
     protected override void Start()
     {
-        InvokeRepeating(nameof(SetState), 0.25f, 0.5f);
-        InvokeRepeating(nameof(SetDirection), 0.25f, 0.5f);
+        InvokeRepeating(nameof(SetStateAndDirection), 0.25f, 0.5f);
+    }
+
+    private void SetStateAndDirection()
+    {
+        if (!Manager.IsAlive) return;
+
+        SetState();
+        SetDirection();
     }
 
     private void SetState()
     {
-        if (!Manager.IsAlive) return;
-
         float distanceToPlayer = Vector2.Distance(_rb.position, _player.position);
 
         if(distanceToPlayer <= _squirrelStats.StopDistance)
@@ -47,6 +56,7 @@ public class ShooterEnemySquirrel : ShooterEnemy, ISpawnableEnemy
                 _state = SquirrelState.Stopped;
                 _movement.CanMove = false;
                 _rb.velocity = Vector2.zero;
+                if (!_isShooting) StartCoroutine(Shoot());
             }
             else
             {
@@ -64,7 +74,15 @@ public class ShooterEnemySquirrel : ShooterEnemy, ISpawnableEnemy
                 //cambio desde stop
                 _movement.CanMove = true;
                 //si el jugador está a la vista dispara, si no camina solo
-                _state = PlayerOnSight() ? SquirrelState.Shooting : SquirrelState.Walking;
+                if(PlayerOnSight())
+                {
+                    _state = SquirrelState.Shooting;
+                    if (!_isShooting) StartCoroutine(Shoot());
+                }   
+                else
+                {
+                    _state =  SquirrelState.Walking;
+                }
                 
             }
             else if(_state == SquirrelState.Walking)
@@ -72,7 +90,7 @@ public class ShooterEnemySquirrel : ShooterEnemy, ISpawnableEnemy
                 if (!PlayerOnSight()) return;
                 //cambio a shooting desde walking
                 _state = SquirrelState.Shooting;
-
+                StartCoroutine(Shoot());
             }
         }
 
@@ -86,16 +104,30 @@ public class ShooterEnemySquirrel : ShooterEnemy, ISpawnableEnemy
     private bool PlayerOnSight()
     {
         var mask = LayerMask.GetMask("Enemy");
-        var hit = Physics2D.Raycast(_rb.position, (Vector2)_player.position - _rb.position, 100f, ~mask);
+        var hit = Physics2D.Raycast(_firePoint.position, _player.position - _firePoint.position, 100f, ~mask);
 
         //if (hit.collider) Debug.Log(hit.collider.gameObject);
         return (hit.collider != null && hit.collider.CompareTag("Player"));
     }
 
+    private IEnumerator Shoot()
+    {
+        if (_state == SquirrelState.Walking)
+        {
+            _isShooting = false;
+            yield break;
+        }
+        _isShooting = true;
+        yield return new WaitForSeconds(_squirrelStats.ShootCooldown);
+
+        //disparar
+        _bulletSpawner.CreateBullet(_firePoint.position, _player.position - _firePoint.position);
+
+        yield return StartCoroutine(Shoot());
+    }
+
     private void SetDirection()
     {
-        if (!Manager.IsAlive) return;
-
         Vector2 directionToPlayer = (Vector2) _player.position - _rb.position;
         Vector2 newDirection = _firePointDirection;
 

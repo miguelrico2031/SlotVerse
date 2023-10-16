@@ -58,7 +58,7 @@ public class ShooterPlayerMovement : MonoBehaviour
         //cuando lo golpeen no se podrá mover temporalmente, esto se hace para que
         //no se anule la fuerza de retroceso, porque al moverse se sobreescribe la velocidad por completo
         _canMove = false;
-
+        _rb.velocity = Vector2.zero;
         //calcular la direccion de retroceso y aplicar la fuerza de retroceso como impulso
         Vector2 knockbackDirection = (_rb.position - attackInfo.Position).normalized;
         _rb.AddForce(knockbackDirection * attackInfo.KnockbackForce, ForceMode2D.Impulse);

@@ -30,6 +30,8 @@ public class ShooterPlayerManager : MonoBehaviour, IEnemyTarget, IEnemyBulletTar
         TakeDamage(attackInfo.Damage);
 
         PlayerHit?.Invoke(attackInfo); //invocar evento de ser golpeado, con la posicion del enemigo
+
+        if (attackInfo.Bullet) attackInfo.Bullet.DestroyBullet();
     }
 
     //recibir daño y cuando corresponda morir
