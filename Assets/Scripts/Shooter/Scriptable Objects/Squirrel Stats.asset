@@ -18,8 +18,8 @@ MonoBehaviour:
   NextWaypointDistance: 0.2
   KnockbackForce: 8
   KnockbackDuration: 0.7
-  BulletSpeed: 10
+  BulletSpeed: 6
   BulletLifeTime: 3
   ShootDistance: 8
   StopDistance: 3.75
-  ShootCooldown: 1
+  ShootCooldown: 2

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 //clase de las balas del jugador
-public class PlayerBullet : ShooterBullet
+public class PlayerBullet : ShooterBullet, IEnemyBulletTarget
 {
     [SerializeField] private PlayerStats _stats; //referencia a los stats del jugador
 
@@ -16,7 +16,6 @@ public class PlayerBullet : ShooterBullet
         _lifetime = _stats.BulletLifetime;
         _damage = _stats.BulletDamage;
     }
-
 
     protected override void OnCollision(Collision2D collision)
     {
@@ -36,6 +35,11 @@ public class PlayerBullet : ShooterBullet
         //metodo implementado por todos los objetos interactuables
         //al final de este método se llamará a DestroyBullet siempre
         target.Hit(info); 
+    }
+
+    public void Hit(EnemyAttackInfo attackInfo)
+    {
+        DestroyBullet();
     }
 }
 
