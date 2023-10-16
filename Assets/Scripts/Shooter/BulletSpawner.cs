@@ -32,7 +32,7 @@ public class BulletSpawner : MonoBehaviour
         return bullet;
     }
 
-    public void DestroyBullet(ShooterBullet bullet)
+    private void DestroyBullet(ShooterBullet bullet)
     {
         //se desuscribe del evento de la bala y devuelve la bala a la pool
         bullet.BulletDestroyed?.RemoveListener(DestroyBullet);

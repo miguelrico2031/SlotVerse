@@ -1,25 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Unity.Burst.Intrinsics.X86.Avx;
 
 //Clase modificada a partir de esta: https://learn.unity.com/tutorial/introduction-to-object-pooling
 public class ObjectPool : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> _pooledObjects;
-    [SerializeField] private GameObject _objectToPool;
-    [SerializeField] private int _amountToPool;
-    [SerializeField] private Transform _parent;
-    [SerializeField] private bool _instantiateOnEmptyPool;
+    public GameObject ObjectToPool;
+    public int AmountToPool;
 
+    [SerializeField] private Transform _parent;
+    [SerializeField] private bool _instantiateOnEmptyPool, _initializeExternally;
+
+    private List<GameObject> _pooledObjects;
+    
     void Start()
+    {
+        if(!_initializeExternally) Initialize();
+    }
+
+    public void Initialize()
     {
         _pooledObjects = new List<GameObject>();
         GameObject tmp;
-        for (int i = 0; i < _amountToPool; i++)
+        for (int i = 0; i < AmountToPool; i++)
         {
-            if(_parent) tmp = Instantiate(_objectToPool, _parent);
-            else tmp = Instantiate(_objectToPool);
+            if (_parent) tmp = Instantiate(ObjectToPool, _parent);
+            else tmp = Instantiate(ObjectToPool);
             tmp.SetActive(false);
             _pooledObjects.Add(tmp);
         }
@@ -28,7 +34,7 @@ public class ObjectPool : MonoBehaviour
     //Para obtener un objeto de la pool
     public GameObject GetFromPool(bool returnActive = true)
     {
-        for (int i = 0; i < _amountToPool; i++)
+        for (int i = 0; i < AmountToPool; i++)
         {
             if (!_pooledObjects[i].activeInHierarchy)
             {
@@ -38,9 +44,9 @@ public class ObjectPool : MonoBehaviour
         }
         if(!_instantiateOnEmptyPool) return null;
 
-        var obj = Instantiate(_objectToPool);
+        var obj = Instantiate(ObjectToPool);
         _pooledObjects.Add(obj);
-        _amountToPool ++;
+        AmountToPool ++;
         return obj;
     }
 
