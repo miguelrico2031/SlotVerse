@@ -59,5 +59,14 @@ public class ObjectPool : MonoBehaviour
         return true;
     }
 
+    public int SizeOfPool()
+    {
+        int n = 0;
+
+        foreach(var obj in _pooledObjects) if(!obj.activeInHierarchy) n++;
+
+        return n;
+    }
+
 
 }

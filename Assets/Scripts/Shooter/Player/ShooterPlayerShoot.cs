@@ -7,14 +7,17 @@ public class ShooterPlayerShoot : MonoBehaviour
     [SerializeField] private Transform _firePoint; //punto desde el que se instancian las balas
     [SerializeField] private BulletSpawner _bulletSpawner;
 
+    private ShooterPlayerManager _manager;
     private ShooterPlayerMovement _playerMovement; //referencia al script de movimiento
 
     private Vector2 _currentDirection; //ultima direccion (para calcular el angulo de rotacion)
 
     private void Awake()
     {
+        _manager = GetComponent<ShooterPlayerManager>();
         _playerMovement = GetComponent<ShooterPlayerMovement>();
 
+        _manager.PlayerDie?.AddListener(OnPlayerDie);
         //añadimos el observador para el evento de cambio de direccion del script de movimiento
         _playerMovement.DirectionChanged?.AddListener(OnDirectionChanged);
 
@@ -23,6 +26,8 @@ public class ShooterPlayerShoot : MonoBehaviour
 
     private void Update()
     {
+        if (!_manager.IsAlive) return;
+
         //Codigo temporal para disparar balas
         if (Input.GetKeyDown(KeyCode.Space))
             //Creamos una bala con el spawner (object pooling) con la direccion y posicion
@@ -37,6 +42,11 @@ public class ShooterPlayerShoot : MonoBehaviour
         _firePoint.RotateAround(transform.position, Vector3.forward, angle);
 
         _currentDirection = newDirection; //actualizar la ultima direccion
+    }
+
+    private void OnPlayerDie()
+    {
+        _playerMovement?.DirectionChanged?.RemoveListener(OnDirectionChanged);
     }
 
     private void OnDisable()

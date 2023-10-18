@@ -14,6 +14,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private LayerMask _ignoreLayersForSpawnOverlap;
 
     private ObjectPool _objectPool;
+    private ShooterPlayerManager _playerManager;
 
     private int enemiesPerWave = 0;
     private float secondsPerWave = 0;
@@ -21,6 +22,7 @@ public class EnemySpawner : MonoBehaviour
     private void Awake()
     {
         _objectPool = GetComponent<ObjectPool>();
+        _playerManager = FindAnyObjectByType<ShooterPlayerManager>();
 
         switch(_gameInfo.NPC)
         {
@@ -37,25 +39,34 @@ public class EnemySpawner : MonoBehaviour
         enemiesPerWave = _initialEnemiesPerWave;
         secondsPerWave = _initialSecondsPerWave;
 
-        while(true)
-        {
+        while(_playerManager.IsAlive)
+        { 
+            if(_objectPool.SizeOfPool() < enemiesPerWave)
+            {
+                yield return new WaitForSeconds(secondsPerWave);
+                continue;
+            }
+
             for (int i = 0; i < enemiesPerWave; i++)
             {
                 Vector2 spawnPosition = GetSpawnPoint();
-                SpawnEnemy(spawnPosition);
+                var enemy = SpawnEnemy(spawnPosition);
+                enemy?.GetComponent<ShooterEnemyManager>().EnemyDie.AddListener(OnEnemyDie);
             }
-
-            yield return new WaitForSeconds(secondsPerWave);
 
             enemiesPerWave += _enemiesPerWaveIncrement;
             secondsPerWave += _secondsPerWaveIncrement;
+
+            yield return new WaitForSeconds(secondsPerWave);
         }
     }
 
 
     private ShooterEnemy SpawnEnemy(Vector2 position)
     {
-        var enemy = _objectPool.GetFromPool(false).GetComponent<ShooterEnemy>();
+        var enemy = _objectPool.GetFromPool(false)?.GetComponent<ShooterEnemy>();
+       
+        if (enemy == null) return null;
 
         var resets = enemy.GetComponentsInChildren<ISpawnableEnemy>(true);
         foreach (var reset in resets) reset.Reset();
@@ -87,6 +98,19 @@ public class EnemySpawner : MonoBehaviour
                 isValidPoint = false;
         }
             return point;
+    }
+
+    private void OnEnemyDie(ShooterEnemy enemy)
+    {
+        enemy.GetComponent<ShooterEnemyManager>().EnemyDie.RemoveListener(OnEnemyDie);
+
+        StartCoroutine(ReturnEnemyAfterDeadTime(enemy));
+    }
+
+    private IEnumerator ReturnEnemyAfterDeadTime(ShooterEnemy enemy)
+    {
+        yield return new WaitForSeconds(enemy.Stats.DeadTime);
+        _objectPool.ReturnToPool(enemy.gameObject);
     }
 
 }

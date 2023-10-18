@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShooterEnemySquirrel : ShooterEnemy, ISpawnableEnemy
+public class ShooterEnemySquirrel : ShooterEnemy
 {
     [SerializeField] private Transform _firePoint;
 
@@ -39,7 +39,7 @@ public class ShooterEnemySquirrel : ShooterEnemy, ISpawnableEnemy
 
     private void SetStateAndDirection()
     {
-        if (!Manager.IsAlive)
+        if (!Manager.IsAlive || !_playerManager.IsAlive)
         {
             CancelInvoke(nameof(SetStateAndDirection));
             return;
@@ -118,7 +118,7 @@ public class ShooterEnemySquirrel : ShooterEnemy, ISpawnableEnemy
     private IEnumerator Shoot()
     {
         
-        if (_state == SquirrelState.Walking || !Manager.IsAlive)
+        if (_state == SquirrelState.Walking || !Manager.IsAlive || !_playerManager.IsAlive)
         {
             _isShooting = false;
             yield break;
@@ -170,11 +170,13 @@ public class ShooterEnemySquirrel : ShooterEnemy, ISpawnableEnemy
         if (!Manager.IsAlive) return;
     }
 
-    public void Reset()
+    public override void Reset()
     {
+        base.Reset();
+
         _state = SquirrelState.Walking;
         _isShooting = false;
-        InvokeRepeating(nameof(SetStateAndDirection), 0.25f, 0.5f);
+        if(_playerManager.IsAlive) InvokeRepeating(nameof(SetStateAndDirection), 0.25f, 0.5f);
     }
 }
 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player Stats
   m_EditorClassIdentifier: 
   MoveSpeed: 100
-  Health: 10
+  Health: 5
   BulletSpeed: 12
   BulletDamage: 1
   BulletLifetime: 3

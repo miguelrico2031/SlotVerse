@@ -13,5 +13,6 @@ public abstract class ShooterEnemyStats : ScriptableObject
     public float NextWaypointDistance; //distancia a partir de la cual avanza de nodo en el pathfinding
     public float KnockbackForce; //fuerza del knockback al jugador
     public float KnockbackDuration; //duración del knockback al jugador
+    public float DeadTime; //tiempo de estar muerto antes de desaparecer
     
 }

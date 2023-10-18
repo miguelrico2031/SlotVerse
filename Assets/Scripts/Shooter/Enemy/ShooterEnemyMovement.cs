@@ -15,30 +15,28 @@ public class ShooterEnemyMovement : MonoBehaviour, ISpawnableEnemy
     private Transform _player; //transform del jugador para seguirlo
 
     private ShooterEnemy _enemy; //Componente con los datos
-    Seeker _seeker; //Componente que genera el Path
-    Rigidbody2D _rb;
+    private Seeker _seeker; //Componente que genera el Path
+    private Rigidbody2D _rb;
+    private Collider2D _collider;
 
-    
+    private ShooterPlayerManager _playerManager;
 
     private void Awake()
     {
         _enemy = GetComponent<ShooterEnemy>();
         _seeker = GetComponent<Seeker>();
         _rb = GetComponent<Rigidbody2D>();
-        
+        _collider = GetComponent<Collider2D>();
+
         _player = GameObject.FindWithTag("Player").transform;
+        _playerManager = _player.GetComponent<ShooterPlayerManager>();
 
         CanMove = true;
     }
 
     private void Start()
     {
-        //se suscribe a los metodos de recibir daño (para el knockback) y de muerte (para desactivarse)
         _enemy.Manager.EnemyHit.AddListener(OnEnemyHit);
-        _enemy.Manager.EnemyDie.AddListener(OnEnemyDie);
-
-        //Llama cada 0.5 segundos a actualizar el path
-        InvokeRepeating(nameof(UpdatePath), 0f, 0.5f);
     }
 
     void UpdatePath()
@@ -109,19 +107,40 @@ public class ShooterEnemyMovement : MonoBehaviour, ISpawnableEnemy
 
     //funcion llamada con el evento de muerte, para quitar el path y asi no moverse
     //y dejar de llamar al UpdatePath
-    private void OnEnemyDie()
+    private void OnEnemyDie(ShooterEnemy enemy)
     {
         _path = null;
         CanMove = false;
         CancelInvoke();
+
+        _collider.enabled = false;
+
+        _enemy.Manager.EnemyDie.RemoveListener(OnEnemyDie);
+
+        _playerManager.PlayerDie.RemoveListener(OnPlayerDie);
+    }
+
+    private void OnPlayerDie()
+    {
+        _path = null;
+        CanMove = false;
+        CancelInvoke();
+
     }
 
     //reseteo del estado para el object pooling
     public void Reset()
     {
+        _collider.enabled = true;
         CanMove = true;
         _currentWaypoint = 0;
-        //_reachedEndOfPath = false;
+
+        _enemy.Manager.EnemyDie.AddListener(OnEnemyDie);
+
+        _playerManager.PlayerDie.AddListener(OnPlayerDie);
+
         InvokeRepeating(nameof(UpdatePath), 0f, 0.5f);
+
+        if (!_playerManager.IsAlive) OnPlayerDie();
     }
 }

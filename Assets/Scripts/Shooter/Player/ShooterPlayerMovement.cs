@@ -10,6 +10,7 @@ public class ShooterPlayerMovement : MonoBehaviour
     [HideInInspector] public UnityEvent<Vector2> DirectionChanged;
 
     private Rigidbody2D _rb; //rigidbody del jugador
+    private Collider2D _collider;
     private ShooterPlayerManager _manager; //referencia al manager para eventos de ser golpeado y morir
 
     private Vector2 _movementInput; //vector para guardar los ejes horizontal y vertical normalizados     
@@ -19,6 +20,7 @@ public class ShooterPlayerMovement : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _collider = GetComponent<Collider2D>();
         _manager = GetComponent<ShooterPlayerManager>();
 
         _manager.PlayerHit.AddListener(OnPlayerHit);
@@ -70,12 +72,15 @@ public class ShooterPlayerMovement : MonoBehaviour
     private IEnumerator KnockbackTime(float duration)
     {
         yield return new WaitForSeconds(duration);
-        _canMove = true;
+
+        if(_manager.IsAlive) _canMove = true;
     }
 
     //funcion llamada por el evento de muerte
     private void OnPlayerDie()
     {
         _canMove = false;
+        _manager.PlayerHit.RemoveListener(OnPlayerHit);
+        _collider.enabled = false;
     }
 }

@@ -11,7 +11,7 @@ public class ShooterEnemyManager : MonoBehaviour, IPlayerBulletTarget, ISpawnabl
     public bool IsAlive { get; private set; } //para saber si esta vivo
 
     //eventos que se lanzan al morir y ser golpeado
-    [HideInInspector] public UnityEvent EnemyDie;
+    [HideInInspector] public UnityEvent<ShooterEnemy> EnemyDie;
     [HideInInspector] public UnityEvent<PlayerAttackInfo> EnemyHit;
 
 
@@ -52,7 +52,7 @@ public class ShooterEnemyManager : MonoBehaviour, IPlayerBulletTarget, ISpawnabl
     private void Die()
     {
         IsAlive = false;
-        EnemyDie?.Invoke(); //invocar evento de muerte
+        EnemyDie?.Invoke(GetComponent<ShooterEnemy>()); //invocar evento de muerte
     }
 
     //funcion para resetear estado del script cuando se spawnee con object pooling
