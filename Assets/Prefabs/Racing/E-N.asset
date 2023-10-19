@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 050ad741a354d9246ac591f548eb0cf3, type: 3}
-  m_Name: Road South-East
+  m_Name: E-N
   m_EditorClassIdentifier: 
-  TileSize: {x: 10, y: 10}
   RoadTiles:
-  - {fileID: 2291429670164880887, guid: 49d589680a88a3046aa619510498c87a, type: 3}
-  EntryDirection: 2
-  ExitDirection: 1
+  - {fileID: 507333138489610511, guid: 07f35da78029aaf4db24794b64cb777b, type: 3}
+  EntryDirection: 1
+  ExitDirection: 0

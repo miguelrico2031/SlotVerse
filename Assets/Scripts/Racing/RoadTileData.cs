@@ -13,9 +13,7 @@ public class RoadTileData : ScriptableObject
         West
     }
 
-    public Vector2 TileSize = new Vector2(10f, 10f);
-
-    public GameObject[] RoadTiles;
+    public Road[] RoadTiles;
     public Direction EntryDirection;
     public Direction ExitDirection;
 }
