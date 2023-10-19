@@ -7,16 +7,16 @@ public class RoadSpawner : MonoBehaviour
     public RoadTileData LastTile { get; private set; }
 
     [SerializeField] private Vector3 _tileSize;
-    [SerializeField] private RoadTileData[] _curvesData;
-    [SerializeField] private RoadTileData[] _straightsData;
+    [SerializeField] private RoadTileData[] _turnTileData;
+    [SerializeField] private RoadTileData[] _straightTileData;
     [SerializeField] private RoadTileData _firstTile;
-    [SerializeField] [Range(0f, 1f)]private float _curveProbability; 
+    [SerializeField] [Range(0f, 1f)]private float _curveChance; 
 
-    private Vector3 _spawnPos;
+    private Vector3 _spawnPosition;
 
     private void Awake()
     {
-        _spawnPos = Vector3.zero;
+        _spawnPosition = Vector3.zero;
         LastTile = null;
     }
 
@@ -24,49 +24,46 @@ public class RoadSpawner : MonoBehaviour
     {
         if (LastTile == null) return _firstTile;
 
+        //List storing all available tiles to spawn
         List<RoadTileData> allowedTiles = new List<RoadTileData>();
-        RoadTileData nextTile = null;
-
+        //Set to north since first tile is supposed to be South-North
         RoadTileData.Direction nextRequiredDirection = RoadTileData.Direction.North;
 
-
+        //Depending on the last tile spawned exit direction, picks a valid entry direction and a spawn position for the next tile
         switch (LastTile.ExitDirection)
         {
             case RoadTileData.Direction.North:
                 nextRequiredDirection = RoadTileData.Direction.South;
-                _spawnPos = _spawnPos + new Vector3(0f, 0, _tileSize.z);
+                _spawnPosition = _spawnPosition + new Vector3(0f, 0, _tileSize.z);
                 break;
 
             case RoadTileData.Direction.East:
                 nextRequiredDirection = RoadTileData.Direction.West;
-                _spawnPos = _spawnPos + new Vector3(_tileSize.x, 0, 0);
+                _spawnPosition = _spawnPosition + new Vector3(_tileSize.x, 0, 0);
                 break;
 
             case RoadTileData.Direction.South:
                 nextRequiredDirection = RoadTileData.Direction.North;
-                _spawnPos = _spawnPos + new Vector3(0f, 0, -_tileSize.z);
+                _spawnPosition = _spawnPosition + new Vector3(0f, 0, -_tileSize.z);
                 break;
 
             case RoadTileData.Direction.West:
                 nextRequiredDirection = RoadTileData.Direction.East;
-                _spawnPos = _spawnPos + new Vector3(-_tileSize.x, 0, 0);
+                _spawnPosition = _spawnPosition + new Vector3(-_tileSize.x, 0, 0);
                 break;
 
             default:
                 break;
         }
 
-        var array = Random.Range(0f, 1f) <= _curveProbability ? _curvesData : _straightsData; 
+        //This line makes straight roads more frequent than turns, so it is not an extremely twisted road
+        var array = Random.Range(0f, 1f) <= _curveChance ? _turnTileData : _straightTileData; 
 
+        //Adds all valid road tiles to the list
         foreach (var d in array)  if (d.EntryDirection == nextRequiredDirection) allowedTiles.Add(d);
-        
 
-        int index = Random.Range(0, allowedTiles.Count);
-
-        Debug.Log("Index = " + index);
-
-        nextTile = allowedTiles[index];
-
+        //Picks a random tile from the previously selected tiles
+        RoadTileData nextTile = allowedTiles[Random.Range(0, allowedTiles.Count)];
         return nextTile;
     }
 
@@ -74,16 +71,13 @@ public class RoadSpawner : MonoBehaviour
     {
         RoadTileData tileToSpawn = PickValidNextTile();
 
+        //Creates the object that will store the road tile
         Road objectFromTile = tileToSpawn.RoadTiles[Random.Range(0, tileToSpawn.RoadTiles.Length)];
         LastTile = tileToSpawn;
-        Road road = Instantiate(objectFromTile, _spawnPos, Quaternion.identity);
+        Road road = Instantiate(objectFromTile, _spawnPosition, Quaternion.identity);
+
         return road;
     }
 
-    public void ResetSpawnPos() => _spawnPos = Vector3.zero;
-
-    //public void UpdateSpawnOrigin(Vector3 originDelta)
-    //{
-    //    spawn = spawn + originDelta;
-    //}
+    public void ResetSpawnPosition() => _spawnPosition = Vector3.zero;
 }

@@ -7,7 +7,7 @@ public class RoadManager : MonoBehaviour
 {
     public static RoadManager Instance;
 
-    public UnityEvent<Vector3> ResetCoords;
+    public UnityEvent<Vector3> ResetCoordinates;
 
     [SerializeField] private int _initialSpawnedRoads;
 
@@ -32,6 +32,7 @@ public class RoadManager : MonoBehaviour
 
     private void SpawnInitialRoads()
     {
+        //Generates the starting track, destroying first the road (if it exists [debugging reasons])
         foreach(var r in _roads) Destroy(r.gameObject);
         _roads = new List<Road>();
         _currentRoad = null;
@@ -43,10 +44,9 @@ public class RoadManager : MonoBehaviour
 
     private void Update()
     {
+        //Debugging "cheat codes"
         if (Input.GetKeyDown(KeyCode.T)) SpawnInitialRoads();
-
         if (Input.GetKeyDown(KeyCode.Y)) OnRoadEnter(_roads[2]);
-
 
     }
 
@@ -58,6 +58,9 @@ public class RoadManager : MonoBehaviour
 
         int newRoadIndex = _roads.IndexOf(road);
 
+        //Selects the road tile located 2 tiles behind the actual player position
+        //Using an arbitrary value of 2 to avoid removing the tile the same instant it is exited, thus giving the player
+        //and camera room to leave it behind and avoid visual issues (or falling down to the void)
         if (newRoadIndex - 2 < 0) return;
 
         road.RoadEnter.RemoveListener(OnRoadEnter);
@@ -74,9 +77,9 @@ public class RoadManager : MonoBehaviour
 
         road.RoadEnter.AddListener(OnRoadEnter);
 
-        //comprobar si estamos demasiado lejos del origen
+        //Check distance to origin
 
-        if(road.transform.position.magnitude > 130f) ResetAllCoords(-road.transform.position);
+        if(road.transform.position.magnitude > 130f) ResetTilesCoordinates(-road.transform.position);
 
         return road;
     }
@@ -88,12 +91,11 @@ public class RoadManager : MonoBehaviour
         Destroy(firstRoad.gameObject);
     }
 
-    private void ResetAllCoords(Vector3 pos)
+    private void ResetTilesCoordinates(Vector3 pos)
     {
         foreach (var r in _roads) r.transform.Translate(pos);
-        _spawner.ResetSpawnPos();
+        _spawner.ResetSpawnPosition();
 
-        ResetCoords.Invoke(pos);
+        ResetCoordinates.Invoke(pos);
     }
-
 }
