@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShooterPlayerShoot : MonoBehaviour
 {
     [SerializeField] private Transform _firePoint; //punto desde el que se instancian las balas
-    [SerializeField] private BulletSpawner _bulletSpawner;
+    [SerializeField] private ShooterBulletSpawner _bulletSpawner;
 
     private ShooterPlayerManager _manager;
     private ShooterPlayerMovement _playerMovement; //referencia al script de movimiento

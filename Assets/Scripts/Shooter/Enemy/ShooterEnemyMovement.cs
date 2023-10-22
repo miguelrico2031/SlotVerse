@@ -5,13 +5,12 @@ using Pathfinding;
 
 //Script que mueve al enemigo hacia el jugador usando A* pathfinding y el rigidbody
 //Basado en el tutorial de Brackeys: https://www.youtube.com/watch?v=jvtFUfJ6CP8&t=1138s
-public class ShooterEnemyMovement : MonoBehaviour, ISpawnableEnemy
+public class ShooterEnemyMovement : MonoBehaviour, ISSpawnableEnemy
 {
     [HideInInspector] public bool CanMove = true;
 
     private Path _path; //camino creado con el A*
     private int _currentWaypoint = 0; //indice del waypoint actual
-    //private bool _reachedEndOfPath = false;
     private Transform _player; //transform del jugador para seguirlo
 
     private ShooterEnemy _enemy; //Componente con los datos
@@ -36,6 +35,7 @@ public class ShooterEnemyMovement : MonoBehaviour, ISpawnableEnemy
 
     private void Start()
     {
+        //nos suscribimos al evento de ser golpeado para encargarnos del knockback
         _enemy.Manager.EnemyHit.AddListener(OnEnemyHit);
     }
 
@@ -61,20 +61,11 @@ public class ShooterEnemyMovement : MonoBehaviour, ISpawnableEnemy
     {
         //si no hay camino o no se puede mover, no entra
         if (_path == null || !CanMove) return;
-
-            //esto esta comentado porque no funciona realmente y tampoco se esta usando
-        //si el indice del waypoint actual es (mayor o) igual al maximo
-        //de waypoints es que ha terminado el path
-        //if(_currentWaypoint >= _path.vectorPath.Count)
-        //{
-        //    _reachedEndOfPath = true;
-        //    return;
-        //}
-        //else _reachedEndOfPath = false;
           
         //direccion sacada con el waypoint actual
         Vector2 direction = ((Vector2)_path.vectorPath[_currentWaypoint] - _rb.position).normalized;
 
+        //movemos al rigidbody añadiendo fuerza en la direccion calculada 
         _rb.AddForce(direction * _enemy.Stats.MoveSpeed * Time.fixedDeltaTime);
 
         //calcular la distancia con el waypoint para saber si estamos lo suficientemente
