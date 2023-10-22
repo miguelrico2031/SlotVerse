@@ -16,3 +16,4 @@ MonoBehaviour:
   - {fileID: 507333138489610511, guid: 0f8e0128f97f03745a61efb7fdd3eba0, type: 3}
   EntryDirection: 2
   ExitDirection: 1
+  GrassSpawnPoints: 243

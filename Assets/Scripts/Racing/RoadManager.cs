@@ -79,7 +79,7 @@ public class RoadManager : MonoBehaviour
 
         //Check distance to origin
 
-        if(road.transform.position.magnitude > 130f) ResetTilesCoordinates(-road.transform.position);
+        if(road.transform.position.magnitude > 600f) ResetTilesCoordinates(-road.transform.position);
 
         return road;
     }
@@ -93,6 +93,7 @@ public class RoadManager : MonoBehaviour
 
     private void ResetTilesCoordinates(Vector3 pos)
     {
+        Debug.Log("resetau");
         foreach (var r in _roads) r.transform.Translate(pos);
         _spawner.ResetSpawnPosition();
 

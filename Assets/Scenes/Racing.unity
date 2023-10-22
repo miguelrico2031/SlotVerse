@@ -412,6 +412,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 154195608fdc03044a9bbc95c0bd06af, type: 2}
   _firstTile: {fileID: 11400000, guid: cbab49222d3c60443810b84b4b50e384, type: 2}
   _curveChance: 0.2
+  _grassTiles:
+  - {fileID: 5813967847380738783, guid: 8c0b3c02e610d884994b797ba80a0929, type: 3}
 --- !u!4 &1333235660
 Transform:
   m_ObjectHideFlags: 0

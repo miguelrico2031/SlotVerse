@@ -18,6 +18,10 @@ public class CarMovement : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
+    }
+
+    private void Start()
+    {
         RoadManager.Instance.ResetCoordinates.AddListener(OnResetCoordinates);
     }
 

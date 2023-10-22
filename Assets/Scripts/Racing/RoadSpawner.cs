@@ -1,6 +1,5 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class RoadSpawner : MonoBehaviour
@@ -12,7 +11,8 @@ public class RoadSpawner : MonoBehaviour
     [SerializeField] private RoadTileData[] _turnTileData;
     [SerializeField] private RoadTileData[] _straightTileData;
     [SerializeField] private RoadTileData _firstTile;
-    [SerializeField] [Range(0f, 1f)]private float _curveChance; 
+    [SerializeField] [Range(0f, 1f)]private float _curveChance;
+    [SerializeField] private Grass[] _grassTiles;
 
     private Vector3 _spawnPosition;
     private Vector3 _grassSpawnPosition;
@@ -78,71 +78,73 @@ public class RoadSpawner : MonoBehaviour
         Road objectFromTile = tileToSpawn.RoadTiles[UnityEngine.Random.Range(0, tileToSpawn.RoadTiles.Length)];
         LastTile = tileToSpawn;
 
-        SpawnGrassTiles(tileToSpawn);
+        //Overlap
+        foreach(var overlap in Physics.OverlapSphere(_spawnPosition, .5f)) 
+        {
+            if(!overlap.TryGetComponent<Grass>(out var grass)) continue;
+
+            Destroy(grass.gameObject);
+            
+        }
 
         //Creates the road tile
         Road road = Instantiate(objectFromTile, _spawnPosition, Quaternion.identity);
 
+        SpawnGrassTiles(tileToSpawn, road);
+
         return road;
     }
 
-    public void SpawnGrassTiles(RoadTileData roadTile)
+    public void SpawnGrassTiles(RoadTileData roadTile, Road parent)
     {
-        Debug.Log("Hola quiero poner cespet");
-        GrassTileData grassTile = null;
-        Grass g = null;
+        List<Vector3> grassSpawnPositions = new List<Vector3>();
 
         if (roadTile.GrassSpawnPoints.HasFlag(RoadTileData.GrassDirection.North))
         {
-            Debug.Log("Cespe norte");
-            Grass grassToSpawn = g.PickGrassTile(grassTile);
-            _grassSpawnPosition = _spawnPosition + new Vector3(0f, 0, _tileSize.z);
-            Instantiate(grassToSpawn, _grassSpawnPosition, Quaternion.identity);
+            grassSpawnPositions.Add(new Vector3(0f, 0, _tileSize.z));
         }
         if (roadTile.GrassSpawnPoints.HasFlag(RoadTileData.GrassDirection.West))
         {
-            Debug.Log("Cespe oeste");
-            Grass grassToSpawn = g.PickGrassTile(grassTile);
-            _grassSpawnPosition = _spawnPosition + new Vector3(_tileSize.x, 0, 0);
-            Instantiate(grassToSpawn, _grassSpawnPosition, Quaternion.identity);
+            grassSpawnPositions.Add(new Vector3(_tileSize.x, 0, 0));
         }
         if (roadTile.GrassSpawnPoints.HasFlag(RoadTileData.GrassDirection.South))
         {
-            Debug.Log("Cespe sur");
-            Grass grassToSpawn = g.PickGrassTile(grassTile);
-            _grassSpawnPosition = _spawnPosition + new Vector3(0f, 0, -_tileSize.z);
-            Instantiate(grassToSpawn, _grassSpawnPosition, Quaternion.identity);
+            grassSpawnPositions.Add(new Vector3(0f, 0, -_tileSize.z));
         }
         if (roadTile.GrassSpawnPoints.HasFlag(RoadTileData.GrassDirection.East))
         {
-            Debug.Log("Cespe este");
-            Grass grassToSpawn = g.PickGrassTile(grassTile);
-            _grassSpawnPosition = _spawnPosition + new Vector3(-_tileSize.x, 0, 0);
-            Instantiate(grassToSpawn, _grassSpawnPosition, Quaternion.identity);
+            grassSpawnPositions.Add(new Vector3(-_tileSize.x, 0, 0));
         }
         if (roadTile.GrassSpawnPoints.HasFlag(RoadTileData.GrassDirection.NorthEast))
         {
-            Grass grassToSpawn = g.PickGrassTile(grassTile);
-            _grassSpawnPosition = _spawnPosition + new Vector3(_tileSize.x, 0, _tileSize.z);
-            Instantiate(grassToSpawn, _grassSpawnPosition, Quaternion.identity);
+            grassSpawnPositions.Add(new Vector3(_tileSize.x, 0, _tileSize.z));
         }
         if (roadTile.GrassSpawnPoints.HasFlag(RoadTileData.GrassDirection.SouthEast))
         {
-            Grass grassToSpawn = g.PickGrassTile(grassTile);
-            _grassSpawnPosition = _spawnPosition + new Vector3(-_tileSize.x, 0, _tileSize.z);
-            Instantiate(grassToSpawn, _grassSpawnPosition, Quaternion.identity);
+            grassSpawnPositions.Add(new Vector3(-_tileSize.x, 0, _tileSize.z));
         }
         if (roadTile.GrassSpawnPoints.HasFlag(RoadTileData.GrassDirection.NorthWest))
         {
-            Grass grassToSpawn = g.PickGrassTile(grassTile);
-            _grassSpawnPosition = _spawnPosition + new Vector3(_tileSize.x, 0, -_tileSize.z);
-            Instantiate(grassToSpawn, _grassSpawnPosition, Quaternion.identity);
+            grassSpawnPositions.Add(new Vector3(_tileSize.x, 0, -_tileSize.z)); 
         }
         if (roadTile.GrassSpawnPoints.HasFlag(RoadTileData.GrassDirection.SouthWest))
         {
-            Grass grassToSpawn = g.PickGrassTile(grassTile);
-            _grassSpawnPosition = _spawnPosition + new Vector3(0f, 0, -_tileSize.z);
-            Instantiate(grassToSpawn, _grassSpawnPosition, Quaternion.identity);
+            grassSpawnPositions.Add(new Vector3(-_tileSize.x, 0, -_tileSize.z));
+        }
+        if (grassSpawnPositions.Count == 0) return;
+
+        foreach(var v in grassSpawnPositions)
+        {
+            bool validPoint = true;
+
+            foreach (var overlap in Physics.OverlapSphere(_spawnPosition + v, .5f))
+            {
+                if (overlap.TryGetComponent<Grass>(out var grass)) validPoint = false;
+                else if (overlap.TryGetComponent<Road>(out var road)) validPoint = false;
+
+            }
+            if (validPoint) Instantiate(_grassTiles[Random.Range(0, _grassTiles.Length)], _spawnPosition + v, Quaternion.identity, parent.transform);
+            
         }
     }
 
