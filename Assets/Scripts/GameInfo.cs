@@ -9,7 +9,7 @@ public class GameInfo : ScriptableObject
     public Setting Setting;
 }
 
-public enum GameMode { Shooter, Racing, Platformer }
+public enum GameMode { Shooter, Racing }
 
 public enum NPC { Hedgehog, Monkey, Squirrel }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SlotController : MonoBehaviour
 {
@@ -54,6 +55,16 @@ public class SlotController : MonoBehaviour
 
         Vector3 eulers = _rails[_activeRailIndex].Rb.rotation.eulerAngles;
 
+        if(_activeRailIndex == 0)
+        {
+            // 315 - 135 -> 30        135 - 315 -> 225
+
+            if (eulers.z < 135 || eulers.z > 315) _rails[0].TargetAngle = 45f;
+            else _rails[0].TargetAngle = 225f;
+
+            return;
+        }
+
         if (eulers.z < 120) _rails[_activeRailIndex].TargetAngle = 60f;
         else if (eulers.z < 240) _rails[_activeRailIndex].TargetAngle = 180f;
         else _rails[_activeRailIndex].TargetAngle = 300f;
@@ -78,7 +89,7 @@ public class SlotController : MonoBehaviour
             {
                 float deltaAngle = Mathf.DeltaAngle(rail.Rb.rotation.eulerAngles.z, rail.TargetAngle);
                 Vector3 newEulers = rail.Rb.rotation.eulerAngles;
-                newEulers.z = Mathf.LerpAngle(rail.Rb.rotation.eulerAngles.z, rail.TargetAngle, 20* Time.fixedDeltaTime / deltaAngle);
+                newEulers.z = Mathf.LerpAngle(rail.Rb.rotation.eulerAngles.z, rail.TargetAngle, 40* Time.fixedDeltaTime / deltaAngle);
 
                 rail.Rb.rotation = Quaternion.Euler(newEulers);
 
@@ -103,15 +114,11 @@ public class SlotController : MonoBehaviour
     {
         switch(_rails[0].TargetAngle)
         {
-            case 60f:
+            case 45:
                 _gameInfo.GameMode = GameMode.Shooter;
                 break;
 
-            case 180f:
-                _gameInfo.GameMode = GameMode.Platformer;
-                break;
-
-            case 300:
+            case 225:
                 _gameInfo.GameMode = GameMode.Racing;
                 break;
         }
@@ -149,7 +156,13 @@ public class SlotController : MonoBehaviour
         Debug.Log(_gameInfo.GameMode.ToString());
         Debug.Log(_gameInfo.NPC.ToString());
         Debug.Log(_gameInfo.Setting.ToString());
+
+        if(_gameInfo.GameMode == GameMode.Shooter)
+        {
+            SceneManager.LoadScene("Shooter");
+        }
     }
+
 }
 
 

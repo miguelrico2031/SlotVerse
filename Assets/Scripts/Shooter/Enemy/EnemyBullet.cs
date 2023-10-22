@@ -4,7 +4,7 @@ using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 //bala del enemigo ardilla
-public class EnemyBullet : ShooterBullet, IPlayerBulletTarget
+public class EnemyBullet : ShooterBullet, IPlayerBulletTarget, IEnemyBulletTarget
 {
     [SerializeField] private ShooterSquirrelStats _stats; //referencia a los stats
 
@@ -44,4 +44,9 @@ public class EnemyBullet : ShooterBullet, IPlayerBulletTarget
         DestroyBullet();
     }
 
+    //con esto la bala enemiga puede ser destruida por otras balas enemigas
+    public void Hit(EnemyAttackInfo attackInfo)
+    {
+        DestroyBullet();
+    }
 }
