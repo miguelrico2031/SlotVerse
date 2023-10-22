@@ -24,4 +24,7 @@ public class Lever : MonoBehaviour
 
         LeverPulled.Invoke();
     }
+
+    public void EnableLever() => _collider.enabled = true;
+    public void DisableLever() => _collider.enabled = false;
 }

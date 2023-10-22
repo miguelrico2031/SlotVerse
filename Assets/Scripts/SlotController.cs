@@ -10,7 +10,7 @@ public class SlotController : MonoBehaviour
     [SerializeField] private Rigidbody _npcRail;
     [SerializeField] private Rigidbody _settingRail;
 
-    [SerializeField] private StopButton _stopButton;
+    [SerializeField] private MenuButton _stopButton, _quitButton, _optionsButton;
 
     [SerializeField] private float _angularSpeed; //vel angular en grados / segundo
 
@@ -21,14 +21,18 @@ public class SlotController : MonoBehaviour
 
     private void Awake()
     {
-        _stopButton.Pressed.AddListener(StopRail);
-
         _rails = new Rail[]
         {
             new Rail(_gameModeRail),
             new Rail(_npcRail),
             new Rail(_settingRail)
         };
+    }
+
+    private void Start()
+    {
+        _stopButton.Pressed.AddListener(StopRail);
+        _stopButton.DisableButton();
     }
 
     public void StartSlot()
@@ -39,10 +43,12 @@ public class SlotController : MonoBehaviour
             rail.Snapped = false;
         }
 
-        _stopButton.EnableButton(true);
+        _stopButton.EnableButton();
+
+        _optionsButton.DisableButton();
     }
 
-    public void StopRail()
+    public void StopRail(MenuButton button)
     {
         _rails[_activeRailIndex].Stopped = true;
 
@@ -84,7 +90,7 @@ public class SlotController : MonoBehaviour
                     rail.Snapped = true;
 
                     _activeRailIndex++;
-                    if (_activeRailIndex < _rails.Length) _stopButton.EnableButton(true);
+                    if (_activeRailIndex < _rails.Length) _stopButton.EnableButton();
 
                     else SetGame();
                 }
