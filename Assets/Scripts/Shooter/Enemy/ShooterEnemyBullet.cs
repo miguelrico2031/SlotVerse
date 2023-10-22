@@ -4,7 +4,7 @@ using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 //bala del enemigo ardilla
-public class EnemyBullet : ShooterBullet, IPlayerBulletTarget, IEnemyBulletTarget
+public class ShooterEnemyBullet : ShooterBullet, ISPlayerBulletTarget, ISEnemyBulletTarget
 {
     [SerializeField] private ShooterSquirrelStats _stats; //referencia a los stats
 
@@ -20,7 +20,7 @@ public class EnemyBullet : ShooterBullet, IPlayerBulletTarget, IEnemyBulletTarge
     protected override void OnCollision(Collision2D collision)
     {
         //Comprueba si el objeto colisionado es interactuable con la bala
-        if (!collision.collider.TryGetComponent<IEnemyBulletTarget>(out var target)) return;
+        if (!collision.collider.TryGetComponent<ISEnemyBulletTarget>(out var target)) return;
 
         //objeto con toda la informacion del ataque que vaya a necesitar el impactado
 

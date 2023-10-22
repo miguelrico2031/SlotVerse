@@ -4,7 +4,7 @@ using UnityEngine;
 
 //clase abstracta del enemigo, cada clase hija se encargará de manejar
 //los aspectos y comportamiento únicos de cada enemigo, como atacar entre otros
-public abstract class ShooterEnemy : MonoBehaviour, ISpawnableEnemy
+public abstract class ShooterEnemy : MonoBehaviour, ISSpawnableEnemy
 {
     //getter de los stats y el manager, lo usarán los otros scripts de enemigos
     //para que no haya demasiadas cross references
@@ -38,7 +38,7 @@ public abstract class ShooterEnemy : MonoBehaviour, ISpawnableEnemy
 
     }
 
-    protected abstract void OnTargetAtRange(IEnemyTarget target);
+    protected abstract void OnTargetAtRange(ISEnemyTarget target);
 
     protected virtual void OnDie(ShooterEnemy enemy)
     {
@@ -59,7 +59,7 @@ public abstract class ShooterEnemy : MonoBehaviour, ISpawnableEnemy
 
 public struct EnemyAttackInfo
 {
-    public EnemyBullet Bullet;
+    public ShooterEnemyBullet Bullet;
     public int Damage;
     public Vector2 Position;
     public float KnockbackForce;

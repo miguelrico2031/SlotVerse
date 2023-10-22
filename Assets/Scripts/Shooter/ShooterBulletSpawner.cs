@@ -4,10 +4,10 @@ using UnityEngine;
 
 [RequireComponent(typeof(ObjectPool))]
 
-//Clase Singleton que se encarga del pooling y manejo de las balas
-//Sirve como intermediario entre el script de disparar del jugador y los objetos Bullet
+//Clase que se encarga del pooling y manejo de las balas
+//Sirve como intermediario entre el script de disparar del jugador y enemigo y los objetos Bullet
 
-public class BulletSpawner : MonoBehaviour 
+public class ShooterBulletSpawner : MonoBehaviour 
 {
 
     private ObjectPool _objectPool; //Componente que se encarga del object pooling

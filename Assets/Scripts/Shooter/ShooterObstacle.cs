@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Clase obstaculo para ambos obstaculo destructible e indestructible
+//Clase para ambos obstaculos: destructible e indestructible
 [RequireComponent(typeof(Collider2D))]
-public class Obstacle : MonoBehaviour, IPlayerBulletTarget, IEnemyBulletTarget
+public class ShooterObstacle : MonoBehaviour, ISPlayerBulletTarget, ISEnemyBulletTarget
 {
     [SerializeField] private bool _destructible; //indica si se puede destruir
-    [SerializeField] private int _health; //la salud del ostaculo (si es destructible, sino es irrelevante)
+    [SerializeField] private int _health; //la salud del ostaculo (si es destructible)
 
     public void Hit(PlayerAttackInfo attackInfo) => ReceiveHit(attackInfo.Bullet);
 

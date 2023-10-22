@@ -16,7 +16,7 @@ public class ShooterEnemyHedgehog : ShooterEnemy
     }
 
     //Hace daño al jugador o a cualquier cosa que sea IEnemyTarget al entrar en su area de ataque
-    protected override void OnTargetAtRange(IEnemyTarget target)
+    protected override void OnTargetAtRange(ISEnemyTarget target)
     {
         if(!Manager.IsAlive) return;
         //crea un objeto con toda la info relevante del ataque

@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.Events;
 
 //clase de las balas del jugador
-public class PlayerBullet : ShooterBullet, IEnemyBulletTarget
+public class ShooterPlayerBullet : ShooterBullet, ISEnemyBulletTarget
 {
-    [SerializeField] private PlayerStats _stats; //referencia a los stats del jugador
+    [SerializeField] private ShooterPlayerStats _stats; //referencia a los stats del jugador
 
     protected override void Awake()
     {
@@ -20,7 +20,7 @@ public class PlayerBullet : ShooterBullet, IEnemyBulletTarget
     protected override void OnCollision(Collision2D collision)
     {
         //Comprueba si el objeto colisionado es interactuable con la bala
-        if (!collision.collider.TryGetComponent<IPlayerBulletTarget>(out var target)) return;
+        if (!collision.collider.TryGetComponent<ISPlayerBulletTarget>(out var target)) return;
 
         //objeto con toda la informacion del ataque que vaya a necesitar el impactado
         var info = new PlayerAttackInfo()
@@ -37,15 +37,17 @@ public class PlayerBullet : ShooterBullet, IEnemyBulletTarget
         target.Hit(info); 
     }
 
+    //funcion para destruirse al chocar con una bala enemiga
     public void Hit(EnemyAttackInfo attackInfo)
     {
         DestroyBullet();
     }
 }
 
+//estructura para la informacion del ataque del jugador
 public struct PlayerAttackInfo
 {
-    public PlayerBullet Bullet;
+    public ShooterPlayerBullet Bullet;
     public int Damage;
     public Vector2 Position;
     public float KnockbackForce;

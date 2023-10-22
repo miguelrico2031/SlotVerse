@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 //clase que se encarga de gestionar la salud y estado del enemigo; recibir daño, morir, y lanzar
 //los eventos correspondientes para los otros scripts del enemigo
-public class ShooterEnemyManager : MonoBehaviour, IPlayerBulletTarget, ISpawnableEnemy
+public class ShooterEnemyManager : MonoBehaviour, ISPlayerBulletTarget, ISSpawnableEnemy
 {
     public int CurrentHealth { get; private set; } //getter de la health
     public bool IsAlive { get; private set; } //para saber si esta vivo

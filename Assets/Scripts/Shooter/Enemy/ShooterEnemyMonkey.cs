@@ -19,7 +19,7 @@ public class ShooterEnemyMonkey : ShooterEnemy
         _movement = GetComponent<ShooterEnemyMovement>();
     }
 
-    protected override void OnTargetAtRange(IEnemyTarget target)
+    protected override void OnTargetAtRange(ISEnemyTarget target)
     {
         if (!Manager.IsAlive) return;
         //Cuando un target (el jugador) esta a melee
@@ -28,7 +28,7 @@ public class ShooterEnemyMonkey : ShooterEnemy
 
     //función que deja quieto al mono un tiempo, y después comprueba si el target
     //(jugador) sigue dentro del área de ataque, siendo así le hace daño
-    private IEnumerator AttackAfterDelay(IEnemyTarget target)
+    private IEnumerator AttackAfterDelay(ISEnemyTarget target)
     {
         //deshabilita el movimiento (se queda quieto)
         _movement.CanMove = false;
@@ -45,7 +45,7 @@ public class ShooterEnemyMonkey : ShooterEnemy
         //itera todos los objetos que estén a rango
         foreach (var c in overlaps)
         {
-            if (!c.TryGetComponent<IEnemyTarget>(out var t)) continue;
+            if (!c.TryGetComponent<ISEnemyTarget>(out var t)) continue;
             if(t != target) continue;
 
             //si encuentra al target en los overlaps, lo ataca
