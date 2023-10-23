@@ -50,16 +50,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2291429670164880887, guid: 54ed26b77f142af49a90f4668e00992b, type: 3}
       propertyPath: m_Name
-      value: WN Road
-      objectReference: {fileID: 0}
-    - target: {fileID: 8135743303938409446, guid: 54ed26b77f142af49a90f4668e00992b, type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      value: SW Road
       objectReference: {fileID: 0}
     - target: {fileID: 8135743303938409446, guid: 54ed26b77f142af49a90f4668e00992b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0062161fd1d66704eaeef6c182920a24, type: 2}
+      objectReference: {fileID: 2100000, guid: 77501afdf1171f1488bf937d42ed8f1b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

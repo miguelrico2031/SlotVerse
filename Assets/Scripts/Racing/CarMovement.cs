@@ -10,8 +10,10 @@ public class CarMovement : MonoBehaviour
     [SerializeField] private float _angularSpeed;
     [SerializeField] private float _acceleration;
     [SerializeField] private float _maxSpeed;
+    [SerializeField] private float _maxTurnSpeed;
 
     private int _turnInput;
+    [SerializeField] private float _turnRatio;
 
     private Rigidbody _rb;
 
@@ -23,6 +25,7 @@ public class CarMovement : MonoBehaviour
     private void Start()
     {
         RoadManager.Instance.ResetCoordinates.AddListener(OnResetCoordinates);
+        _turnRatio = _angularSpeed / _speed;
     }
 
 
@@ -46,6 +49,8 @@ public class CarMovement : MonoBehaviour
 
         //Add acceleration to speed value
         _speed = Mathf.Min(_speed + _acceleration * Time.fixedDeltaTime, _maxSpeed);
+        
+        _angularSpeed = Mathf.Min(_angularSpeed + _turnRatio * Time.fixedDeltaTime, _maxTurnSpeed);
     }
 
     private void OnResetCoordinates(Vector3 pos)
