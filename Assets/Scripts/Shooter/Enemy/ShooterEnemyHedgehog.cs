@@ -8,11 +8,14 @@ using UnityEngine;
 public class ShooterEnemyHedgehog : ShooterEnemy
 {
     private Rigidbody2D _rb;
+    private Animator _animator;
 
     protected override void Awake()
     {
         base.Awake();
         _rb = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
+        _animator.keepAnimatorStateOnDisable = false;
     }
 
     //Hace daño al jugador o a cualquier cosa que sea IEnemyTarget al entrar en su area de ataque
@@ -29,6 +32,11 @@ public class ShooterEnemyHedgehog : ShooterEnemy
             KnockbackDuration = Stats.KnockbackDuration
         };
         target.Hit(info); //llama al metodo hit del target
+
+        _animator.SetBool("Attack", true); //activamos animacion de ataque
+        Invoke(nameof(ResetAnimation), 0.05f); //reseteamos la animación para luego
     }
+
+    private void ResetAnimation() => _animator.SetBool("Attack", false);
 
 }

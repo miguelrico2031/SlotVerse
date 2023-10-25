@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 2.8, y: 2.8, z: 2.8}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6958645405363591268}
@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 345563762933516038}
   - component: {fileID: 2131283867514712503}
   - component: {fileID: 8623712626928067445}
+  - component: {fileID: 2909009489101393735}
   m_Layer: 7
   m_Name: Monkey
   m_TagString: Untagged
@@ -116,7 +117,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.84, y: -0.99, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5358571414990088442}
@@ -164,8 +165,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.33962262, g: 0.17956759, b: 0, a: 1}
+  m_Sprite: {fileID: 1997058054, guid: 2d9c37e4ce92f4d4a8a284f3e8113ff7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -234,8 +235,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: 0, y: 0.12}
+  m_Size: {x: 1, y: 1.8}
   m_Direction: 0
 --- !u!114 &3796028517650827550
 MonoBehaviour:
@@ -309,6 +310,27 @@ MonoBehaviour:
   EnemyHit:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &2909009489101393735
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8544948416398247051}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9b18ea06e87c78747a79379b379cce15, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &4151431105413166612
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -350,6 +372,18 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1767693649740700724, guid: 80cf47b7ae9ec414a9bb429df83c3e5d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1767693649740700724, guid: 80cf47b7ae9ec414a9bb429df83c3e5d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1767693649740700724, guid: 80cf47b7ae9ec414a9bb429df83c3e5d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1767693649740700724, guid: 80cf47b7ae9ec414a9bb429df83c3e5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -383,7 +417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1767693649740700724, guid: 80cf47b7ae9ec414a9bb429df83c3e5d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.25
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1767693649740700724, guid: 80cf47b7ae9ec414a9bb429df83c3e5d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -396,6 +430,10 @@ PrefabInstance:
     - target: {fileID: 1767693649740700724, guid: 80cf47b7ae9ec414a9bb429df83c3e5d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1767693649740700724, guid: 80cf47b7ae9ec414a9bb429df83c3e5d, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3335493861072230756, guid: 80cf47b7ae9ec414a9bb429df83c3e5d, type: 3}
       propertyPath: m_AnchorMax.x

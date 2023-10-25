@@ -7,6 +7,8 @@ using Pathfinding;
 //Basado en el tutorial de Brackeys: https://www.youtube.com/watch?v=jvtFUfJ6CP8&t=1138s
 public class ShooterEnemyMovement : MonoBehaviour, ISSpawnableEnemy
 {
+    public Vector2 Direction { get; private set; }
+
     [HideInInspector] public bool CanMove = true;
 
     private Path _path; //camino creado con el A*
@@ -17,8 +19,11 @@ public class ShooterEnemyMovement : MonoBehaviour, ISSpawnableEnemy
     private Seeker _seeker; //Componente que genera el Path
     private Rigidbody2D _rb;
     private Collider2D _collider;
+    private Animator _animator;
 
     private ShooterPlayerManager _playerManager;
+
+    private float _updateAnimationTimer = 0f;
 
     private void Awake()
     {
@@ -26,6 +31,7 @@ public class ShooterEnemyMovement : MonoBehaviour, ISSpawnableEnemy
         _seeker = GetComponent<Seeker>();
         _rb = GetComponent<Rigidbody2D>();
         _collider = GetComponent<Collider2D>();
+        _animator = GetComponent<Animator>();
 
         _player = GameObject.FindWithTag("Player").transform;
         _playerManager = _player.GetComponent<ShooterPlayerManager>();
@@ -63,10 +69,22 @@ public class ShooterEnemyMovement : MonoBehaviour, ISSpawnableEnemy
         if (_path == null || !CanMove) return;
           
         //direccion sacada con el waypoint actual
-        Vector2 direction = ((Vector2)_path.vectorPath[_currentWaypoint] - _rb.position).normalized;
+        Vector3 direction = ((Vector2)_path.vectorPath[_currentWaypoint] - _rb.position).normalized;
+        if (direction.magnitude > 0f) Direction = direction;
 
         //movemos al rigidbody añadiendo fuerza en la direccion calculada 
         _rb.AddForce(direction * _enemy.Stats.MoveSpeed * Time.fixedDeltaTime);
+
+        _updateAnimationTimer += Time.fixedDeltaTime;
+
+        if (_updateAnimationTimer >= 0.5f)
+        {        if(direction.magnitude > 0f) Direction = direction;
+            Debug.Log(Direction);
+            _animator.SetFloat("x", Direction.x);
+            _animator.SetFloat("y", Direction.y);
+
+            _updateAnimationTimer = 0f;
+        }
 
         //calcular la distancia con el waypoint para saber si estamos lo suficientemente
         //cerca para avanzar al siguiente waypoint
@@ -133,5 +151,7 @@ public class ShooterEnemyMovement : MonoBehaviour, ISSpawnableEnemy
         InvokeRepeating(nameof(UpdatePath), 0f, 0.5f);
 
         if (!_playerManager.IsAlive) OnPlayerDie();
+
+        _updateAnimationTimer = 0f;
     }
 }
