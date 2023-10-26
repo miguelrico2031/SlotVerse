@@ -18,4 +18,7 @@ MonoBehaviour:
   NextWaypointDistance: 0.2
   KnockbackForce: 8
   KnockbackDuration: 0.7
+  DeadTime: 1
+  DamageColor: {r: 1, g: 0, b: 0, a: 1}
+  DeadColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   AttackDelay: 0.5
