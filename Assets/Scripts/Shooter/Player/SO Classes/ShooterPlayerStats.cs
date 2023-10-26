@@ -10,4 +10,7 @@ public class ShooterPlayerStats : ScriptableObject
     public float BulletLifetime;
     public float BulletKnockbackForce;
     public float BulletKnockbackDuration;
+    public Color DamageColor = Color.red;
+    public Color DeadColor = Color.gray;
+
 }

@@ -601,9 +601,9 @@ MonoBehaviour:
   _hedgehogPrefab: {fileID: 8478088304499046958, guid: 369488c8548fff94a8f969e36116903a, type: 3}
   _monkeyPrefab: {fileID: 345563762933516038, guid: dbebd93118ff8cb42a7b5fc153f6f52c, type: 3}
   _squirrelPrefab: {fileID: 2967898053186576493, guid: 479370665ba78814cadaa338f0151d13, type: 3}
-  _initialEnemiesPerWave: 4
+  _initialEnemiesPerWave: 1
   _enemiesPerWaveIncrement: 0
-  _initialSecondsPerWave: 15
+  _initialSecondsPerWave: 100
   _secondsPerWaveIncrement: 0
   _minSpawnCoords: {x: -20, y: -20}
   _maxSpawnCoords: {x: 20, y: 20}
@@ -923,71 +923,6 @@ MonoBehaviour:
   _parent: {fileID: 1467649595}
   _instantiateOnEmptyPool: 1
   _initializeExternally: 0
---- !u!1001 &1597575112
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1717794945309110128, guid: dbebd93118ff8cb42a7b5fc153f6f52c, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1717794945309110128, guid: dbebd93118ff8cb42a7b5fc153f6f52c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6958645405363591268, guid: dbebd93118ff8cb42a7b5fc153f6f52c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6958645405363591268, guid: dbebd93118ff8cb42a7b5fc153f6f52c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 6958645405363591268, guid: dbebd93118ff8cb42a7b5fc153f6f52c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6958645405363591268, guid: dbebd93118ff8cb42a7b5fc153f6f52c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6958645405363591268, guid: dbebd93118ff8cb42a7b5fc153f6f52c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6958645405363591268, guid: dbebd93118ff8cb42a7b5fc153f6f52c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6958645405363591268, guid: dbebd93118ff8cb42a7b5fc153f6f52c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6958645405363591268, guid: dbebd93118ff8cb42a7b5fc153f6f52c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6958645405363591268, guid: dbebd93118ff8cb42a7b5fc153f6f52c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6958645405363591268, guid: dbebd93118ff8cb42a7b5fc153f6f52c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8544948416398247051, guid: dbebd93118ff8cb42a7b5fc153f6f52c, type: 3}
-      propertyPath: m_Name
-      value: Monkey
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dbebd93118ff8cb42a7b5fc153f6f52c, type: 3}
 --- !u!1 &1641631767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,4 +1348,3 @@ SceneRoots:
   - {fileID: 1198157902}
   - {fileID: 8126938829828235453}
   - {fileID: 5810951661469892920}
-  - {fileID: 1597575112}

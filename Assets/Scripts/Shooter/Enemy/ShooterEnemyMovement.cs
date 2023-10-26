@@ -10,6 +10,7 @@ public class ShooterEnemyMovement : MonoBehaviour, ISSpawnableEnemy
     public Vector2 Direction { get; private set; }
 
     [HideInInspector] public bool CanMove = true;
+    [HideInInspector] public bool UpdateAnimationDirection = true;
 
     private Path _path; //camino creado con el A*
     private int _currentWaypoint = 0; //indice del waypoint actual
@@ -78,8 +79,7 @@ public class ShooterEnemyMovement : MonoBehaviour, ISSpawnableEnemy
         _updateAnimationTimer += Time.fixedDeltaTime;
 
         if (_updateAnimationTimer >= 0.5f)
-        {        if(direction.magnitude > 0f) Direction = direction;
-            Debug.Log(Direction);
+        {
             _animator.SetFloat("x", Direction.x);
             _animator.SetFloat("y", Direction.y);
 

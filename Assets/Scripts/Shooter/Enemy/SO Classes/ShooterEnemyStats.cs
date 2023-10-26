@@ -14,5 +14,6 @@ public abstract class ShooterEnemyStats : ScriptableObject
     public float KnockbackForce; //fuerza del knockback al jugador
     public float KnockbackDuration; //duración del knockback al jugador
     public float DeadTime; //tiempo de estar muerto antes de desaparecer
-    
+    public Color DamageColor = Color.red; //color del que se pintan los enemigos al ser dañados
+    public Color DeadColor = Color.gray; //color del que se pintan los enemigos muertos
 }

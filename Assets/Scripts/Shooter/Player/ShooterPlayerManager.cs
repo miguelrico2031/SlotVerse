@@ -16,6 +16,9 @@ public class ShooterPlayerManager : MonoBehaviour, ISEnemyTarget, ISEnemyBulletT
 
     [SerializeField] private ShooterPlayerStats _stats;
 
+    private SpriteRenderer _renderer;
+    private Color _spriteColor;
+
     //para saber si es invulnerable y no hacerse daño, pues lo es temporalmente al ser atacado
     private bool _invulnerable;
 
@@ -25,6 +28,9 @@ public class ShooterPlayerManager : MonoBehaviour, ISEnemyTarget, ISEnemyBulletT
         IsAlive = true;
 
         CurrentHealth = Stats.Health;
+
+        _renderer = GetComponent<SpriteRenderer>();
+        _spriteColor = _renderer.color;
     }
 
     //funcion que recibe el ataque enemigo
@@ -33,6 +39,8 @@ public class ShooterPlayerManager : MonoBehaviour, ISEnemyTarget, ISEnemyBulletT
         if (_invulnerable) return; //si el jugador es invulnerable no hace nada
 
         TakeDamage(attackInfo.Damage); //se descuenta el daño y comprueba estado
+
+
 
         PlayerHit?.Invoke(attackInfo); //invocar evento de ser golpeado, con la posicion del enemigo
 
@@ -56,6 +64,7 @@ public class ShooterPlayerManager : MonoBehaviour, ISEnemyTarget, ISEnemyBulletT
     private void Die()
     {
         IsAlive = false;
+        _renderer.color = _stats.DeadColor;
         PlayerDie?.Invoke();
     }
 
@@ -67,11 +76,17 @@ public class ShooterPlayerManager : MonoBehaviour, ISEnemyTarget, ISEnemyBulletT
         _invulnerable = true;
         GetComponent<Rigidbody2D>().excludeLayers = LayerMask.GetMask("EnemyBullet");
 
+        //cambiamos de color
+        _renderer.color = _stats.DamageColor;
+
         yield return new WaitForSeconds(Stats.BulletKnockbackDuration);
 
         //se revierten los cambios y se deja de ser invulnerable
         _invulnerable = false;
         GetComponent<Rigidbody2D>().excludeLayers = new LayerMask();
+
+        //volvemos al color original
+        _renderer.color = _spriteColor;
 
     }
 

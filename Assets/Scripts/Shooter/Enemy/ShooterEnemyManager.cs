@@ -16,11 +16,16 @@ public class ShooterEnemyManager : MonoBehaviour, ISPlayerBulletTarget, ISSpawna
 
 
     private ShooterEnemyStats _stats;
+    private SpriteRenderer _renderer;
 
+    private Color _spriteColor;
 
     private void Awake()
     {
         _stats = GetComponent<ShooterEnemy>().Stats;
+        _renderer = GetComponent<SpriteRenderer>();
+
+        _spriteColor = _renderer.color;
 
         CurrentHealth = _stats.Health;
         IsAlive = true;
@@ -34,10 +39,21 @@ public class ShooterEnemyManager : MonoBehaviour, ISPlayerBulletTarget, ISSpawna
         int damage = attackInfo.Bullet.Damage;
         attackInfo.Bullet.DestroyBullet(); //destruir (devolver a la pool) la bala despues de usarla
 
+
         TakeDamage(damage);
+
+        var duration = IsAlive ? attackInfo.KnockbackDuration : _stats.DeadTime;
+        StartCoroutine(ChangeColor(duration)); //mientras dure el knockback se pondra rojo si fue dañado o gris si fue dañado y murio
 
         EnemyHit?.Invoke(attackInfo); //invocar al evento de ser golpeado
 
+    }
+
+    private IEnumerator ChangeColor(float duration)
+    {
+        _renderer.color = IsAlive ? _stats.DamageColor : _stats.DeadColor;
+        yield return new WaitForSeconds(duration);
+        _renderer.color = _spriteColor;
     }
 
     private void TakeDamage(int damage)
@@ -60,5 +76,6 @@ public class ShooterEnemyManager : MonoBehaviour, ISPlayerBulletTarget, ISSpawna
     {
         CurrentHealth = _stats.Health;
         IsAlive = true;
+        _renderer.color = _spriteColor;
     }
 }

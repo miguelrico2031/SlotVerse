@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class ShooterEnemySquirrel : ShooterEnemy
 {
-    [SerializeField] private Transform _firePoint; //objeto hijo desde donde se dispara
+    [SerializeField] private Transform _rightFP, _upFP, _downFP, _leftFP;
 
-
+    private Transform _firePoint; //objeto hijo desde donde se dispara
     private ShooterBulletSpawner _bulletSpawner; //spawner de balas
     private ShooterSquirrelStats _squirrelStats; //stats casteados para facil acceso
     private Rigidbody2D _rb;
     private ShooterEnemyMovement _movement;
+    private Animator _animator;
     private Transform _player;
     private SquirrelState _state; //estado actual de la ardilla
 
@@ -34,8 +35,11 @@ public class ShooterEnemySquirrel : ShooterEnemy
         _squirrelStats = (ShooterSquirrelStats) Stats;
         _rb = GetComponent<Rigidbody2D>();
         _movement = GetComponent<ShooterEnemyMovement>();
+        _animator = GetComponent<Animator>();
         _player = GameObject.FindWithTag("Player").transform;
         _bulletSpawner = GameObject.Find("Enemy Bullet Spawner").GetComponent<ShooterBulletSpawner>();
+
+        _movement.UpdateAnimationDirection = false;
 
         _state = SquirrelState.Walking; //el estado inicial es caminando
     }
@@ -43,7 +47,7 @@ public class ShooterEnemySquirrel : ShooterEnemy
     protected override void Start()
     {
         //actualiza el estado y la direccion cardinal del firepoint cada 0.5 segundos
-        InvokeRepeating(nameof(SetStateAndDirection), 0.25f, 0.5f);
+        //InvokeRepeating(nameof(SetStateAndDirection), 0.25f, 0.5f);
     }
 
     private void SetStateAndDirection()
@@ -55,8 +59,8 @@ public class ShooterEnemySquirrel : ShooterEnemy
             return;
         }
 
-        SetState();
         SetDirection();
+        SetState();
     }
 
     //funcion que actualiza el estado de la ardilla
@@ -72,6 +76,11 @@ public class ShooterEnemySquirrel : ShooterEnemy
             {
                 //cambio a stop
                 _state = SquirrelState.Stopped;
+
+                _animator.SetBool("Walking", false);
+                _animator.SetBool("Shooting", false);
+                _animator.SetBool("Stopped", true);
+
                 _movement.CanMove = false;
                 _rb.velocity = Vector2.zero;
                 if (!_isShooting) StartCoroutine(Shoot());
@@ -81,6 +90,12 @@ public class ShooterEnemySquirrel : ShooterEnemy
             {
                 //cambio a walking
                 _state = SquirrelState.Walking;
+
+
+                _animator.SetBool("Shooting", false);
+                _animator.SetBool("Stopped", false);
+                _animator.SetBool("Walking", true);
+
                 _movement.CanMove = true;
             }
 
@@ -94,12 +109,25 @@ public class ShooterEnemySquirrel : ShooterEnemy
                 _movement.CanMove = true;
 
                 //si el jugador está a la vista cambia a Shooting, si no a Walking hasta verlo
-                if(PlayerOnSight())
+                if (PlayerOnSight())
                 {
                     _state = SquirrelState.Shooting;
+
+                    _animator.SetBool("Walking", false);
+                    _animator.SetBool("Stopped", false);
+                    _animator.SetBool("Shooting", true);
+
                     if (!_isShooting) StartCoroutine(Shoot());
-                }   
-                else _state =  SquirrelState.Walking;
+                }
+                else
+
+                {
+                    _state = SquirrelState.Walking;
+
+                    _animator.SetBool("Shooting", false);
+                    _animator.SetBool("Stopped", false);
+                    _animator.SetBool("Walking", true);
+                }
             }
 
             //Si estaba Walking es que entro a la distancia de disparar moviendose
@@ -110,6 +138,11 @@ public class ShooterEnemySquirrel : ShooterEnemy
 
                 //si ve al jugador, cambio a Shooting desde Walking
                 _state = SquirrelState.Shooting;
+
+                _animator.SetBool("Walking", false);
+                _animator.SetBool("Stopped", false);
+                _animator.SetBool("Shooting", true);
+
                 if (!_isShooting) StartCoroutine(Shoot()); // empieza a disparar si no lo estaba
             }
         }
@@ -117,7 +150,14 @@ public class ShooterEnemySquirrel : ShooterEnemy
         //Si está a mayor distancia y no estaba en Walking, se actualiza a Walking
         else
         {
-            if (_state == SquirrelState.Shooting) _state = SquirrelState.Walking;
+            if (_state == SquirrelState.Shooting)
+            {
+                _state = SquirrelState.Walking;
+
+                _animator.SetBool("Shooting", false);
+                _animator.SetBool("Stopped", false);
+                _animator.SetBool("Walking", true);
+            }
         }
     }
 
@@ -156,8 +196,13 @@ public class ShooterEnemySquirrel : ShooterEnemy
             yield break;
         }
 
+        _animator.SetBool("Fire", true);
+
         //si no, dispara creando una balal con el spawner, y dandole la direccion hacia el jugador
         _bulletSpawner.CreateBullet(_firePoint.position, _player.position - _firePoint.position);
+
+        yield return new WaitForSeconds(0.05f);
+        _animator.SetBool("Fire", false);
 
         //llamada recursiva para hacer un ciclo de disparo
         yield return StartCoroutine(Shoot());
@@ -191,7 +236,13 @@ public class ShooterEnemySquirrel : ShooterEnemy
         {
             _firePointDirection = newDirection;
 
-            _firePoint.localPosition = _firePointDirection * 1.2f;
+            if (_firePointDirection == Vector2.right) _firePoint = _rightFP;
+            else if(_firePointDirection == Vector2.up) _firePoint = _upFP;
+            else if(_firePointDirection == Vector2.left) _firePoint = _leftFP;
+            else if(_firePointDirection == Vector2.down) _firePoint = _downFP;
+
+            _animator.SetFloat("x", _firePointDirection.x);
+            _animator.SetFloat("y", _firePointDirection.y);
         }
     }
 
@@ -208,6 +259,8 @@ public class ShooterEnemySquirrel : ShooterEnemy
 
         _state = SquirrelState.Walking;
         _isShooting = false;
+        _firePoint = _rightFP;
+        _firePointDirection = Vector2.right;
         if(_playerManager.IsAlive) InvokeRepeating(nameof(SetStateAndDirection), 0.25f, 0.5f);
     }
 }
