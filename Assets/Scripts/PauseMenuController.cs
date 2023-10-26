@@ -10,6 +10,7 @@ public class PauseMenuController : MonoBehaviour
 
     private bool isPaused = false; //variable que indica si el juego está pausado 
 
+
     void Start()
     {
         //suscribirse a ambos botones que van a ser manejados por este script
@@ -29,25 +30,35 @@ public class PauseMenuController : MonoBehaviour
     //funcion para pausar o reanudar el juego
     private void TogglePause(MenuButton button = null)
     {
-        isPaused = !isPaused;
+        if (_resumeButton != null)
+        {
+            isPaused = !isPaused;
 
-        //pausar juego y mostrar panel
-        if (isPaused)
-        {
-            Time.timeScale = 0f;
-            _pauseMenuPanel.SetActive(true);
-        }
-        else
-        {
-            Time.timeScale = 1f;
-            _pauseMenuPanel.SetActive(false);
+            //pausar juego y mostrar panel
+            if (isPaused)
+            {
+                Time.timeScale = 0f;
+                _pauseMenuPanel.SetActive(true);
+                _resumeButton.EnableButton();
+            }
+            else
+            {
+                Time.timeScale = 1f;
+                _pauseMenuPanel.SetActive(false);
+            }
         }
     }
 
     //funcion para reanudar el juego
     private void HomeButtonPressed(MenuButton button)
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
+    }
+
+    private void QuitButtonPressed(MenuButton button)
+    {
+        Application.Quit();
     }
 }
 
