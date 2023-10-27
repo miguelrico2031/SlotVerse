@@ -8,33 +8,35 @@ public class DeathMenu : MonoBehaviour
     [SerializeField] private MenuButton _homeButton, _quitButton;
     [SerializeField] private GameObject _deathMenuPanel;
 
-    private bool isDeath = false; //variable a referenciar y poner en tru en el gamecontroller una vez muera el personaje
-
-    void Start()
+    void Awake()
     {
+        _deathMenuPanel.SetActive(false);
         _homeButton.Pressed.AddListener(HomeButtonPressed);
         _quitButton.Pressed.AddListener(QuitButtonPressed);
-    }
-
-    // Update is called once per frame
-    void fixedUpdate()
-    {
-        if (!isDeath)
-        {
-            _deathMenuPanel.SetActive(true);
-        }
     }
 
     //cambiar de escena al menu principal al pulsar boton de home
     private void HomeButtonPressed(MenuButton button)
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }
 
     //quitar el juego
     private void QuitButtonPressed(MenuButton button)
     {
+        Time.timeScale = 1f;
         Application.Quit();
+    }
+
+    public void DeathScreen()
+    {
+        Time.timeScale = 0f;
+        _deathMenuPanel.gameObject.SetActive(true);
+
+        var pause = FindAnyObjectByType<PauseMenuController>();
+
+        if(pause != null) pause.enabled = false;
     }
 
 }

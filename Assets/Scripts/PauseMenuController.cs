@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class PauseMenuController : MonoBehaviour
@@ -19,6 +20,12 @@ public class PauseMenuController : MonoBehaviour
 
         //aseguramos que el panel este oculto al entrar a cualquier minijuego
         _pauseMenuPanel.SetActive(false);
+
+        EventSystem e = _pauseMenuPanel.GetComponentInChildren<EventSystem>();
+        foreach (EventSystem es in FindObjectsOfType<EventSystem>()) 
+        {
+            if (es != e) Destroy(es);
+        }  
     }
 
     void Update()
@@ -30,26 +37,25 @@ public class PauseMenuController : MonoBehaviour
     //funcion para pausar o reanudar el juego
     private void TogglePause(MenuButton button = null)
     {
-        if (_resumeButton != null)
-        {
-            isPaused = !isPaused;
 
-            //pausar juego y mostrar panel
-            if (isPaused)
-            {
-                Time.timeScale = 0f;
-                _pauseMenuPanel.SetActive(true);
-                _resumeButton.EnableButton();
-            }
-            else
-            {
-                Time.timeScale = 1f;
-                _pauseMenuPanel.SetActive(false);
-            }
+        isPaused = !isPaused;
+
+        //pausar juego y mostrar panel
+        if (isPaused)
+        {
+            Time.timeScale = 0f;
+            _pauseMenuPanel.SetActive(true);
+            _resumeButton.EnableButton();
         }
+        else
+        {
+            Time.timeScale = 1f;
+            _pauseMenuPanel.SetActive(false);
+        }
+        
     }
 
-    //funcion para reanudar el juego
+    //funcion para volver al menu
     private void HomeButtonPressed(MenuButton button)
     {
         Time.timeScale = 1f;

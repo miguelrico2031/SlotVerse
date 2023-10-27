@@ -9,7 +9,7 @@ public class AudioControl : MonoBehaviour
     public const string musicVolumeKey = "MusicVolume";//clave para cambiar el volumen
 
     //valor inicial del slider
-    void Start()
+    void Awake()
     {
         float savedVolume = PlayerPrefs.GetFloat(musicVolumeKey, 0.5f);
 
@@ -23,12 +23,14 @@ public class AudioControl : MonoBehaviour
 
         //seteamos el volumen en el playerpref
         PlayerPrefs.SetFloat(musicVolumeKey, volume);
-        PlayerPrefs.Save();
+        //PlayerPrefs.Save();
     }
 
-    private void UpdateVolume(float volume)
+    public void UpdateVolume(float volume)
     {
         AudioListener.volume = volume;
+
+        
     }
 
 }

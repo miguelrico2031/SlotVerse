@@ -203,7 +203,8 @@ public class SlotController : MonoBehaviour
         Debug.Log(_gameInfo.Setting.ToString());
 
         if(_gameInfo.GameMode == GameMode.Shooter) SceneManager.LoadScene("Shooter");
-        
+        if (_gameInfo.GameMode == GameMode.Racing) SceneManager.LoadScene("Racing");
+
     }
 
 }
