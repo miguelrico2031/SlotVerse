@@ -5,16 +5,10 @@ namespace Interfaces
     public interface IEnemy
     {
         public GameObject GetGameObject();
-        public void SetState();
+        public void SetState(IState state);
         public IState GetState();
 
-        //Movement
-        public float WalkSpeed();
-        public float WalkDistance();
-        public void FlipDirection();
+        public float GetWalkSpeed();
 
-        //Actions
-        public void HitPlayer();
-        public void Die();
     }
 }

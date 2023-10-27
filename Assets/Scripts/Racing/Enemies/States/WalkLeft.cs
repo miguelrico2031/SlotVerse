@@ -1,18 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Interfaces;
+using Unity;
 
-public class WalkLeft : MonoBehaviour
+namespace States
 {
-    // Start is called before the first frame update
-    void Start()
+    public class WalkLeft : AEnemyState
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public WalkLeft(IEnemy enemy) : base(enemy)
+        {
+        }
+
+        public override void Enter()
+        {
+            // Get velocidad del enemigo
+            throw new System.NotImplementedException();
+        }
+
+        public override void Exit()
+        {
+            // Parar movimiento
+            // Parar animación
+            throw new System.NotImplementedException();
+        }
+
+        public override void FixedUpdate()
+        {
+            // Transformar posición hacia la izquierda
+            // Animación
+            // En momento aleatorio cambiar a modo de ataque
+            throw new System.NotImplementedException();
+        }
+
+        public override void Update()
+        {
+            // Comprobar colisión (?????
+            throw new System.NotImplementedException();
+        }
     }
 }
