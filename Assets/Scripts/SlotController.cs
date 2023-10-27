@@ -15,6 +15,7 @@ public class SlotController : MonoBehaviour
 
     //3 botones frontales de la tragaperras
     [SerializeField] private MenuButton _stopButton, _quitButton, _optionsButton;
+    [SerializeField] private GameObject _stopReel, _pressToPlay;
 
     [SerializeField] private float _angularSpeed; //velocidad angular en grados / segundo de los carriles
 
@@ -70,6 +71,10 @@ public class SlotController : MonoBehaviour
         _stopButton.EnableButton(); //activamos el boton de parar el rail
 
         _optionsButton.DisableButton(); //desactivamos el boton de opciones
+
+        //activar texto boton stop y deasctivar texto palanca
+        _stopReel.SetActive(true);
+        _pressToPlay.SetActive(false);
     }
 
     //funcion llamada por el evento de pulsar el boton de parar, que hace detenerse al rail activo

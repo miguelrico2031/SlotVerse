@@ -10,7 +10,7 @@ public class OptionsController : MonoBehaviour
     //referencia a todos los botones de la escena
     [SerializeField] private MenuButton _stopButton, _optionsButton, _quitButton, _creditsButton, _returnButton;
     [SerializeField] private Lever _lever; //palanca que activa los carriles
-    [SerializeField] private GameObject _optionsPanel, _creditsPanel; //paneles UI de opciones y creditos
+    [SerializeField] private GameObject _optionsPanel, _creditsPanel, _pressToPlay; //paneles UI de opciones y creditos
 
     private Animator _camAnimator; //animator de la camara, para la animacion girar sobre la tragaperras
 
@@ -51,6 +51,9 @@ public class OptionsController : MonoBehaviour
         //se activa el panel de opciones (y desactiva el de creditos)
         _creditsPanel.SetActive(false);
         _optionsPanel.SetActive(true);
+
+        //DESACTIVAR TEXTO PALANCA
+        _pressToPlay.SetActive(false);
     }
 
     //funcion llamada por elevento del boton de return
@@ -65,7 +68,7 @@ public class OptionsController : MonoBehaviour
         _returnButton.DisableButton();
 
         //se espera un segundo antes de terminar los resets
-        Invoke(nameof(ResetToSlotState), 1f);
+        Invoke(nameof(ResetToSlotState), 1.17f);
     }
 
     private void ResetToSlotState()
@@ -79,6 +82,9 @@ public class OptionsController : MonoBehaviour
         _lever.EnableLever();
         _optionsButton.EnableButton();
         _quitButton.EnableButton();
+
+        //activar texto palanca
+        _pressToPlay.SetActive(true);
     }
 
     //funcion llamada por el evento del boton de creditos
