@@ -12,6 +12,8 @@ public class MenuButton : MonoBehaviour
     protected Animator _animator;
     protected Collider _collider;
 
+    [SerializeField] private float delayBeforeAction = 0f;
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -24,9 +26,20 @@ public class MenuButton : MonoBehaviour
         _collider.enabled = false; //se desactiva el collider por tanto el boton
         _animator.SetBool("Press", true); //se activa la animacion de ser pulsado
 
-        Pressed.Invoke(this); //se invoca el evento
+        StartCoroutine(DelayedButtonAction());
 
-        Invoke(nameof(ResetAnimation), 0.1f); //se resetea la animacion
+        //Pressed.Invoke(this); //se invoca el evento
+
+        //Invoke(nameof(ResetAnimation), 0.1f); //se resetea la animacion
+    }
+
+    //corrutina
+    private IEnumerator DelayedButtonAction()
+    {
+        yield return new WaitForSecondsRealtime(delayBeforeAction);
+
+        Pressed.Invoke(this); //se invoca el evento
+        ResetAnimation(); //se resetea la animación
     }
 
     private void ResetAnimation() => _animator.SetBool("Press", false);
