@@ -1,0 +1,1 @@
+todos los archivos estan en un lienzo de 100 x 100 px

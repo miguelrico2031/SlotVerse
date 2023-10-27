@@ -1,0 +1,1 @@
+todos los elementos del cielo estan en un lienzo de 64 x 64 px

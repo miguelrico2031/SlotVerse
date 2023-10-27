@@ -1,0 +1,1 @@
+todos los archivos de animales (ardillas, erizos, monos y nuez) estan en un lienzo de 64 x 64 px
