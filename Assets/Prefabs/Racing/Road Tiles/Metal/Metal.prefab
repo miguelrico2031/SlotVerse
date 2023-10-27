@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8135743303938409446}
   - component: {fileID: 1962450386300880756}
   - component: {fileID: -2651035514791175679}
-  - component: {fileID: 1916011190702889655}
   m_Layer: 0
   m_Name: Metal
   m_TagString: Road
@@ -134,15 +133,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1916011190702889655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2291429670164880887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eef8a278e1e7b144a7e16af1af6b7b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

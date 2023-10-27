@@ -226,7 +226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1333235660}
-  - component: {fileID: 1333235659}
+  - component: {fileID: 1333235662}
   - component: {fileID: 1333235661}
   m_Layer: 0
   m_Name: Road Manager
@@ -235,35 +235,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1333235659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1333235657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 560197d4356166c4dae0e794ce4a9735, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <LastTile>k__BackingField: {fileID: 0}
-  _tileSize: {x: 10, y: 0, z: 10}
-  _turnTileData:
-  - {fileID: 11400000, guid: b7e132887f71c0549a2c1cb1c897a327, type: 2}
-  - {fileID: 11400000, guid: c30dc8d259d7ea2439867f70a54debea, type: 2}
-  - {fileID: 11400000, guid: 6fcda3e35cf2a7144889216b7d387094, type: 2}
-  - {fileID: 11400000, guid: 593bf5efc6bf0874cb9a132404e46857, type: 2}
-  _straightTileData:
-  - {fileID: 11400000, guid: 2c34a5f593ee565499914a6b4337eb29, type: 2}
-  - {fileID: 11400000, guid: 6d88e4a6dd4f95a44bbeec956d1efa84, type: 2}
-  - {fileID: 11400000, guid: 414b719df83ec12498d422aaffda08e0, type: 2}
-  _firstTile: {fileID: 11400000, guid: 414b719df83ec12498d422aaffda08e0, type: 2}
-  _curveChance: 0.2
-  _grassTiles:
-  - {fileID: 1368164884949108744, guid: be91796633a695947a33abcb6de29e67, type: 3}
-  _spawnPosition: {x: 0, y: 0, z: 0}
-  _grassSpawnPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &1333235660
 Transform:
   m_ObjectHideFlags: 0
@@ -288,17 +259,137 @@ MonoBehaviour:
   m_GameObject: {fileID: 1333235657}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85329896f6e1a1a469a32b56de97c8ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 49d3bfe1f8528b347a4c0e7c754c6c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tileSize: {x: 0, y: 0, z: 0}
+  _turnTileData: []
+  _straightTileData: []
+  _firstTile: {fileID: 0}
+  _curveChance: 0
+  _grassTiles: []
+--- !u!114 &1333235662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333235657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6660450efa2b548845c45d39aeb389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ResetCoordinates:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
-  _initialSpawnedRoads: 20
-  _spawner: {fileID: 0}
-  _roads: []
-  _currentRoad: {fileID: 0}
+  _initialSpawnedRoads: 0
+--- !u!1 &1723818234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1723818236}
+  - component: {fileID: 1723818235}
+  - component: {fileID: 1723818237}
+  m_Layer: 0
+  m_Name: COCHE CYBERPUNK
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1723818235
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723818234}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -1400269844, guid: d347eec8a616c7e4e9bcd0de87e7bfd0, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.75, y: 0.4}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1723818236
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723818234}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1723818237
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723818234}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5c6ce9395270bc148a9cc0e426da1df0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &6977159320683164029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -354,8 +445,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4410888721277388044, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6977159320683164031}
   m_SourcePrefab: {fileID: 100100000, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
+--- !u!1 &6977159320683164030 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4410888721277388044, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
+  m_PrefabInstance: {fileID: 6977159320683164029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6977159320683164031
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6977159320683164030}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -363,3 +483,4 @@ SceneRoots:
   - {fileID: 6977159320683164029}
   - {fileID: 1333235660}
   - {fileID: 351765324}
+  - {fileID: 1723818236}

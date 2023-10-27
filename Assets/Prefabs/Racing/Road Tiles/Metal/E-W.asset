@@ -9,12 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050ad741a354d9246ac591f548eb0cf3, type: 3}
+  m_Script: {fileID: 11500000, guid: 230ce60eac09cd64e964245ef305db40, type: 3}
   m_Name: E-W
   m_EditorClassIdentifier: 
-  RoadTiles:
-  - {fileID: 507333138489610511, guid: 2ed619d410a204a4887c497649dad792, type: 3}
-  - {fileID: 507333138489610511, guid: 3e675c589b54718499ed83e41c62c983, type: 3}
-  EntryDirection: 1
-  ExitDirection: 3
-  GrassSpawnPoints: 5
