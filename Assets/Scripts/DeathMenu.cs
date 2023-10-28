@@ -6,12 +6,8 @@ using UnityEngine.Events;
 
 public class DeathMenu : MonoBehaviour
 {
-    public UnityEvent<bool> PlayerDeath;
-
     [SerializeField] private MenuButton _homeButton, _quitButton;
     [SerializeField] private GameObject _deathMenuPanel;
-
-    private bool _isDeath = false;
 
     void Awake()
     {
@@ -36,16 +32,18 @@ public class DeathMenu : MonoBehaviour
 
     public void DeathScreen()
     {
-        //está muerto
-        _isDeath = true; 
+        Invoke(nameof(SetDeathScreen), 0.05f);
+    }
 
+
+    private void SetDeathScreen()
+    {
         Time.timeScale = 0f;
         _deathMenuPanel.gameObject.SetActive(true);
-        PlayerDeath.Invoke(_isDeath);
 
         var pause = FindAnyObjectByType<PauseMenuController>();
 
-        if(pause != null) pause.enabled = false;
+        if (pause != null) pause.enabled = false;
     }
 
 }

@@ -1049,7 +1049,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4257134387255047982}
   - component: {fileID: 2050109563648001598}
-  - component: {fileID: 790548060518530180}
   m_Layer: 0
   m_Name: Death Menu Controller
   m_TagString: Untagged
@@ -1090,20 +1089,6 @@ MonoBehaviour:
   _homeButton: {fileID: 148285114553643928}
   _quitButton: {fileID: 4111861494484084051}
   _deathMenuPanel: {fileID: 3625067824657858131}
---- !u!114 &790548060518530180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5074269661606427821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ccd51ddb73d6e249bfce66c54625706, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scoreText: {fileID: 1905596176789882596}
-  _scoreTextDeath: {fileID: 1905596176789882596}
 --- !u!1 &5542461672259847512
 GameObject:
   m_ObjectHideFlags: 0

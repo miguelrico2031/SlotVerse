@@ -11,7 +11,7 @@ public class ShooterPlayerManager : MonoBehaviour, ISEnemyTarget, ISEnemyBulletT
     public ShooterPlayerStats Stats { get { return _stats; } } //getter de los stats para las demas clases
 
     public UnityEvent PlayerDie; //evneto de muerte
-    [HideInInspector] public UnityEvent<EnemyAttackInfo> PlayerHit; //evento de ser golpeado
+    public UnityEvent<EnemyAttackInfo> PlayerHit; //evento de ser golpeado
 
     [SerializeField] private ShooterPlayerStats _stats;
 

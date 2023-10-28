@@ -18,6 +18,7 @@ public class HealthBar : MonoBehaviour
 
         // Configurar el valor máximo del slider con la salud máxima del jugador
         _healthSlider.maxValue = _playerStats.GetMaxHealth();
+        _healthSlider.value = _healthSlider.maxValue;
 
         //para suscribirse al evento GamePaused del PauseMenuController
         var pause = FindObjectOfType<PauseMenuController>();
@@ -28,6 +29,7 @@ public class HealthBar : MonoBehaviour
 
     public void OnPlayerTakeDamage() //suscribirse a evento de recibir daño jugador en el inspector!!
     {
+        Debug.Log("auch");
         //cambiar valor del slider a la vida actual del jugador;
         _healthSlider.value = Mathf.Max(_playerManager.GetCurrentHealth(), 0);
     }

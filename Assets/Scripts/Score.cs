@@ -43,7 +43,7 @@ public class Score : MonoBehaviour
     {
         var score = _scoreText.text;
         _scoreText.enabled = false;
-        _scoreTextDeath.enabled = true;
+        
         _scoreTextDeath.text = score;
     }
 }
