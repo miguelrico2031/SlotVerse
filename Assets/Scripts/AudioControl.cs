@@ -14,7 +14,7 @@ public class AudioControl : MonoBehaviour
         float savedVolume = PlayerPrefs.GetFloat(MusicVolumeKey, 0.5f);
 
         //se configura el slider y el volumen inicial
-        VolumeSlider.value = savedVolume;
+        VolumeSlider.value = savedVolume;  
         UpdateVolume(savedVolume);
     }
     private void OnVolumeChanged(float volume)
@@ -29,8 +29,5 @@ public class AudioControl : MonoBehaviour
     public void UpdateVolume(float volume)
     {
         AudioListener.volume = volume;
-
-        
     }
-
 }

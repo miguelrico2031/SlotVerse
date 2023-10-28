@@ -25,6 +25,9 @@ public class SlotController : MonoBehaviour
 
     private int _activeRailIndex; //indice del rail activo, es decir, el que sera detenido con el boton parar
 
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip _stopRail;
+
     //clase rail que guarda el estado e informacion relevante de cada rail
     class Rail
     {
@@ -50,6 +53,8 @@ public class SlotController : MonoBehaviour
             new Rail(_npcRail),
             new Rail(_settingRail)
         };
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -62,6 +67,9 @@ public class SlotController : MonoBehaviour
     //funcion llamada por el evento de pulsar la palanca, que hace iniciar a girar a los 3 carriles
     public void StartSlot()
     {
+        //empezarsonido
+        _audioSource.Play();
+
         //cada carril deja de estar stopped y snapped, lo que hace que en el FixedUpdate sean rotados
         foreach (var rail in _rails)
         {
@@ -81,6 +89,9 @@ public class SlotController : MonoBehaviour
     //funcion llamada por el evento de pulsar el boton de parar, que hace detenerse al rail activo
     public void StopRail(MenuButton button)
     {
+        //activar audio
+        _audioSource.PlayOneShot(_stopRail);
+
         //detengo el movimiento del rail activo cambiando su estado
         _rails[_activeRailIndex].Stopped = true;
 
@@ -163,6 +174,9 @@ public class SlotController : MonoBehaviour
     //funcion que escribe en el GameInfo los datos obtenidos en la tragaperras, y carga la escena del juego obtenido
     private void SetGame()
     {
+        //parar audio
+        _audioSource.Stop();
+
         switch(_rails[0].TargetAngle)
         {
             case 45:
