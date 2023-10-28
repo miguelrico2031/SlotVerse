@@ -4,12 +4,11 @@ using UnityEngine;
 using UnityEngine.Events;
 
 //script encargado de manejar la salud y estado del jugador (basicamente recibir daño y morir)
-public class ShooterPlayerManager : MonoBehaviour, ISEnemyTarget, ISEnemyBulletTarget
+public class ShooterPlayerManager : MonoBehaviour, ISEnemyTarget, ISEnemyBulletTarget, IPlayerManager
 {
     public int CurrentHealth { get; private set; }
     public bool IsAlive { get; private set; }
     public ShooterPlayerStats Stats { get { return _stats; } } //getter de los stats para las demas clases
-
 
     public UnityEvent PlayerDie; //evneto de muerte
     [HideInInspector] public UnityEvent<EnemyAttackInfo> PlayerHit; //evento de ser golpeado
@@ -22,6 +21,7 @@ public class ShooterPlayerManager : MonoBehaviour, ISEnemyTarget, ISEnemyBulletT
     //para saber si es invulnerable y no hacerse daño, pues lo es temporalmente al ser atacado
     private bool _invulnerable;
 
+    public int GetCurrentHealth() => CurrentHealth;
 
     private void Awake()
     {
@@ -58,7 +58,7 @@ public class ShooterPlayerManager : MonoBehaviour, ISEnemyTarget, ISEnemyBulletT
 
         CurrentHealth -= damage;
 
-        if (CurrentHealth <= 0) Die();
+        if (CurrentHealth <= 0)Die();
     }
 
     private void Die()

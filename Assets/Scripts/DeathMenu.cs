@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class DeathMenu : MonoBehaviour
 {
+    public UnityEvent<bool> PlayerDeath;
+
     [SerializeField] private MenuButton _homeButton, _quitButton;
     [SerializeField] private GameObject _deathMenuPanel;
+
+    private bool _isDeath = false;
 
     void Awake()
     {
@@ -31,8 +36,12 @@ public class DeathMenu : MonoBehaviour
 
     public void DeathScreen()
     {
+        //está muerto
+        _isDeath = true; 
+
         Time.timeScale = 0f;
         _deathMenuPanel.gameObject.SetActive(true);
+        PlayerDeath.Invoke(_isDeath);
 
         var pause = FindAnyObjectByType<PauseMenuController>();
 

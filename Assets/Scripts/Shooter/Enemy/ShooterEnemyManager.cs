@@ -9,6 +9,7 @@ public class ShooterEnemyManager : MonoBehaviour, ISPlayerBulletTarget, ISSpawna
 {
     public int CurrentHealth { get; private set; } //getter de la health
     public bool IsAlive { get; private set; } //para saber si esta vivo
+    public object Stats { get; internal set; }
 
     //eventos que se lanzan al morir y ser golpeado
     [HideInInspector] public UnityEvent<ShooterEnemy> EnemyDie;

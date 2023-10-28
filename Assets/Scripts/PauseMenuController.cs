@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class PauseMenuController : MonoBehaviour
 {
+    public UnityEvent<bool> GamePaused;
+
     [SerializeField] private MenuButton _resumeButton, _homeButton;
     [SerializeField] private GameObject _pauseMenuPanel;
 
@@ -52,7 +55,8 @@ public class PauseMenuController : MonoBehaviour
             Time.timeScale = 1f;
             _pauseMenuPanel.SetActive(false);
         }
-        
+
+        GamePaused.Invoke(isPaused);
     }
 
     //funcion para volver al menu
