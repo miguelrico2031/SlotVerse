@@ -6,10 +6,35 @@ using UnityEngine.Events;
 public class Road : MonoBehaviour
 {
 
+    public Road PreviousRoad;
     public UnityEvent<Road> RoadEnter;
+
+    [SerializeField] private int _reverseRoadDamage = 50;
+
+    private bool _playerEntered = false;
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Car")) RoadEnter.Invoke(this);
+        if (!collision.gameObject.TryGetComponent<CarManager>(out var carManager))
+        {
+            return;
+        }
+
+        if (PreviousRoad == null) 
+        {
+            RoadEnter.Invoke(this);
+        }
+
+        else if (carManager.CurrentRoad != PreviousRoad)
+        {
+            carManager.TakeDamage(_reverseRoadDamage);
+            Debug.Log("Estás yendo del revés");
+        }
+
+        else if (!_playerEntered) RoadEnter.Invoke(this);
+
+       _playerEntered = true;
+
+        carManager.CurrentRoad = this;
     }
 }
