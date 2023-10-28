@@ -7,6 +7,9 @@ TagManager:
   - Car
   - Road
   - Enemy
+  - Floor
+  - EnemySpawner
+  - Wall
   layers:
   - Default
   - TransparentFX

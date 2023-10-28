@@ -121,7 +121,511 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: COCHE VERANO_0
+      rect:
+        serializedVersion: 2
+        x: 3965
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f963fe10dd3ca54bb6c0d1a3b940f6b
+      internalID: 1579947961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_1
+      rect:
+        serializedVersion: 2
+        x: 4285
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da7b1084caa1fab4692b1db957f71445
+      internalID: 1484160702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_2
+      rect:
+        serializedVersion: 2
+        x: 4605
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b871d2dcea57b1458de0cf1b105702a
+      internalID: 1430232658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_3
+      rect:
+        serializedVersion: 2
+        x: 4925
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a091191c70e7995408b9b87525018179
+      internalID: 1662159391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_5
+      rect:
+        serializedVersion: 2
+        x: 5245
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b1a32eb0741dd4b8afe0556b9a7711
+      internalID: 1259849724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_7
+      rect:
+        serializedVersion: 2
+        x: 5565
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 356ee0a3a8d8a4a499fd5b0c59b68606
+      internalID: 1259264405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_9
+      rect:
+        serializedVersion: 2
+        x: 5885
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39f7c20b593d1ce46a158cbed17f4e87
+      internalID: -538282831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_10
+      rect:
+        serializedVersion: 2
+        x: 6205
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e193cda6e7035af4a863952604ef36a0
+      internalID: -1927633238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_11
+      rect:
+        serializedVersion: 2
+        x: 6525
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bc8d12fc3ed2564d92c82ea6a78247d
+      internalID: 421913313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_12
+      rect:
+        serializedVersion: 2
+        x: 6845
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4164e59a0e730041ba734c99d3d477f
+      internalID: -188652697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_13
+      rect:
+        serializedVersion: 2
+        x: 7165
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 180230a638086ab4cac041b921887b44
+      internalID: 994049728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_14
+      rect:
+        serializedVersion: 2
+        x: 7485
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad4517815c81054d9b02a9a4987b7e6
+      internalID: 1635169397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_15
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 883bae3f8c7326c43a6378dc065a57df
+      internalID: 1472918727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_16
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee516c0b445dc804aa10c222a5caa866
+      internalID: -1798006310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_17
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad3a04160952b434aa2081d80d51139d
+      internalID: 1847238816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_18
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44df1c6c3ac90f34491d0a017e4dc6e6
+      internalID: -1759596140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_19
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be481dc1af7650744bccdec7344b20a0
+      internalID: -1467301470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_20
+      rect:
+        serializedVersion: 2
+        x: 1725
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0aa6f194f8747a4b97f2b7a122f96a9
+      internalID: -1036633322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_21
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 917e153ea57c5ec469bce3117450d424
+      internalID: 1493725062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_22
+      rect:
+        serializedVersion: 2
+        x: 2365
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f9cc023559784043964aa331632a7ef
+      internalID: -279173506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_23
+      rect:
+        serializedVersion: 2
+        x: 2685
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2e6d27bc20980d41a028dd41d696bd6
+      internalID: 219916070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_24
+      rect:
+        serializedVersion: 2
+        x: 3005
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e811ce010b1fa74b957c702e5f49b9f
+      internalID: 667186524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_25
+      rect:
+        serializedVersion: 2
+        x: 3325
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d27958ae864b70449102598fe92e7fd
+      internalID: 1647656658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE VERANO_26
+      rect:
+        serializedVersion: 2
+        x: 3645
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b7c9220576757c47a5c0b9c2dda652f
+      internalID: -2011545574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +636,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      COCHE VERANO_0: 1579947961
+      COCHE VERANO_1: 1484160702
+      COCHE VERANO_10: -1927633238
+      COCHE VERANO_11: 421913313
+      COCHE VERANO_12: -188652697
+      COCHE VERANO_13: 994049728
+      COCHE VERANO_14: 1635169397
+      COCHE VERANO_15: 1472918727
+      COCHE VERANO_16: -1798006310
+      COCHE VERANO_17: 1847238816
+      COCHE VERANO_18: -1759596140
+      COCHE VERANO_19: -1467301470
+      COCHE VERANO_2: 1430232658
+      COCHE VERANO_20: -1036633322
+      COCHE VERANO_21: 1493725062
+      COCHE VERANO_22: -279173506
+      COCHE VERANO_23: 219916070
+      COCHE VERANO_24: 667186524
+      COCHE VERANO_25: 1647656658
+      COCHE VERANO_26: -2011545574
+      COCHE VERANO_3: 1662159391
+      COCHE VERANO_4: -1786739084
+      COCHE VERANO_5: 1259849724
+      COCHE VERANO_6: -2001098137
+      COCHE VERANO_7: 1259264405
+      COCHE VERANO_8: 2039627658
+      COCHE VERANO_9: -538282831
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

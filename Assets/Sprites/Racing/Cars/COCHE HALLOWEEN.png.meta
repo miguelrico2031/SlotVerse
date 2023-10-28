@@ -121,7 +121,511 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_0
+      rect:
+        serializedVersion: 2
+        x: 3965
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8077598aa4faf9b458d3818e73b9ade7
+      internalID: -145767036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_1
+      rect:
+        serializedVersion: 2
+        x: 4285
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ad26455ff27c541939ca807050fc41
+      internalID: -1507038639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_2
+      rect:
+        serializedVersion: 2
+        x: 4605
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a56e29116a17841a16b09fec4a0e78
+      internalID: -1333901016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_3
+      rect:
+        serializedVersion: 2
+        x: 4925
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f71cf72951dcef46b2a4e247652e215
+      internalID: 1166665181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_5
+      rect:
+        serializedVersion: 2
+        x: 5245
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2dd6ca1f8db04f42a2a7730fe782bf3
+      internalID: 1322880148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_7
+      rect:
+        serializedVersion: 2
+        x: 5565
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59e0f8c66ca5ba0409e9c36e3d715cc6
+      internalID: 333092076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_9
+      rect:
+        serializedVersion: 2
+        x: 5885
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9129264245a399043b11358e0ccfde54
+      internalID: -1986306730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_10
+      rect:
+        serializedVersion: 2
+        x: 6205
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19f4f96807d96184a86dbd026df3854b
+      internalID: 2108046769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_11
+      rect:
+        serializedVersion: 2
+        x: 6525
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3506f0479cf1e634d8b8d3db6d071e65
+      internalID: -2140703303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_12
+      rect:
+        serializedVersion: 2
+        x: 6845
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b999b2bba9ecd641ba5cfcbe3876521
+      internalID: -1354543965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_13
+      rect:
+        serializedVersion: 2
+        x: 7165
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3770d14b57bab2e44a4a5545f3ae60c2
+      internalID: -250079559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_14
+      rect:
+        serializedVersion: 2
+        x: 7485
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5fc34d4bb041f545b28a3c9a10080df
+      internalID: 389250234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_15
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff2a0b8cc60a2204dbcdc24af9c499a6
+      internalID: 1201830473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_16
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4618e3c60a29990459f10386a6b588dd
+      internalID: 1971940119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_17
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f9ca0f366f2d6f41bbce010896b3970
+      internalID: -758703542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_18
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f90a5cc3d0e8cdf42b92c2a46fa3675f
+      internalID: -574754350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_19
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b808d8ab4d01abc49bd9e5f87e48bb68
+      internalID: 550680201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_20
+      rect:
+        serializedVersion: 2
+        x: 1725
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00c43903ac7d1114cbae48c2da76e9b7
+      internalID: 1753326667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_21
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3d07fae389274c4b9771732f49c2c29
+      internalID: 552984353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_22
+      rect:
+        serializedVersion: 2
+        x: 2365
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 509a0692484f90a44896ac164bc19dda
+      internalID: -251626251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_23
+      rect:
+        serializedVersion: 2
+        x: 2685
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cc9528d3bfe52a4b89fdb59cd70fe8e
+      internalID: -1180591690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_24
+      rect:
+        serializedVersion: 2
+        x: 3005
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2efe26778669f774a9932b6fe8f7ab20
+      internalID: -1039343810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_25
+      rect:
+        serializedVersion: 2
+        x: 3325
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efa5bf807a08d0c4a9a9817606be1042
+      internalID: -68525941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COCHE HALLOWEEN_26
+      rect:
+        serializedVersion: 2
+        x: 3645
+        y: 137
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60dbaa4091f4f18438aa6a18901e7074
+      internalID: 1376969537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +636,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      COCHE HALLOWEEN_0: -145767036
+      COCHE HALLOWEEN_1: -1507038639
+      COCHE HALLOWEEN_10: 2108046769
+      COCHE HALLOWEEN_11: -2140703303
+      COCHE HALLOWEEN_12: -1354543965
+      COCHE HALLOWEEN_13: -250079559
+      COCHE HALLOWEEN_14: 389250234
+      COCHE HALLOWEEN_15: 1201830473
+      COCHE HALLOWEEN_16: 1971940119
+      COCHE HALLOWEEN_17: -758703542
+      COCHE HALLOWEEN_18: -574754350
+      COCHE HALLOWEEN_19: 550680201
+      COCHE HALLOWEEN_2: -1333901016
+      COCHE HALLOWEEN_20: 1753326667
+      COCHE HALLOWEEN_21: 552984353
+      COCHE HALLOWEEN_22: -251626251
+      COCHE HALLOWEEN_23: -1180591690
+      COCHE HALLOWEEN_24: -1039343810
+      COCHE HALLOWEEN_25: -68525941
+      COCHE HALLOWEEN_26: 1376969537
+      COCHE HALLOWEEN_3: 1166665181
+      COCHE HALLOWEEN_4: -17128134
+      COCHE HALLOWEEN_5: 1322880148
+      COCHE HALLOWEEN_6: -1466383761
+      COCHE HALLOWEEN_7: 333092076
+      COCHE HALLOWEEN_8: -1285945023
+      COCHE HALLOWEEN_9: -1986306730
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

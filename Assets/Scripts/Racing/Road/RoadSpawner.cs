@@ -7,18 +7,38 @@ public class RoadSpawner : MonoBehaviour
 
     public RoadTileData LastTile { get; private set; }
 
+    [SerializeField] private GameInfo _gameInfo;
     [SerializeField] private Vector3 _tileSize;
     [SerializeField] private RoadTileData[] _turnTileData;
     [SerializeField] private RoadTileData[] _straightTileData;
     [SerializeField] private RoadTileData _firstTile;
     [SerializeField] [Range(0f, 1f)]private float _curveChance;
-    [SerializeField] private Grass[] _grassTiles;
+    [SerializeField] private Grass[] _futuristicTiles;
+    [SerializeField] private Grass[] _halloweenTiles;
+    [SerializeField] private Grass[] _beachTiles;
 
+    
+    private Grass[] _grassTiles;
     private Vector3 _spawnPosition;
     private Vector3 _grassSpawnPosition;
 
     private void Awake()
     {
+        switch (_gameInfo.Setting)
+        {
+            case Setting.Futuristic:
+                _grassTiles = _futuristicTiles;
+                break;
+
+            case Setting.Halloween:
+                _grassTiles = _halloweenTiles;
+                break;
+
+            case Setting.Beach:
+                _grassTiles = _beachTiles;
+                break;
+        }
+
         _spawnPosition = Vector3.zero;
         LastTile = null;
     }
@@ -89,6 +109,8 @@ public class RoadSpawner : MonoBehaviour
 
         //Creates the road tile
         Road road = Instantiate(objectFromTile, _spawnPosition, Quaternion.identity);
+
+        road.RoadTileData = tileToSpawn;
 
         SpawnGrassTiles(tileToSpawn, road);
 

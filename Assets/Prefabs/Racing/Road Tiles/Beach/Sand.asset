@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 166ae120fd08fc949bfc90351d1a16de, type: 3}
+  m_Name: Sand
+  m_EditorClassIdentifier: 
+  GrassTiles:
+  - {fileID: 2939700865976672134, guid: 2ae83e91e52dfab4a94160f37378c9ed, type: 3}
+  - {fileID: 2939700865976672134, guid: d3d4e47c6e9a1324d88d291a15b9e3b4, type: 3}
