@@ -19,6 +19,7 @@ public class SlotController : MonoBehaviour
 
     [SerializeField] private float _angularSpeed; //velocidad angular en grados / segundo de los carriles
 
+    [SerializeField] private float _delayBeforeStart;
 
     private Rail[] _rails; //array de los 3 carriles
 

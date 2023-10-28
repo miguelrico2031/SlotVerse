@@ -5,16 +5,16 @@ using UnityEngine.UI;
 
 public class AudioControl : MonoBehaviour
 {
-    public Slider _volumeSlider;
-    public const string musicVolumeKey = "MusicVolume";//clave para cambiar el volumen
+    public Slider VolumeSlider;
+    public const string MusicVolumeKey = "MusicVolume";//clave para cambiar el volumen
 
     //valor inicial del slider
     void Awake()
     {
-        float savedVolume = PlayerPrefs.GetFloat(musicVolumeKey, 0.5f);
+        float savedVolume = PlayerPrefs.GetFloat(MusicVolumeKey, 0.5f);
 
         //se configura el slider y el volumen inicial
-        _volumeSlider.value = savedVolume;
+        VolumeSlider.value = savedVolume;
         UpdateVolume(savedVolume);
     }
     private void OnVolumeChanged(float volume)
@@ -22,7 +22,7 @@ public class AudioControl : MonoBehaviour
         UpdateVolume(volume);
 
         //seteamos el volumen en el playerpref
-        PlayerPrefs.SetFloat(musicVolumeKey, volume);
+        PlayerPrefs.SetFloat(MusicVolumeKey, volume);
         //PlayerPrefs.Save();
     }
 
