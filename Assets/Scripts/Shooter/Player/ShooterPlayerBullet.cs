@@ -7,6 +7,11 @@ using UnityEngine.Events;
 public class ShooterPlayerBullet : ShooterBullet, ISEnemyBulletTarget
 {
     [SerializeField] private ShooterPlayerStats _stats; //referencia a los stats del jugador
+    //sprites de las balas en cada ambientacion
+    [SerializeField] private Sprite _beachSprite;
+    [SerializeField] private Sprite _halloweenSprite;
+    [SerializeField] private Sprite _futuristicSprite;
+    [SerializeField] private GameInfo _gameInfo;
 
     protected override void Awake()
     {
@@ -15,6 +20,15 @@ public class ShooterPlayerBullet : ShooterBullet, ISEnemyBulletTarget
         _speed = _stats.BulletSpeed;
         _lifetime = _stats.BulletLifetime;
         _damage = _stats.BulletDamage;
+
+        var renderer = GetComponent<SpriteRenderer>();
+
+        switch(_gameInfo.Setting)
+        {
+            case Setting.Beach: renderer.sprite = _beachSprite; break;
+            case Setting.Halloween: renderer.sprite = _halloweenSprite; break;
+            case Setting.Futuristic: renderer.sprite = _futuristicSprite; break;
+        }
     }
 
     protected override void OnCollision(Collision2D collision)

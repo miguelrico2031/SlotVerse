@@ -8,6 +8,7 @@ public class ShooterEnemyBullet : ShooterBullet, ISPlayerBulletTarget, ISEnemyBu
 {
     [SerializeField] private ShooterSquirrelStats _stats; //referencia a los stats
 
+
     protected override void Awake()
     {
         base.Awake();
@@ -49,4 +50,5 @@ public class ShooterEnemyBullet : ShooterBullet, ISPlayerBulletTarget, ISEnemyBu
     {
         DestroyBullet();
     }
+
 }

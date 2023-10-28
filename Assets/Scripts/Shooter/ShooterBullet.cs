@@ -10,6 +10,8 @@ public abstract class ShooterBullet : MonoBehaviour
 
     public int Damage { get { return _damage; } } //getter del daño
 
+    [SerializeField] private float _rotationSpeed; //velocidad a la que rota la bala
+
     protected float _speed; //velocidad de la bala
     protected int _damage; //daño que hace la bala a los enemigos
     protected float _lifetime; //segundos antes de que la bala se destruya sola
@@ -21,6 +23,11 @@ public abstract class ShooterBullet : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
     }
+    protected virtual void Update()
+    {
+        transform.Rotate(Vector3.forward, _rotationSpeed * Time.deltaTime);
+    }
+
 
     public void FireBullet(Vector2 direction)
     {
@@ -48,6 +55,7 @@ public abstract class ShooterBullet : MonoBehaviour
 
     public void DestroyBullet()
     {
+        transform.rotation = Quaternion.identity; //se reinicia la rotacion
         _rb.velocity = Vector2.zero; //Se le quita la velocidad a la bala
         StopCoroutine(DestroyAfterTime()); //Se detiene la corrutina para no destruir la bala 2 veces
         BulletDestroyed.Invoke(this); //Se invoca el evento 
