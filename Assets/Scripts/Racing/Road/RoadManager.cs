@@ -94,13 +94,28 @@ public class RoadManager : MonoBehaviour
         //and camera room to leave it behind and avoid visual issues (or falling down to the void)
         if (newRoadIndex - 10 < 0) return;
 
-        road.RoadEnter.RemoveListener(OnRoadEnter);
+        //road.RoadEnter.RemoveListener(OnRoadEnter);
 
         DestroyFirstRoad();
         
         Road newRoad = SpawnNextRoad();
 
         newRoad.PreviousRoad = _roads[newRoadIndex - 1];
+
+        //comprobaar en cual carretera tenemos que spawnear
+        int tempIndex = 4;
+        //indice hardcodeado + indice de carreter donde esta el jugador = indice de la carretera donde hay q spawnear enemigo(s)
+        int spawnIndex = tempIndex + newRoadIndex;
+
+        if (spawnIndex < _roads.Count)
+        {
+            var spawner = _roads[spawnIndex].GetComponentInChildren<RacingEnemySpawner>();
+
+            if (spawner != null)
+            {
+                spawner.SpawnEnemy();
+            }
+        }
         
     }
 
@@ -127,7 +142,6 @@ public class RoadManager : MonoBehaviour
 
     private void ResetTilesCoordinates(Vector3 pos)
     {
-        Debug.Log("resetau");
         foreach (var r in _roads) r.transform.Translate(pos);
         _spawner.ResetSpawnPosition();
 

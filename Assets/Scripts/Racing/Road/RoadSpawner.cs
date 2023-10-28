@@ -110,6 +110,8 @@ public class RoadSpawner : MonoBehaviour
         //Creates the road tile
         Road road = Instantiate(objectFromTile, _spawnPosition, Quaternion.identity);
 
+        road.RoadTileData = tileToSpawn;
+
         SpawnGrassTiles(tileToSpawn, road);
 
         return road;

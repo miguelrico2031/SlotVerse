@@ -21,11 +21,13 @@ public class CarManager : MonoBehaviour
     [SerializeField] private RuntimeAnimatorController _beachAnim;
 
     private Animator _animator;
+    private Animator _explosionAnimator;
     private int x;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _explosionAnimator = GetComponentInChildren<Animator>();
 
         switch (_gameInfo.Setting)
         {
@@ -60,10 +62,15 @@ public class CarManager : MonoBehaviour
     public void setX(int value) { x = value; }
 
     public void TakeDamage(int value) {
-        
-        Health -=  value; 
+
+        _explosionAnimator.SetBool("Damage", true);
+        Health -=  value;
+        _explosionAnimator.SetBool("Damage", false);
+
         if (Health <= 0)
         {
+            Debug.Log("Tas matao xaval");
+            _explosionAnimator.SetBool("Dead", true);
             //Muerte
         }
     }

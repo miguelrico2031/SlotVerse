@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 523470493472203341}
   - component: {fileID: 1102118185231534716}
   - component: {fileID: 7569793536753976635}
+  - component: {fileID: 2514143385002907217}
   m_Layer: 0
   m_Name: Small Arch
   m_TagString: Wall
@@ -958,6 +959,33 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!54 &2514143385002907217
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5181255721409219955}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8954578280709140491
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,6 +1000,7 @@ GameObject:
   - component: {fileID: 496297380554949781}
   - component: {fileID: 6486527334260361741}
   - component: {fileID: 5697544283317244109}
+  - component: {fileID: 2168362459569674755}
   m_Layer: 0
   m_Name: Big Arch
   m_TagString: Wall
@@ -2516,6 +2545,33 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!54 &2168362459569674755
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8954578280709140491}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &2780255256956988968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2573,7 +2629,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: d7299e1aa86a3154cb3c194bf553a2fb, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7976904280006483325, guid: 59bbc379433a0bb42906a0bdc66b2e13, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1593230619097975278, guid: 59bbc379433a0bb42906a0bdc66b2e13, type: 3}
       insertIndex: -1
