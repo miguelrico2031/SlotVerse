@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class ShooterEnemySquirrel : ShooterEnemy
 {
@@ -20,6 +21,9 @@ public class ShooterEnemySquirrel : ShooterEnemy
     private Vector2[] _firePointDirections = { Vector2.right, Vector2.up, Vector2.left, Vector2.down };
 
     private bool _isShooting = false; //para saber si está disparando
+
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip _shootSound;
 
     enum SquirrelState
     {
@@ -42,6 +46,9 @@ public class ShooterEnemySquirrel : ShooterEnemy
         _movement.UpdateAnimationDirection = false;
 
         _state = SquirrelState.Walking; //el estado inicial es caminando
+
+        //audioSource
+        _audioSource = GetComponent<AudioSource>();
     }
 
     protected override void Start()
@@ -187,6 +194,10 @@ public class ShooterEnemySquirrel : ShooterEnemy
 
         //declara que está disparando y espera un tiempo semialeatorio 
         _isShooting = true;
+
+        //audiosource
+        if (_isShooting = true) _audioSource.PlayOneShot(_shootSound);
+
         yield return new WaitForSeconds(_squirrelStats.ShootCooldown + Random.Range(0f, 0.7f));
 
         //despues de esperar, comprueba si el estado ahora es Walking o si esta muerto para no disparar

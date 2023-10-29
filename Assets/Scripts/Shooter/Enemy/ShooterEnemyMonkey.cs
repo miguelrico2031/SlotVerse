@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 //clase del enemigo mono que se encarga de atacar a los objetos con la interfaz IEnemyTarget
 //usando un trigger collider que representa su área de ataque
@@ -12,6 +13,9 @@ public class ShooterEnemyMonkey : ShooterEnemy
     private ShooterEnemyMovement _movement;
     private Animator _animator;
 
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip _shootSound;
+
     protected override void Awake()
     {
         base.Awake();
@@ -20,6 +24,9 @@ public class ShooterEnemyMonkey : ShooterEnemy
         _movement = GetComponent<ShooterEnemyMovement>();
         _animator = GetComponent<Animator>();
         _animator.keepAnimatorStateOnDisable = false;
+
+        //audiosource
+        _audioSource = GetComponent<AudioSource>();
     }
 
     protected override void OnTargetAtRange(ISEnemyTarget target)
@@ -72,9 +79,12 @@ public class ShooterEnemyMonkey : ShooterEnemy
 
             _animator.SetBool("Hold", false);
             _animator.SetBool("Attack", true);
+
+            //audiosource
+            _audioSource.PlayOneShot(_shootSound);
+
             yield return new WaitForSeconds(0.05f);
             _animator.SetBool("Attack", false);
-
         }
 
         if(!attacked)

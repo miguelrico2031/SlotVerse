@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Audio;
 
 //clase que se encarga de gestionar la salud y estado del enemigo; recibir daño, morir, y lanzar
 //los eventos correspondientes para los otros scripts del enemigo
@@ -21,6 +22,9 @@ public class ShooterEnemyManager : MonoBehaviour, ISPlayerBulletTarget, ISSpawna
 
     private Color _spriteColor;
 
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip _takeDamageSound;
+
     private void Awake()
     {
         _stats = GetComponent<ShooterEnemy>().Stats;
@@ -30,6 +34,9 @@ public class ShooterEnemyManager : MonoBehaviour, ISPlayerBulletTarget, ISSpawna
 
         CurrentHealth = _stats.Health;
         IsAlive = true;
+
+        //audiosource
+        _audioSource = GetComponent<AudioSource>();
     }
 
     //metodo llamado por la bala al detectar una colision con un IBulletTarget
@@ -62,6 +69,7 @@ public class ShooterEnemyManager : MonoBehaviour, ISPlayerBulletTarget, ISSpawna
         if (!IsAlive) return;
 
         CurrentHealth -= damage;
+        _audioSource.PlayOneShot(_takeDamageSound);
 
         if (CurrentHealth <= 0) Die();
     }

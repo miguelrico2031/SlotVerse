@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 //clase del enemigo erizo que se encarga de atacar a los objetos con la interfaz IEnemyTarget
 //usando un trigger collider que representa su área de ataque
@@ -10,12 +11,18 @@ public class ShooterEnemyHedgehog : ShooterEnemy
     private Rigidbody2D _rb;
     private Animator _animator;
 
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip _shootSound;
+
     protected override void Awake()
     {
         base.Awake();
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _animator.keepAnimatorStateOnDisable = false;
+
+        //audioSource
+        _audioSource = GetComponent<AudioSource>();
     }
 
     //Hace daño al jugador o a cualquier cosa que sea IEnemyTarget al entrar en su area de ataque
@@ -32,6 +39,9 @@ public class ShooterEnemyHedgehog : ShooterEnemy
             KnockbackDuration = Stats.KnockbackDuration
         };
         target.Hit(info); //llama al metodo hit del target
+
+        //audiosource
+        _audioSource.PlayOneShot(_shootSound);
 
         _animator.SetBool("Attack", true); //activamos animacion de ataque
         Invoke(nameof(ResetAnimation), 0.05f); //reseteamos la animación para luego

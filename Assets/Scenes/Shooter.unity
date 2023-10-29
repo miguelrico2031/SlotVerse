@@ -188,6 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &4229580
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -334,6 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &7097825
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -512,6 +514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &16609070
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -658,6 +661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &20545749
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -820,6 +824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &25862344
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -998,6 +1003,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &37237067
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1160,6 +1166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &44149386
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1322,6 +1329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &59993118
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1484,6 +1492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &121528611
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1708,6 +1717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &150804104
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1854,6 +1864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &165352041
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2016,6 +2027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &166125293
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2278,6 +2290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &204009883
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2440,6 +2453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &210890211
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2602,6 +2616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &223299284
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2764,6 +2779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &234824733
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2926,6 +2942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &246641854
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3088,6 +3105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &250471489
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3234,6 +3252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &252133610
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3396,6 +3415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &258778873
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3574,6 +3594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &260681393
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3736,6 +3757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &263782994
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3898,6 +3920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &299104878
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4132,6 +4155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &330362374
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4278,6 +4302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &330808272
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4400,6 +4425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 369709134}
+  - component: {fileID: 369709135}
   m_Layer: 0
   m_Name: Destuctibles
   m_TagString: Untagged
@@ -4482,6 +4508,102 @@ Transform:
   - {fileID: 1355295068}
   m_Father: {fileID: 1072659542}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &369709135
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369709133}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &392452470
 GameObject:
   m_ObjectHideFlags: 0
@@ -4547,6 +4669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &392452474
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4706,6 +4829,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 0
   _health: 0
+  _sandSound: {fileID: 0}
 --- !u!66 &397696141
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -9790,6 +9914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &399190505
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9952,6 +10077,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &411435008
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10114,6 +10240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &440053623
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10276,6 +10403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &462099118
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10438,6 +10566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &475190601
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10544,6 +10673,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 482101481}
+  - component: {fileID: 482101482}
   m_Layer: 0
   m_Name: Destuctibles
   m_TagString: Untagged
@@ -10613,6 +10743,102 @@ Transform:
   - {fileID: 392452471}
   m_Father: {fileID: 1988466542}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &482101482
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482101480}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &482681984
 GameObject:
   m_ObjectHideFlags: 0
@@ -10678,6 +10904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &482681988
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10969,6 +11196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &551556446
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11131,6 +11359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &566530216
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11387,6 +11616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &601339817
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11617,6 +11847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &629186489
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11795,6 +12026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &642152589
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11957,6 +12189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &651368597
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12119,6 +12352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &666711898
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12265,6 +12499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &682417499
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12443,6 +12678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &687894718
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12605,6 +12841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &695856723
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12767,6 +13004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &700029504
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12929,6 +13167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &715324001
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13075,6 +13314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &717586941
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13253,6 +13493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &748591651
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13415,6 +13656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &750487934
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13577,6 +13819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &750550695
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13674,6 +13917,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &793904433 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2792541777055922259, guid: f950a07053e417a4eb47173d6294a654, type: 3}
+  m_PrefabInstance: {fileID: 590751689264514600}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66d6a5bad35867d48b0b75d91c8d3423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &800403855 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5421337688533788128, guid: 0229e28ed1e55b9408d048c443f8cf84, type: 3}
@@ -13761,6 +14015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &830740703
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13923,6 +14178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &842558288
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14085,6 +14341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &848358204
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14247,6 +14504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &856506489
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14353,6 +14611,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 860436016}
+  - component: {fileID: 860436017}
   m_Layer: 0
   m_Name: Destructibles
   m_TagString: Untagged
@@ -14411,6 +14670,102 @@ Transform:
   - {fileID: 1565516342}
   m_Father: {fileID: 1665836436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &860436017
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860436015}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &864815628
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14617,6 +14972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &900311701
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15047,6 +15403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &939660491
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15209,6 +15566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &960671503
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15371,6 +15729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &965291321
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15533,6 +15892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &967505992
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15695,6 +16055,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &971028372
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15857,6 +16218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &987104703
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16019,6 +16381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &989645683
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16181,6 +16544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1006254237
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16327,6 +16691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &1020507980
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16489,6 +16854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &1022303461
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16667,6 +17033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1023197926
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16829,6 +17196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1032060169
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16975,6 +17343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &1038598796
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17237,6 +17606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1052890877
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17385,6 +17755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 0
   _health: 0
+  _sandSound: {fileID: 0}
 --- !u!66 &1057363007
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -25571,6 +25942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1059467660
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25733,6 +26105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1060135548
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25929,6 +26302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1078893529
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26091,6 +26465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1083112557
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26237,6 +26612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &1084688162
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26415,6 +26791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1085727503
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26577,6 +26954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1116352641
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26739,6 +27117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1117356585
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26901,6 +27280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1119145630
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27063,6 +27443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1122072862
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27230,6 +27611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1152574992
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27376,6 +27758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &1157674456
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27538,6 +27921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &1165331605
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27716,6 +28100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1192345336
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28054,6 +28439,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 793904433}
+        m_TargetAssemblyTypeName: Music, Assembly-CSharp
+        m_MethodName: OnPlayerDie
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   PlayerHit:
     m_PersistentCalls:
       m_Calls:
@@ -28072,7 +28469,7 @@ MonoBehaviour:
   _stats: {fileID: 11400000, guid: dc8f71d61220e6048968c442a1d405d0, type: 2}
   _takeDamageSound: {fileID: 8300000, guid: d6f4d725d33079d47957da3b79c289f6, type: 3}
   _deathMusic: {fileID: 8300000, guid: 2621a7ae5fcaa2949bf1397b1e71df1f, type: 3}
-  _deathSound: {fileID: 8300000, guid: 3877cba9dc6340b4b941f3e663db802c, type: 3}
+  _deathSound: {fileID: 0}
 --- !u!95 &1198157905
 Animator:
   serializedVersion: 5
@@ -28260,6 +28657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1218169902
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28422,6 +28820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1220438783
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28584,6 +28983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1271229354
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28746,6 +29146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1274180750
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28892,6 +29293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &1282967179
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29070,6 +29472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1303954779
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29216,6 +29619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &1305534564
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29394,6 +29798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1306781038
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29556,6 +29961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1307177094
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29718,6 +30124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1313382743
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39117,6 +39524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 0
   _health: 0
+  _sandSound: {fileID: 0}
 --- !u!1 &1328248355
 GameObject:
   m_ObjectHideFlags: 0
@@ -39182,6 +39590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1328248359
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39328,6 +39737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &1328667571
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39517,6 +39927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1355295071
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39679,6 +40090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1357752571
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39825,6 +40237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &1375025050
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40003,6 +40416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1381931056
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40165,6 +40579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1388863924
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40327,6 +40742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1391143865
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40489,6 +40905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1395402959
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40651,6 +41068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1417679544
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40797,6 +41215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &1422211339
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41071,6 +41490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1477484945
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41233,6 +41653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1491683096
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41395,6 +41816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1524724875
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41557,6 +41979,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &1548354551
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41719,6 +42142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1548741577
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41865,6 +42289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &1565516344
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42043,6 +42468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1596300923
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42205,6 +42631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1598941267
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42351,6 +42778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &1608526242
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42529,6 +42957,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1612013250
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42675,6 +43104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &1635474837
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42972,6 +43402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1652295583
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43168,6 +43599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1670150887
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43330,6 +43762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1673139166
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43492,6 +43925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1674177081
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43654,6 +44088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1720751074
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43816,6 +44251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1741074953
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -62970,6 +63406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &1774177270
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -63132,6 +63569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &1775983458
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -63310,6 +63748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1787476868
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -63456,6 +63895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &1789603690
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -63634,6 +64074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1805347437
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -63907,6 +64348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 0
   _health: 0
+  _sandSound: {fileID: 0}
 --- !u!1 &1826211227
 GameObject:
   m_ObjectHideFlags: 0
@@ -63972,6 +64414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1826211231
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -64134,6 +64577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1832814157
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -64296,6 +64740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1837492352
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -64458,6 +64903,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1841099161
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -64620,6 +65066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1874040280
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -64782,6 +65229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &1897779001
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -64928,6 +65376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &1901532891
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -65106,6 +65555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1911312485
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -65268,6 +65718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1918891149
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -65497,6 +65948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1972140160
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -65659,6 +66111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &1979378201
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -65839,6 +66292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &1999243685
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -66197,6 +66651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &2050047998
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -66359,6 +66814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &2060544878
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -66521,6 +66977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &2078184068
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -75859,6 +76316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &2107389471
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -84053,6 +84511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: e85b6dbf4ae5102479fef79b556d37be, type: 3}
 --- !u!61 &2125264685
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -84231,6 +84690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 62879934b135af747a7d76608df42644, type: 3}
 --- !u!61 &2131302019
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -84393,6 +84853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructible: 1
   _health: 1
+  _sandSound: {fileID: 8300000, guid: 66eb652f8f426764387c00deba4cbe89, type: 3}
 --- !u!61 &2139085525
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -84490,7 +84951,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &5810951661469892920
+--- !u!1001 &590751689264514600
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -84498,120 +84959,67 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7424015380260279230, guid: 2cfdbf141d6828f4a85feb47cf095715, type: 3}
+    - target: {fileID: 649403017961231731, guid: f950a07053e417a4eb47173d6294a654, type: 3}
+      propertyPath: m_Name
+      value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 2792541777055922259, guid: f950a07053e417a4eb47173d6294a654, type: 3}
+      propertyPath: _beachMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 08b62c66ce8119f47bfa815622e8b5c5, type: 3}
+    - target: {fileID: 2792541777055922259, guid: f950a07053e417a4eb47173d6294a654, type: 3}
+      propertyPath: _halloweenMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 15b26ed4c5ef83545b028a0279439b4a, type: 3}
+    - target: {fileID: 2792541777055922259, guid: f950a07053e417a4eb47173d6294a654, type: 3}
+      propertyPath: _futuristicMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: b6cef0c398150aa458d3e40cba305ad0, type: 3}
+    - target: {fileID: 3973823359994394624, guid: f950a07053e417a4eb47173d6294a654, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.75
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7424015380260279230, guid: 2cfdbf141d6828f4a85feb47cf095715, type: 3}
+    - target: {fileID: 3973823359994394624, guid: f950a07053e417a4eb47173d6294a654, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7424015380260279230, guid: 2cfdbf141d6828f4a85feb47cf095715, type: 3}
+    - target: {fileID: 3973823359994394624, guid: f950a07053e417a4eb47173d6294a654, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7424015380260279230, guid: 2cfdbf141d6828f4a85feb47cf095715, type: 3}
+    - target: {fileID: 3973823359994394624, guid: f950a07053e417a4eb47173d6294a654, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7424015380260279230, guid: 2cfdbf141d6828f4a85feb47cf095715, type: 3}
+    - target: {fileID: 3973823359994394624, guid: f950a07053e417a4eb47173d6294a654, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7424015380260279230, guid: 2cfdbf141d6828f4a85feb47cf095715, type: 3}
+    - target: {fileID: 3973823359994394624, guid: f950a07053e417a4eb47173d6294a654, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7424015380260279230, guid: 2cfdbf141d6828f4a85feb47cf095715, type: 3}
+    - target: {fileID: 3973823359994394624, guid: f950a07053e417a4eb47173d6294a654, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7424015380260279230, guid: 2cfdbf141d6828f4a85feb47cf095715, type: 3}
+    - target: {fileID: 3973823359994394624, guid: f950a07053e417a4eb47173d6294a654, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7424015380260279230, guid: 2cfdbf141d6828f4a85feb47cf095715, type: 3}
+    - target: {fileID: 3973823359994394624, guid: f950a07053e417a4eb47173d6294a654, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7424015380260279230, guid: 2cfdbf141d6828f4a85feb47cf095715, type: 3}
+    - target: {fileID: 3973823359994394624, guid: f950a07053e417a4eb47173d6294a654, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8006958617292677146, guid: 2cfdbf141d6828f4a85feb47cf095715, type: 3}
-      propertyPath: m_Name
-      value: Obstacle (Indestructible)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8006958617292677146, guid: 2cfdbf141d6828f4a85feb47cf095715, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2cfdbf141d6828f4a85feb47cf095715, type: 3}
---- !u!1001 &8126938829828235453
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5949276331621120490, guid: 92a2447c0335a78419352ab84b3ce398, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 5949276331621120490, guid: 92a2447c0335a78419352ab84b3ce398, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5949276331621120490, guid: 92a2447c0335a78419352ab84b3ce398, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5949276331621120490, guid: 92a2447c0335a78419352ab84b3ce398, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5949276331621120490, guid: 92a2447c0335a78419352ab84b3ce398, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5949276331621120490, guid: 92a2447c0335a78419352ab84b3ce398, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5949276331621120490, guid: 92a2447c0335a78419352ab84b3ce398, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5949276331621120490, guid: 92a2447c0335a78419352ab84b3ce398, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5949276331621120490, guid: 92a2447c0335a78419352ab84b3ce398, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5949276331621120490, guid: 92a2447c0335a78419352ab84b3ce398, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6917805225840703150, guid: 92a2447c0335a78419352ab84b3ce398, type: 3}
-      propertyPath: m_Name
-      value: Obstacle (Destructible)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6917805225840703150, guid: 92a2447c0335a78419352ab84b3ce398, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 92a2447c0335a78419352ab84b3ce398, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: f950a07053e417a4eb47173d6294a654, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -84622,7 +85030,6 @@ SceneRoots:
   - {fileID: 1641631769}
   - {fileID: 1429997249}
   - {fileID: 1198157902}
-  - {fileID: 8126938829828235453}
-  - {fileID: 5810951661469892920}
   - {fileID: 1956600141}
   - {fileID: 864815628}
+  - {fileID: 590751689264514600}
