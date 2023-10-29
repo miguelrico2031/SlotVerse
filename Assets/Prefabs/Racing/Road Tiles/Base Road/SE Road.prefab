@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1102118185231534716}
   - component: {fileID: 7569793536753976635}
   - component: {fileID: 2514143385002907217}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Small Arch
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1001,7 +1001,7 @@ GameObject:
   - component: {fileID: 6486527334260361741}
   - component: {fileID: 5697544283317244109}
   - component: {fileID: 2168362459569674755}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Big Arch
   m_TagString: Wall
   m_Icon: {fileID: 0}

@@ -33,7 +33,7 @@ public class CarMovement : MonoBehaviour
     private void Start()
     {
         RoadManager.Instance.ResetCoordinates.AddListener(OnResetCoordinates);
-        _turnRatio = (_angularSpeed / _speed) / 16; //He cambiado tanto las fisicas que voy a poner numeros al azar
+        _turnRatio = (_angularSpeed / _speed) / 5; //He cambiado tanto las fisicas que voy a poner numeros al azar
     }
 
 
@@ -56,7 +56,7 @@ public class CarMovement : MonoBehaviour
                 _rb.AddTorque(Vector3.up * _turnInput * _angularSpeed * Time.fixedDeltaTime);
             }
 
-            _carManager.setX(_turnInput);
+            _carManager.SetX(_turnInput);
 
             //Add acceleration to speed value
             _speed = Mathf.Min(_speed + _acceleration * Time.fixedDeltaTime, _maxSpeed);
@@ -77,6 +77,10 @@ public class CarMovement : MonoBehaviour
 
         if (collision.gameObject.tag == "Wall") 
         {
+            _carManager.TakeDamage(_carManager.DamageByWall);
+
+            if (!_carManager.IsAlive) return;
+
             Vector3 targetDirection = Vector3.zero;
             var roadData = collision.gameObject.GetComponentInParent<Road>();
 
@@ -101,14 +105,30 @@ public class CarMovement : MonoBehaviour
 
             _rb.AddTorque(Vector3.up * angle * _straightenForce, ForceMode.Impulse);
 
-            _rb.AddForce(bounceDirection * _bounceSpeed, ForceMode.Impulse);
-            _isBouncing = true;
-            Invoke(nameof(StopBounce), .3f);
-
+            Bounce(bounceDirection);
         }
     }
 
+    public void Bounce(Vector3 bounceDirection)
+    {
+        _rb.AddForce(bounceDirection * _bounceSpeed, ForceMode.Impulse);
+            _isBouncing = true;
+            Invoke(nameof(StopBounce), .3f);
+    }
+
     private void StopBounce() { _isBouncing = false; }
+
+    public void SlowDown(float speedToSlow)
+    {
+        _speed = _speed - speedToSlow;
+    }
+
+    public void StopCar()
+    {
+        _speed = 0;
+        _acceleration = 0;
+        _angularSpeed = 0;
+    }
 
     private void OnDisable() => RoadManager.Instance.ResetCoordinates.RemoveListener(OnResetCoordinates);
 }

@@ -12,6 +12,8 @@ public class RacingEnemySpawner : MonoBehaviour
 
     private GameObject _instantiatedEnemy;
 
+    private bool _hasSpawned = false;
+
     private void Awake()
     {
         switch (_gameInfo.NPC)
@@ -32,6 +34,10 @@ public class RacingEnemySpawner : MonoBehaviour
 
     public void SpawnEnemy()
     {
+        if (_hasSpawned) return;
+
         _instantiatedEnemy = Instantiate(_enemyPrefab, transform.position, transform.rotation, transform);
+
+        _hasSpawned = true;
     }
 }

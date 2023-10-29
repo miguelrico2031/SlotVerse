@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 1220362797345491541}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Car
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,8 +147,8 @@ MonoBehaviour:
   _speed: 300
   _angularSpeed: 100
   _acceleration: 1.5
-  _maxSpeed: 600
-  _maxTurnSpeed: 110
+  _maxSpeed: 700
+  _maxTurnSpeed: 130
   _bounceSpeed: 12
   _straightenForce: 0.01
   _turnRatio: 0
@@ -165,7 +165,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentRoad: {fileID: 0}
-  Health: 100
+  _maxHealth: 100
+  _currentHealth: 0
   _gameInfo: {fileID: 11400000, guid: 1184bb5c90a032d44b48aa6aa88a64bf, type: 2}
   _futuristicPrefab: {fileID: 3950632976803590395, guid: 0a4191c39cd32984194641f701a5354d, type: 3}
   _halloweenPrefab: {fileID: 3950632976803590395, guid: 13c13f56091cf3b4f8d01821063a3c22, type: 3}

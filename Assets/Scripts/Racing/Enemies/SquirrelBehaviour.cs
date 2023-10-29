@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class SquirrelBehaviour : MonoBehaviour
+public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
 {
 
     enum States
@@ -11,14 +11,18 @@ public class SquirrelBehaviour : MonoBehaviour
         Die
     }
 
-    [SerializeField] private float _walkSpeed = 20;
+    [SerializeField] private RacingBullet _bullet;
+    [SerializeField] private float _walkSpeed = 25;
     [SerializeField] private float _minShootTime = 3.0f;
     [SerializeField] private float _maxShootTime = 8.0f;
+    [SerializeField] private float _bulletSpeed = 8.0f;
+    [SerializeField] private float _bulletOffset = 1.0f;
     [SerializeField] private float _destructionTime = 5.0f;
 
     private Vector3 _direction;
     private States _currentState;
     private Rigidbody _rb;
+    private Rigidbody _bulletRb;
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
     private Collider _collider;
@@ -31,7 +35,17 @@ public class SquirrelBehaviour : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _collider = GetComponent<Collider>();
 
-        ChangeState(States.Walk);
+        float walkRandomDir = Random.value;
+        if (walkRandomDir <= 0.5)
+        {
+            ChangeState(States.Walk);
+        }
+        else
+        {
+            _direction *= -1;
+            _spriteRenderer.flipX = !(_spriteRenderer.flipX);
+            ChangeState(States.Walk);
+        }
     }
 
     // Update is called once per frame
@@ -70,9 +84,10 @@ public class SquirrelBehaviour : MonoBehaviour
                 _animator.SetBool("Shooting", true);
                 break;
             case States.Die:
+                _collider.enabled = false;
+                Debug.Log(_collider.enabled);
                 _rb.velocity = Vector3.zero;
                 _animator.SetTrigger("Dead");
-                _collider.enabled = false;
 
                 Invoke(nameof(DestroyThisGameObject), _destructionTime);
                 break;
@@ -83,7 +98,9 @@ public class SquirrelBehaviour : MonoBehaviour
 
     private void OnShoot()
     {
-        //Crear la bala y tal
+        var bullet =
+            Instantiate(_bullet, transform.position - transform.forward * _bulletOffset, Quaternion.LookRotation(-transform.forward));
+        bullet.FireBullet(_bulletSpeed);
     }
 
     private void OnAnimationExit()
@@ -103,11 +120,15 @@ public class SquirrelBehaviour : MonoBehaviour
             _direction *= -1;
         }
 
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.TryGetComponent<CarManager>(out var carManager))
         {
             ChangeState(States.Die);
+            carManager.PlayerHit(this);
         }
     }
 
     private void DestroyThisGameObject() { Destroy(this); }
+
+    public int GetDamage() => 0; //daño al jugador al chocaar con el
+    public GameObject GetGameObject() => gameObject;
 }
