@@ -52,8 +52,8 @@ MonoBehaviour:
   _shootSound: {fileID: 8300000, guid: 6153d6b286b74964696beccb96354155, type: 3}
   _bullet: {fileID: -391516978100560762, guid: 1dcff5ea23ce1344ea61f39b54f2bd37, type: 3}
   _walkSpeed: 45
-  _minShootTime: 0.5
-  _maxShootTime: 2.5
+  _minShootTime: 0.75
+  _maxShootTime: 3
   _bulletSpeed: 8
   _bulletOffset: 1
   _destructionTime: 5
