@@ -95,7 +95,6 @@ public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
                 break;
             case States.Die:
                 _collider.enabled = false;
-                Debug.Log(_collider.enabled);
                 _rb.velocity = Vector3.zero;
                 _animator.SetTrigger("Dead");
 

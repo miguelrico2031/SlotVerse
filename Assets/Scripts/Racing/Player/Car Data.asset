@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d04e0295b4f4837469f57caa8522cf3b, type: 3}
   m_Name: Car Data
   m_EditorClassIdentifier: 
-  Health: 100
+  Health: 5

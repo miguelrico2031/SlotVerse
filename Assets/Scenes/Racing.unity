@@ -1090,6 +1090,10 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7322863043291465712, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
+      propertyPath: DamageByWall
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322863043291465712, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
       propertyPath: PlayerDie.m_PersistentCalls.m_Calls.Array.size
       value: 4
       objectReference: {fileID: 0}

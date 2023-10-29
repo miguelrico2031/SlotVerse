@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RacingBullet : MonoBehaviour
 {
-    [SerializeField] private int _bulletDamage = 20;
+    [SerializeField] private int _bulletDamage = 1;
     [SerializeField] private float _destructionTime = 10f;
     
     private Rigidbody _rb;

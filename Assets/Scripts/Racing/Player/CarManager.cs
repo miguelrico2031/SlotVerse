@@ -12,7 +12,7 @@ public class CarManager : MonoBehaviour, IPlayerManager
     public UnityEvent PlayerDie;
 
     public Road CurrentRoad;
-    public int DamageByWall = 20;
+    public int DamageByWall = 1;
 
     public int Health { get { return _currentHealth; } }
     public bool IsAlive { get; private set; }
