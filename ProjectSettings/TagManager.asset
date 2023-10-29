@@ -10,6 +10,7 @@ TagManager:
   - EnemySpawner
   - Wall
   - Bullet
+  - Car
   layers:
   - Default
   - TransparentFX
@@ -22,10 +23,10 @@ TagManager:
   - Obstacle
   - EnemyBullet
   - PlayerBullet
-  - RacingWall
+  - 
   - 
   - Squirrel
-  - 
+  - RacingWall
   - 
   - 
   - 
