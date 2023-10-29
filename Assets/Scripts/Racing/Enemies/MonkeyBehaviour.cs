@@ -10,9 +10,9 @@ public class MonkeyBehaviour : MonoBehaviour, IRacingEnemy
         Stop
     }
 
-    [SerializeField] private float _walkSpeed = 15;
-    [SerializeField] private float _minStopTime = 3.0f;
-    [SerializeField] private float _maxStopTime = 8.0f;
+    [SerializeField] private float _walkSpeed = 25;
+    [SerializeField] private float _minStopTime = 1.0f;
+    [SerializeField] private float _maxStopTime = 3.0f;
 
     private Vector3 _direction;
     private States _currentState;
@@ -74,17 +74,7 @@ public class MonkeyBehaviour : MonoBehaviour, IRacingEnemy
 
     private void OnAnimationExit()
     {
-        float walkRandomDir = Random.value;
-        if (walkRandomDir <= 0.5)
-        {
-            ChangeState(States.Walk);
-        }
-        else
-        {
-            _direction *= -1;
-            _spriteRenderer.flipX = !(_spriteRenderer.flipX);
-            ChangeState(States.Walk);
-        }
+        SelectRandomWalkDirection();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -102,6 +92,21 @@ public class MonkeyBehaviour : MonoBehaviour, IRacingEnemy
 
             _damageToPlayer = carManager.Health;
             carManager.PlayerHit(this);
+        }
+    }
+
+    private void SelectRandomWalkDirection()
+    {
+        float walkRandomDir = Random.value;
+        if (walkRandomDir <= 0.5)
+        {
+            ChangeState(States.Walk);
+        }
+        else
+        {
+            _direction *= -1;
+            _spriteRenderer.flipX = !(_spriteRenderer.flipX);
+            ChangeState(States.Walk);
         }
     }
 

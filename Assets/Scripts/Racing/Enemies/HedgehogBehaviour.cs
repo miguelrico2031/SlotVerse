@@ -12,9 +12,9 @@ public class HedgehogBehaviour : MonoBehaviour, IRacingEnemy
 
     public float SlowPlayerSpeed = 25;
 
-    [SerializeField] private float _walkSpeed = 30;
-    [SerializeField] private float _minWalkBoost = 20;
-    [SerializeField] private int _maxWalkBoost = 35;
+    [SerializeField] private float _walkSpeed = 60;
+    [SerializeField] private float _minWalkBoost = 40;
+    [SerializeField] private int _maxWalkBoost = 65;
     [SerializeField] private int _spikeDamage = 35;
     [SerializeField] private float _destructionTime = 5.0f;
 
@@ -34,17 +34,7 @@ public class HedgehogBehaviour : MonoBehaviour, IRacingEnemy
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _collider = GetComponent<Collider>();
 
-        float walkRandomDir = Random.value;
-        if (walkRandomDir <= 0.5)
-        {
-            ChangeState(States.Walk);
-        }
-        else
-        {
-            _direction *= -1;
-            _spriteRenderer.flipX = !(_spriteRenderer.flipX);
-            ChangeState(States.Walk);
-        }
+        SelectRandomWalkDirection();
 
         _walkBoost = Random.Range(_minWalkBoost, _maxWalkBoost);
     }
@@ -99,6 +89,21 @@ public class HedgehogBehaviour : MonoBehaviour, IRacingEnemy
         {
             carManager.PlayerHit(this);
             ChangeState(States.Die);
+        }
+    }
+
+    private void SelectRandomWalkDirection()
+    {
+        float walkRandomDir = Random.value;
+        if (walkRandomDir <= 0.5)
+        {
+            ChangeState(States.Walk);
+        }
+        else
+        {
+            _direction *= -1;
+            _spriteRenderer.flipX = !(_spriteRenderer.flipX);
+            ChangeState(States.Walk);
         }
     }
 

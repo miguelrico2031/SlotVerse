@@ -12,9 +12,9 @@ public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
     }
 
     [SerializeField] private RacingBullet _bullet;
-    [SerializeField] private float _walkSpeed = 25;
-    [SerializeField] private float _minShootTime = 3.0f;
-    [SerializeField] private float _maxShootTime = 8.0f;
+    [SerializeField] private float _walkSpeed = 45;
+    [SerializeField] private float _minShootTime = 0.5f;
+    [SerializeField] private float _maxShootTime = 2.5f;
     [SerializeField] private float _bulletSpeed = 8.0f;
     [SerializeField] private float _bulletOffset = 1.0f;
     [SerializeField] private float _destructionTime = 5.0f;
@@ -35,17 +35,7 @@ public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _collider = GetComponent<Collider>();
 
-        float walkRandomDir = Random.value;
-        if (walkRandomDir <= 0.5)
-        {
-            ChangeState(States.Walk);
-        }
-        else
-        {
-            _direction *= -1;
-            _spriteRenderer.flipX = !(_spriteRenderer.flipX);
-            ChangeState(States.Walk);
-        }
+        SelectRandomWalkDirection();
     }
 
     // Update is called once per frame
@@ -105,7 +95,7 @@ public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
 
     private void OnAnimationExit()
     {
-        ChangeState(States.Walk);
+        SelectRandomWalkDirection();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -124,6 +114,21 @@ public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
         {
             ChangeState(States.Die);
             carManager.PlayerHit(this);
+        }
+    }
+
+    private void SelectRandomWalkDirection()
+    {
+        float walkRandomDir = Random.value;
+        if (walkRandomDir <= 0.5)
+        {
+            ChangeState(States.Walk);
+        }
+        else
+        {
+            _direction *= -1;
+            _spriteRenderer.flipX = !(_spriteRenderer.flipX);
+            ChangeState(States.Walk);
         }
     }
 
