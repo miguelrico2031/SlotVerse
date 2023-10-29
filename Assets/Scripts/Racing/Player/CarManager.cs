@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
-
+using UnityEngine.Audio;
 public class CarManager : MonoBehaviour, IPlayerManager
 {
     public UnityEvent PlayerDamaged;
@@ -34,6 +34,8 @@ public class CarManager : MonoBehaviour, IPlayerManager
     private Animator _animator;
     private int x;
 
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip _crashSound, _deathMusic, _explodeSound;
 
     private void Awake()
     {
@@ -57,6 +59,9 @@ public class CarManager : MonoBehaviour, IPlayerManager
         }
 
         _currentHealth = _playerStats.Health;
+
+        //audioSource
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -94,7 +99,10 @@ public class CarManager : MonoBehaviour, IPlayerManager
 
     public void SetX(int value) { x = value; }
 
-    public void TakeDamage(int value) {
+    public void TakeDamage(int value) 
+    {
+        //audiosource
+        _audioSource.PlayOneShot(_crashSound);
 
         _currentHealth -=  value;
 
@@ -110,6 +118,10 @@ public class CarManager : MonoBehaviour, IPlayerManager
 
     private void Die()
     {
+        //audioSource
+        _audioSource.PlayOneShot(_deathMusic);
+        _audioSource.PlayOneShot(_explodeSound);
+
         IsAlive = false;
         _carMovement.StopCar();
 

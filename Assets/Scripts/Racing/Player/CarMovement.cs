@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class CarMovement : MonoBehaviour
 {
@@ -24,10 +25,16 @@ public class CarMovement : MonoBehaviour
     private Rigidbody _rb;
     private CarManager _carManager;
 
+    private AudioSource _audioSource;
+    [SerializeField] AudioClip _skiddingSound;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         _carManager = GetComponent<CarManager>();
+
+        //audiosource
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -41,6 +48,9 @@ public class CarMovement : MonoBehaviour
     {
         //Get turn input
         _turnInput = Mathf.RoundToInt(Input.GetAxisRaw("Horizontal"));
+
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)
+            || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow)) _audioSource.PlayOneShot(_skiddingSound);
     }
 
     private void FixedUpdate()
@@ -73,8 +83,6 @@ public class CarMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-
-
         if (collision.gameObject.tag == "Wall") 
         {
             _carManager.TakeDamage(_carManager.DamageByWall);
@@ -111,6 +119,9 @@ public class CarMovement : MonoBehaviour
 
     public void Bounce(Vector3 bounceDirection)
     {
+        //audioSource
+        _audioSource.PlayOneShot(_skiddingSound);
+
         _rb.AddForce(bounceDirection * _bounceSpeed, ForceMode.Impulse);
             _isBouncing = true;
             Invoke(nameof(StopBounce), .3f);

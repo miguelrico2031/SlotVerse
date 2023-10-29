@@ -1,8 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class HedgehogBehaviour : MonoBehaviour, IRacingEnemy
 {
+    private AudioSource _audioSource;
+    [SerializeField] AudioClip _shootSound;
 
     enum States
     {
@@ -47,6 +50,9 @@ public class HedgehogBehaviour : MonoBehaviour, IRacingEnemy
         }
 
         _walkBoost = Random.Range(_minWalkBoost, _maxWalkBoost);
+
+        //audioSource
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -97,6 +103,9 @@ public class HedgehogBehaviour : MonoBehaviour, IRacingEnemy
 
         if (collision.collider.TryGetComponent<CarManager>(out var carManager))
         {
+            //audioSource
+            _audioSource.PlayOneShot(_shootSound);
+
             carManager.PlayerHit(this);
             ChangeState(States.Die);
         }
