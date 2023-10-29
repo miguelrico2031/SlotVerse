@@ -89,7 +89,11 @@ public class ShooterEnemyMovement : MonoBehaviour, ISSpawnableEnemy
         //calcular la distancia con el waypoint para saber si estamos lo suficientemente
         //cerca para avanzar al siguiente waypoint
         float distance = Vector2.Distance(_rb.position, _path.vectorPath[_currentWaypoint]);
-        if (distance < _enemy.Stats.NextWaypointDistance) _currentWaypoint ++;
+        if (distance < _enemy.Stats.NextWaypointDistance)
+        {
+            _currentWaypoint++;
+            if(_currentWaypoint >= _path.vectorPath.Count) _currentWaypoint = _path.vectorPath.Count-1;
+        }
     }
 
     //función que detiene el movimiento del enemigo por un tiempo cuando es golpeado, esto para 
