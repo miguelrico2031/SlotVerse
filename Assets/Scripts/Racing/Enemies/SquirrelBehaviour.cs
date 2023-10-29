@@ -104,6 +104,9 @@ public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
 
     private void OnShoot()
     {
+        //audioSource
+        _audioSource.PlayOneShot(_shootSound);
+
         var bullet =
             Instantiate(_bullet, transform.position - transform.forward * _bulletOffset, Quaternion.LookRotation(-transform.forward));
         bullet.FireBullet(_bulletSpeed);
@@ -128,9 +131,6 @@ public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
 
         if (collision.gameObject.TryGetComponent<CarManager>(out var carManager))
         {
-            //audioSource
-            _audioSource.PlayOneShot(_shootSound);
-
             ChangeState(States.Die);
             carManager.PlayerHit(this);
         }
