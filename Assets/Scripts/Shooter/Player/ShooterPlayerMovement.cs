@@ -12,16 +12,21 @@ public class ShooterPlayerMovement : MonoBehaviour
     private Rigidbody2D _rb; //rigidbody del jugador
     private Collider2D _collider;
     private ShooterPlayerManager _manager; //referencia al manager para eventos de ser golpeado y morir
+    private Animator _animator;
 
     private Vector2 _movementInput; //vector para guardar los ejes horizontal y vertical normalizados     
     private Vector2 _direction; //dirección no normalizada donde mira el jugador
     private bool _canMove = true; //si se puede mover o no
+
+    private int _animatorWalkHash;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _collider = GetComponent<Collider2D>();
         _manager = GetComponent<ShooterPlayerManager>();
+        _animator = GetComponent<Animator>();
+        _animatorWalkHash = Animator.StringToHash("Walk");
 
         _manager.PlayerHit.AddListener(OnPlayerHit);
         _manager.PlayerDie.AddListener(OnPlayerDie);
@@ -52,6 +57,8 @@ public class ShooterPlayerMovement : MonoBehaviour
 
         //mover el rigidbody del jugador segun el input y la velocidad
         _rb.velocity = _movementInput.normalized * _manager.Stats.MoveSpeed * Time.fixedDeltaTime;
+
+        _animator.SetBool(_animatorWalkHash, _rb.velocity.magnitude > 0f);
     }
 
     //funcion llamada por el evento de jugador golpeado
