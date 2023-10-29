@@ -10,7 +10,7 @@ public class Road : MonoBehaviour
     public UnityEvent<Road> RoadEnter;
     public RoadTileData RoadTileData;
 
-    [SerializeField] private int _reverseRoadDamage = 50;
+    //[SerializeField] private int _reverseRoadDamage = 50;
 
     private bool _playerEntered = false;
 
@@ -29,7 +29,7 @@ public class Road : MonoBehaviour
         else if (carManager.CurrentRoad != PreviousRoad) //el coche va en dir contraria!
         {
             //carManager.TakeDamage(_reverseRoadDamage);
-            Debug.Log("Estás yendo del revés");
+            //Debug.Log("Estás yendo del revés");
         }
 
         else if (!_playerEntered) RoadEnter.Invoke(this);

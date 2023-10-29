@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Data.SqlTypes;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class CarManager : MonoBehaviour
+public class CarManager : MonoBehaviour, IPlayerManager
 {
+    public UnityEvent PlayerDamaged;
+    public UnityEvent PlayerDie;
+
     public Road CurrentRoad;
     public int DamageByWall = 20;
 
     public int Health { get { return _currentHealth; } }
     public bool IsAlive { get; private set; }
 
-    [SerializeField] private int _maxHealth = 100;
+    [SerializeField] private RacingPlayerStats _playerStats;
     [SerializeField] private int _currentHealth;
 
     [SerializeField] private Animator _explosionAnimator;
@@ -54,7 +56,7 @@ public class CarManager : MonoBehaviour
                 break;
         }
 
-        _currentHealth = _maxHealth;
+        _currentHealth = _playerStats.Health;
     }
 
     // Update is called once per frame
@@ -96,6 +98,8 @@ public class CarManager : MonoBehaviour
 
         _currentHealth -=  value;
 
+        PlayerDamaged.Invoke();
+
         if (_currentHealth <= 0) Die();
         else if(value > 0)
         {
@@ -110,10 +114,15 @@ public class CarManager : MonoBehaviour
         _carMovement.StopCar();
 
         _explosionAnimator.SetTrigger("Die");
+        Invoke(nameof(FinishDeath), 1f);
     }
+
+    public void FinishDeath() => PlayerDie.Invoke();
 
     private void OnFinishDamageAnimation()
     {
         _explosionAnimator.SetBool("Damage", false);
     }
+
+    public int GetCurrentHealth() => Health;
 }
