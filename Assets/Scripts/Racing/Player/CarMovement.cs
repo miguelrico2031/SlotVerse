@@ -46,6 +46,7 @@ public class CarMovement : MonoBehaviour
 
     private void Update()
     {
+        if (!_carManager.IsAlive) return;
         //Get turn input
         _turnInput = Mathf.RoundToInt(Input.GetAxisRaw("Horizontal"));
 

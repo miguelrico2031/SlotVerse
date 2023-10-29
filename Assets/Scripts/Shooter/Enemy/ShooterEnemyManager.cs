@@ -61,7 +61,7 @@ public class ShooterEnemyManager : MonoBehaviour, ISPlayerBulletTarget, ISSpawna
     {
         _renderer.color = IsAlive ? _stats.DamageColor : _stats.DeadColor;
         yield return new WaitForSeconds(duration);
-        _renderer.color = _spriteColor;
+        if(IsAlive) _renderer.color = _spriteColor;
     }
 
     private void TakeDamage(int damage)

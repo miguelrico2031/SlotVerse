@@ -123,7 +123,6 @@ public class CarManager : MonoBehaviour, IPlayerManager
     {
         if (!IsAlive) return;
         //audioSource
-        _audioSource.PlayOneShot(_deathMusic);
         _audioSource.PlayOneShot(_explodeSound);
 
         IsAlive = false;
@@ -131,19 +130,20 @@ public class CarManager : MonoBehaviour, IPlayerManager
 
         _explosionAnimator.SetTrigger("Die");
         
-        Invoke(nameof(FinishDeath), 2.5f);
+        Invoke(nameof(FinishDeath), 1.8f);
     }
 
     public void FinishDeath()
     {
+        _audioSource.PlayOneShot(_deathMusic);
         //Se quiere suponer que este if previene crasheos si por lo que sea las fisicas enloquecen y el enemigo (especialmente el mono)
         //te empuja a una carretera sin spawner, no haya null reference al no encontrar el gameObject del enemigo
-        if (CurrentRoad.transform.Find(name = "Spawner") == true)
+        if (CurrentRoad.transform.Find(name = "Spawner") != null)
         {
             // Y esto lo que hace es que si estoy en la misma carretera que un enemigo al morir, pues elimine al objeto del enemigo
             // Si no, lo que puede pasar es que el sprite del enemigo clippee sobre la UI del menú de muerte y pues vaya flop
-            GameObject enemy = CurrentRoad.GetComponentInChildren<IRacingEnemy>().GetGameObject();
-            Destroy(enemy);
+            GameObject enemy = CurrentRoad.GetComponentInChildren<IRacingEnemy>()?.GetGameObject();
+            if(enemy) Destroy(enemy);
         }
 
         PlayerDie.Invoke();

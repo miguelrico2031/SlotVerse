@@ -15203,7 +15203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectToPool: {fileID: 0}
-  AmountToPool: 40
+  AmountToPool: 20
   _parent: {fileID: 902057076}
   _instantiateOnEmptyPool: 0
   _initializeExternally: 1

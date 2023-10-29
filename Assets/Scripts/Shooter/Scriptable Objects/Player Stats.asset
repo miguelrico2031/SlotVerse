@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d83fdb88703664ba82ac74f339a4a8, type: 3}
   m_Name: Player Stats
   m_EditorClassIdentifier: 
-  MoveSpeed: 100
+  MoveSpeed: 130
   Health: 5
   BulletSpeed: 12
   BulletDamage: 1

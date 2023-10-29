@@ -34,8 +34,9 @@ public class ShooterEnemySpawner : MonoBehaviour
         {
             case NPC.Hedgehog:
                 _objectPool.ObjectToPool = _hedgehogPrefab.gameObject;
-                _initialEnemiesPerWave = 8;
+                _initialEnemiesPerWave = 6;
                 _enemiesPerWaveIncrement = 2;
+                _initialSecondsPerWave = 15;
                 break;
             case NPC.Monkey:
                 _objectPool.ObjectToPool = _monkeyPrefab.gameObject;
@@ -45,9 +46,9 @@ public class ShooterEnemySpawner : MonoBehaviour
                 break;
             case NPC.Squirrel:
                 _objectPool.ObjectToPool = _squirrelPrefab.gameObject;
-                _initialEnemiesPerWave = 4;
+                _initialEnemiesPerWave = 3;
                 _enemiesPerWaveIncrement = 1;
-                _initialSecondsPerWave = 20;
+                _initialSecondsPerWave = 25;
                 break;
         }
     }
