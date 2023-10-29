@@ -1,0 +1,77 @@
+
+variablesasd
+sds
+
+dsdsd
+
+dsd
+
+enum estados
+	- caminar
+	- atacar
+	 - morir
+
+	 estadoactual;
+
+	awake:
+		- estadoactual = caminar
+
+	inicializar variables tal
+
+fixed update:
+	switch estado actual:
+		caso canimar:
+		mover rigidbody hacia direccion q este mirando, con una velocidad.
+		
+		caso atacar: - 
+
+		caso morir: - 
+
+
+ienumerator esperarcaminandountiemporandomentre2valoresyluegoatacar:
+	segundos a esperar = random entre tiempo min y tiempo max
+	yield return new waitforseconds -< segs a esperar (lo d arriba)
+
+	estado actual = atacar.
+	fhgfhghhfgh
+	hfghgfhgh
+	hgfgfhfg
+
+
+funcion void cambiar de estado(nuevo estado)
+	switch estado nuevo:
+		caso canimar:
+			reseteamos a false el bool del animator de disparar
+
+		caso atacar: - 
+			frenar rigidbody (rb.vlocity = vectyor2.zero)
+			cambiamos animator a atacar
+			
+
+		caso morir:
+			-frenar rigidbody (rb.vlocity = vectyor2.zero)
+			-cambiar animator a morir (trigger)
+			-desactibar el collider
+
+			Invoke(nameof(funcionqdestruyeaesteobjeto), tiempo que se queda ahi muerta tal)
+			
+
+funcion que suscribiremos al evento de animacion cuando haya que crear una bala:
+	-crear bala
+
+funcion que subs. al ev. de anim. cuando se acabe la animacion:
+	-cambiar de estado(caminar) 
+
+on collision enter tal
+
+	-si el estado actual es morir: return
+
+	-si nos chocamos con un muro:
+		-rnderer . flip x = ! renderer.flip x
+		-direccion *= -1;
+
+	-si nos chocamos con un jugador:
+		-cambiar de estado(morir)
+
+
+funcion que destruye a este objeto: -destruir objeto fin

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Audio;
 
 //script encargado de manejar la salud y estado del jugador (basicamente recibir daño y morir)
 public class ShooterPlayerManager : MonoBehaviour, ISEnemyTarget, ISEnemyBulletTarget, IPlayerManager
@@ -23,6 +24,9 @@ public class ShooterPlayerManager : MonoBehaviour, ISEnemyTarget, ISEnemyBulletT
 
     public int GetCurrentHealth() => CurrentHealth;
 
+    private AudioSource _audioSource;
+    [SerializeField] AudioClip _takeDamageSound, _deathMusic, _deathSound;
+
     private void Awake()
     {
         IsAlive = true;
@@ -31,6 +35,9 @@ public class ShooterPlayerManager : MonoBehaviour, ISEnemyTarget, ISEnemyBulletT
 
         _renderer = GetComponent<SpriteRenderer>();
         _spriteColor = _renderer.color;
+
+        //audiosource
+        _audioSource = GetComponent<AudioSource>();
     }
 
     //funcion que recibe el ataque enemigo
@@ -55,9 +62,13 @@ public class ShooterPlayerManager : MonoBehaviour, ISEnemyTarget, ISEnemyBulletT
     private void TakeDamage(int damage)
     {
         if (!IsAlive) return;
+        {
+            CurrentHealth -= damage;
 
-        CurrentHealth -= damage;
-
+            //reproducimos audioclip
+            _audioSource.PlayOneShot(_takeDamageSound);
+        }
+        
         if (CurrentHealth <= 0)Die();
     }
 
@@ -66,6 +77,10 @@ public class ShooterPlayerManager : MonoBehaviour, ISEnemyTarget, ISEnemyBulletT
         IsAlive = false;
         _renderer.color = _stats.DeadColor;
         PlayerDie?.Invoke();
+
+        //audiosource
+        _audioSource.PlayOneShot(_deathSound);
+        _audioSource.PlayOneShot(_deathMusic);
     }
 
     //funcion que hace al jugador invulnerable por unos segundos

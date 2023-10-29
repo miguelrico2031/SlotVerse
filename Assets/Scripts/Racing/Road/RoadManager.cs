@@ -10,10 +10,17 @@ public class RoadManager : MonoBehaviour
     public UnityEvent<Vector3> ResetCoordinates;
 
     [SerializeField] private int _initialSpawnedRoads;
+    [SerializeField] private GameInfo _gameInfo;
+
+    [SerializeField] private Material _futuristicMaterial;
+    [SerializeField] private Material _halloweenMaterial;
+    [SerializeField] private Material _beachMaterial;
 
     private RoadSpawner _spawner;
     private List<Road> _roads;
     private Road _currentRoad;
+    private GameObject _floor;
+
 
     private void Awake()
     {
@@ -23,6 +30,22 @@ public class RoadManager : MonoBehaviour
         _spawner = GetComponent<RoadSpawner>();
         _roads = new List<Road>();
         _currentRoad = null;
+        _floor = GameObject.FindGameObjectWithTag("Floor");
+
+        switch (_gameInfo.Setting)
+        {
+            case Setting.Futuristic:
+                _floor.GetComponent<Renderer>().material = _futuristicMaterial;
+                break;
+
+            case Setting.Halloween:
+                _floor.GetComponent<Renderer>().material = _halloweenMaterial;
+                break;
+
+            case Setting.Beach:
+                _floor.GetComponent<Renderer>().material = _beachMaterial;
+                break;
+        }
     }
 
     private void Start()
@@ -37,7 +60,15 @@ public class RoadManager : MonoBehaviour
         _roads = new List<Road>();
         _currentRoad = null;
 
-        for (int i = 0; i < _initialSpawnedRoads; i++) SpawnNextRoad();
+        for (int i = 0; i < _initialSpawnedRoads; i++)
+        {
+            var newRoad = SpawnNextRoad();
+            int previousIndex = _roads.Count-2;
+            if(previousIndex >= 0)
+            {
+                newRoad.PreviousRoad = _roads[previousIndex];
+            }
+        }
 
         _currentRoad = _roads[0];
     }
@@ -58,16 +89,34 @@ public class RoadManager : MonoBehaviour
 
         int newRoadIndex = _roads.IndexOf(road);
 
-        //Selects the road tile located 2 tiles behind the actual player position
-        //Using an arbitrary value of 2 to avoid removing the tile the same instant it is exited, thus giving the player
+        //Selects the road tile located 10 tiles behind the actual player position
+        //Using an arbitrary value of 10 to avoid removing the tile the same instant it is exited, thus giving the player
         //and camera room to leave it behind and avoid visual issues (or falling down to the void)
-        if (newRoadIndex - 2 < 0) return;
+        if (newRoadIndex - 10 < 0) return;
 
-        road.RoadEnter.RemoveListener(OnRoadEnter);
+        //road.RoadEnter.RemoveListener(OnRoadEnter);
 
         DestroyFirstRoad();
+        
+        Road newRoad = SpawnNextRoad();
 
-        SpawnNextRoad();
+        newRoad.PreviousRoad = _roads[newRoadIndex - 1];
+
+        //comprobaar en cual carretera tenemos que spawnear
+        int tempIndex = 4;
+        //indice hardcodeado + indice de carreter donde esta el jugador = indice de la carretera donde hay q spawnear enemigo(s)
+        int spawnIndex = tempIndex + newRoadIndex;
+
+        if (spawnIndex < _roads.Count)
+        {
+            var spawner = _roads[spawnIndex].GetComponentInChildren<RacingEnemySpawner>();
+
+            if (spawner != null)
+            {
+                spawner.SpawnEnemy();
+            }
+        }
+        
     }
 
     private Road SpawnNextRoad()
@@ -93,7 +142,6 @@ public class RoadManager : MonoBehaviour
 
     private void ResetTilesCoordinates(Vector3 pos)
     {
-        Debug.Log("resetau");
         foreach (var r in _roads) r.transform.Translate(pos);
         _spawner.ResetSpawnPosition();
 

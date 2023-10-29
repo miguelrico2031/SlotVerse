@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class ShooterPlayerShoot : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class ShooterPlayerShoot : MonoBehaviour
 
     private Vector2 _currentDirection; //ultima direccion (para calcular el angulo de rotacion)
 
+    private AudioSource _audioSource;
+    [SerializeField] AudioClip _shootSound;
+
     private void Awake()
     {
         _manager = GetComponent<ShooterPlayerManager>();
@@ -25,11 +29,14 @@ public class ShooterPlayerShoot : MonoBehaviour
         _animator = GetComponent<Animator>();
 
         _manager.PlayerDie?.AddListener(OnPlayerDie);
-        //añadimos el observador para el evento de cambio de direccion del script de movimiento
+        //aï¿½adimos el observador para el evento de cambio de direccion del script de movimiento
         _playerMovement.DirectionChanged?.AddListener(OnDirectionChanged);
 
         _currentDirection = Vector2.right;
         _firePoint = _firepointR;
+
+        //audiosource
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -41,6 +48,9 @@ public class ShooterPlayerShoot : MonoBehaviour
         {
             //Creamos una bala con el spawner (object pooling) con la direccion y posicion
             _bulletSpawner.CreateBullet(_firePoint.position, _currentDirection);
+
+            //reproducimos clip
+            _audioSource.PlayOneShot(_shootSound);
 
             //actualizamos el animator
             _animator.SetBool("Fire", true);

@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Audio;
 
 //clase de todos los botones fisicos (3D) de la tragaperras
 //al pulsarse el boton este queda desactivado y se tiene que activar externamente con EnableButton()
 public class MenuButton : MonoBehaviour
 {
     public UnityEvent<MenuButton> Pressed; //evento invocado al pulsar el boton
+
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip _buttonSound;
 
     protected Animator _animator;
     protected Collider _collider;
@@ -18,11 +22,14 @@ public class MenuButton : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _collider = GetComponent<Collider>();
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     //al pulsarse
     private void OnMouseDown()
     {
+        _audioSource.PlayOneShot(_buttonSound);
         _collider.enabled = false; //se desactiva el collider por tanto el boton
         _animator.SetBool("Press", true); //se activa la animacion de ser pulsado
 
