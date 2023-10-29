@@ -51,10 +51,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shootSound: {fileID: 8300000, guid: 2c30e7138fb484a4cbcba6cebe3e194f, type: 3}
   SlowPlayerSpeed: 25
-  _walkSpeed: 60
+  _walkSpeed: 75
   _minWalkBoost: 40
   _maxWalkBoost: 65
-  _spikeDamage: 35
+  _spikeDamage: 2
   _destructionTime: 5
 --- !u!95 &3627373022080859604
 Animator:

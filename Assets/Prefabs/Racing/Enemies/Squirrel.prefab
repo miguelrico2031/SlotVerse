@@ -54,9 +54,12 @@ MonoBehaviour:
   _walkSpeed: 45
   _minShootTime: 0.75
   _maxShootTime: 3
+  _startingShootTime: 1.75
+  _shootSpeedIncrease: 0.00025
   _bulletSpeed: 8
   _bulletOffset: 1
   _destructionTime: 5
+  _currentShootTime: 0
 --- !u!95 &2367188939652982794
 Animator:
   serializedVersion: 5

@@ -15,10 +15,10 @@ public class HedgehogBehaviour : MonoBehaviour, IRacingEnemy
 
     public float SlowPlayerSpeed = 25;
 
-    [SerializeField] private float _walkSpeed = 60;
+    [SerializeField] private float _walkSpeed = 75;
     [SerializeField] private float _minWalkBoost = 40;
     [SerializeField] private int _maxWalkBoost = 65;
-    [SerializeField] private int _spikeDamage = 35;
+    [SerializeField] private int _spikeDamage = 2;
     [SerializeField] private float _destructionTime = 5.0f;
 
     private Vector3 _direction;

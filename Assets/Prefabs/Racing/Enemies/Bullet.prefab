@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2094554561361560755}
+  - component: {fileID: -391516978100560762}
   - component: {fileID: 8233775061262154426}
   - component: {fileID: 3474987314074002614}
   - component: {fileID: -2052535739962878036}
-  - component: {fileID: -391516978100560762}
   m_Layer: 9
   m_Name: Bullet
   m_TagString: Bullet
@@ -35,6 +35,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-391516978100560762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8637614651336178029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed511287d3d7534a8108706b26e2a18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletDamage: 1
+  _destructionTime: 10
 --- !u!212 &8233775061262154426
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -135,17 +149,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &-391516978100560762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8637614651336178029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed511287d3d7534a8108706b26e2a18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bulletDamage: 20
-  _destructionTime: 10
