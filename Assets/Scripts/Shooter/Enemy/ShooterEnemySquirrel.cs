@@ -196,7 +196,7 @@ public class ShooterEnemySquirrel : ShooterEnemy
         _isShooting = true;
 
         //audiosource
-        if (_isShooting = true) _audioSource.PlayOneShot(_shootSound);
+        _audioSource.PlayOneShot(_shootSound);
 
         yield return new WaitForSeconds(_squirrelStats.ShootCooldown + Random.Range(0f, 0.7f));
 

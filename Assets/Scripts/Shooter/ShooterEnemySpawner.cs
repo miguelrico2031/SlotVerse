@@ -32,9 +32,21 @@ public class ShooterEnemySpawner : MonoBehaviour
         //Segun el enemigo electo en la tragaperras, spawnear el prefab correspondiente
         switch(_gameInfo.NPC)
         {
-            case NPC.Hedgehog: _objectPool.ObjectToPool = _hedgehogPrefab.gameObject; break;
-            case NPC.Monkey: _objectPool.ObjectToPool = _monkeyPrefab.gameObject; break;
-            case NPC.Squirrel: _objectPool.ObjectToPool = _squirrelPrefab.gameObject; break;
+            case NPC.Hedgehog:
+                _objectPool.ObjectToPool = _hedgehogPrefab.gameObject;
+                _initialEnemiesPerWave = 8;
+                _enemiesPerWaveIncrement = 2;
+                break;
+            case NPC.Monkey:
+                _objectPool.ObjectToPool = _monkeyPrefab.gameObject;
+                _initialEnemiesPerWave = 4;
+                _enemiesPerWaveIncrement = 2;
+                break;
+            case NPC.Squirrel:
+                _objectPool.ObjectToPool = _squirrelPrefab.gameObject;
+                _initialEnemiesPerWave = 6;
+                _enemiesPerWaveIncrement = 1;
+                break;
         }
     }
 

@@ -25,7 +25,7 @@ public class ShooterPlayerManager : MonoBehaviour, ISEnemyTarget, ISEnemyBulletT
     public int GetCurrentHealth() => CurrentHealth;
 
     private AudioSource _audioSource;
-    [SerializeField] AudioClip _takeDamageSound, _deathMusic, _deathSound;
+    [SerializeField] AudioClip _takeDamageSound, _deathMusic;
 
     private void Awake()
     {
@@ -79,7 +79,6 @@ public class ShooterPlayerManager : MonoBehaviour, ISEnemyTarget, ISEnemyBulletT
         PlayerDie?.Invoke();
 
         //audiosource
-        _audioSource.PlayOneShot(_deathSound);
         _audioSource.PlayOneShot(_deathMusic);
     }
 
