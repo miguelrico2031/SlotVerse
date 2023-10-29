@@ -39,13 +39,15 @@ public class ShooterEnemySpawner : MonoBehaviour
                 break;
             case NPC.Monkey:
                 _objectPool.ObjectToPool = _monkeyPrefab.gameObject;
-                _initialEnemiesPerWave = 4;
+                _initialEnemiesPerWave = 3;
                 _enemiesPerWaveIncrement = 2;
+                _initialSecondsPerWave = 20;
                 break;
             case NPC.Squirrel:
                 _objectPool.ObjectToPool = _squirrelPrefab.gameObject;
-                _initialEnemiesPerWave = 6;
+                _initialEnemiesPerWave = 4;
                 _enemiesPerWaveIncrement = 1;
+                _initialSecondsPerWave = 20;
                 break;
         }
     }

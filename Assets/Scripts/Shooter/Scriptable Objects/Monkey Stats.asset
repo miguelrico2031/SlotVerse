@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c712a0b2dca9454b8f4813400a3e898, type: 3}
   m_Name: Monkey Stats
   m_EditorClassIdentifier: 
-  Health: 3
+  Health: 4
   Damage: 2
   MoveSpeed: 75
   NextWaypointDistance: 0.2

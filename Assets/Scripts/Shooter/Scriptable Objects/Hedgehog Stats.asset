@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81a548cad1a21346832bed30d86c9f5, type: 3}
   m_Name: Hedgehog Stats
   m_EditorClassIdentifier: 
-  Health: 3
+  Health: 2
   Damage: 1
-  MoveSpeed: 100
+  MoveSpeed: 120
   NextWaypointDistance: 0.2
   KnockbackForce: 8
   KnockbackDuration: 0.7

@@ -1,0 +1,2 @@
+All the content of this product is under the Apache 2.0 license, described in the text document LICENSE.txt, except those files that have their own license file.
+The files that do not have an additional license file are intellectual property of Miguel Rico Feo, Antonio Bernal, Ezequiel Garcia, Gloria Llorente and Adrián Carmona.
