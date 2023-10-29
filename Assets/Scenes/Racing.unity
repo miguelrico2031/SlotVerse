@@ -228,7 +228,6 @@ GameObject:
   - component: {fileID: 495142102}
   - component: {fileID: 495142101}
   - component: {fileID: 495142100}
-  - component: {fileID: 495142099}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Floor
@@ -236,28 +235,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &495142099
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 495142098}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &495142100
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -317,7 +294,7 @@ Transform:
   m_GameObject: {fileID: 495142098}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.01, z: 0}
+  m_LocalPosition: {x: 0, y: -0.03, z: 0}
   m_LocalScale: {x: 1000, y: 1, z: 1000}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -475,6 +452,11 @@ MonoBehaviour:
   _futuristicMaterial: {fileID: 2100000, guid: 1b82533ab11350745920030319fb0528, type: 2}
   _halloweenMaterial: {fileID: 2100000, guid: 68be82ff4c39b2642b28594ad35698f2, type: 2}
   _beachMaterial: {fileID: 2100000, guid: bc8b60fa262f84a42aec3822e0efc1e7, type: 2}
+--- !u!95 &1693816605 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3057174981937524122, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
+  m_PrefabInstance: {fileID: 6977159320683164029}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6977159320683164029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -487,6 +469,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6136432349110819145, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6136432349110819145, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
+      propertyPath: far clip plane
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322863043291465712, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
+      propertyPath: _explosionAnimator
+      value: 
+      objectReference: {fileID: 1693816605}
     - target: {fileID: 8170300698375377338, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

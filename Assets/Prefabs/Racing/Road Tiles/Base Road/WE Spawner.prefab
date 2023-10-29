@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 490730279483545783}
   - component: {fileID: 1428947135547622167}
   - component: {fileID: 3224304052667718894}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 1460588721334466181}
   - component: {fileID: 6070447237693794089}
   - component: {fileID: 9034092428850541946}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -826,6 +826,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 3873694515932267947, guid: 59bbc379433a0bb42906a0bdc66b2e13, type: 3}
+      propertyPath: _monkey
+      value: 
+      objectReference: {fileID: 1039754061641026793, guid: 4753175368c1a5a42a0a2aa3a1b01dd4, type: 3}
+    - target: {fileID: 3873694515932267947, guid: 59bbc379433a0bb42906a0bdc66b2e13, type: 3}
+      propertyPath: _hedgehog
+      value: 
+      objectReference: {fileID: 320763209645503143, guid: ec72c6742507b964cb4377c847f806ac, type: 3}
+    - target: {fileID: 3873694515932267947, guid: 59bbc379433a0bb42906a0bdc66b2e13, type: 3}
+      propertyPath: _squirrel
+      value: 
+      objectReference: {fileID: 2135890061925344936, guid: ac233d31dde9d264680a33f2ac93dceb, type: 3}
     - target: {fileID: 8135743303938409446, guid: 59bbc379433a0bb42906a0bdc66b2e13, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

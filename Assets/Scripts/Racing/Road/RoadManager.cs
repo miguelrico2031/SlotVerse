@@ -16,6 +16,7 @@ public class RoadManager : MonoBehaviour
     [SerializeField] private Material _halloweenMaterial;
     [SerializeField] private Material _beachMaterial;
 
+    private Camera _cam;
     private RoadSpawner _spawner;
     private List<Road> _roads;
     private Road _currentRoad;
@@ -24,6 +25,8 @@ public class RoadManager : MonoBehaviour
 
     private void Awake()
     {
+        _cam = Camera.main;
+
         if (!Instance) Instance = this;
         else Destroy(this);
 
@@ -35,14 +38,17 @@ public class RoadManager : MonoBehaviour
         switch (_gameInfo.Setting)
         {
             case Setting.Futuristic:
+                _cam.backgroundColor = new Color(0.368f, 0.227f, 0.592f);
                 _floor.GetComponent<Renderer>().material = _futuristicMaterial;
                 break;
 
             case Setting.Halloween:
+                _cam.backgroundColor = new Color(0.368f, 0.290f, 0.372f);
                 _floor.GetComponent<Renderer>().material = _halloweenMaterial;
                 break;
 
             case Setting.Beach:
+                _cam.backgroundColor = new Color(0.239f, 0.666f, 0.862f);
                 _floor.GetComponent<Renderer>().material = _beachMaterial;
                 break;
         }
@@ -67,6 +73,15 @@ public class RoadManager : MonoBehaviour
             if(previousIndex >= 0)
             {
                 newRoad.PreviousRoad = _roads[previousIndex];
+            }
+
+            if (_roads.Count < 3) continue;
+
+            var spawner = newRoad.GetComponentInChildren<RacingEnemySpawner>();
+
+            if (spawner != null)
+            {
+                spawner.SpawnEnemy();
             }
         }
 
@@ -102,8 +117,9 @@ public class RoadManager : MonoBehaviour
 
         newRoad.PreviousRoad = _roads[newRoadIndex - 1];
 
+
         //comprobaar en cual carretera tenemos que spawnear
-        int tempIndex = 4;
+        int tempIndex = 2;
         //indice hardcodeado + indice de carreter donde esta el jugador = indice de la carretera donde hay q spawnear enemigo(s)
         int spawnIndex = tempIndex + newRoadIndex;
 
@@ -116,7 +132,6 @@ public class RoadManager : MonoBehaviour
                 spawner.SpawnEnemy();
             }
         }
-        
     }
 
     private Road SpawnNextRoad()

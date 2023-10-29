@@ -28,7 +28,7 @@ public class Road : MonoBehaviour
 
         else if (carManager.CurrentRoad != PreviousRoad) //el coche va en dir contraria!
         {
-            carManager.TakeDamage(_reverseRoadDamage);
+            //carManager.TakeDamage(_reverseRoadDamage);
             Debug.Log("Estás yendo del revés");
         }
 

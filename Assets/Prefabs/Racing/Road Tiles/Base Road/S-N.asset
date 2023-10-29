@@ -15,7 +15,6 @@ MonoBehaviour:
   RoadTiles:
   - {fileID: 6461624960740609232, guid: b5a22592ceee6864cbb4d00c8512fce6, type: 3}
   - {fileID: 6461624960740609232, guid: edb4aeeaaa6c63249977e8e705c0bf5a, type: 3}
-  - {fileID: 6461624960740609232, guid: b5a22592ceee6864cbb4d00c8512fce6, type: 3}
   EntryDirection: 2
   ExitDirection: 0
   GrassSpawnPoints: 250
