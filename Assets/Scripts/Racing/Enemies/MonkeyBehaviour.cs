@@ -1,8 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MonkeyBehaviour : MonoBehaviour, IRacingEnemy
 {
+    private AudioSource _audioSource;
+    [SerializeField] AudioClip _shootSound;
 
     enum States
     {
@@ -30,6 +33,9 @@ public class MonkeyBehaviour : MonoBehaviour, IRacingEnemy
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
         ChangeState(States.Stop);
+
+        //audioSource
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -98,6 +104,9 @@ public class MonkeyBehaviour : MonoBehaviour, IRacingEnemy
 
         if (collision.collider.TryGetComponent<CarManager>(out var carManager))
         {
+            //audioSource
+            _audioSource.PlayOneShot(_shootSound);
+
             ChangeState(States.Stop);
 
             _damageToPlayer = carManager.Health;

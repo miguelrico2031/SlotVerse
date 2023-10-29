@@ -1,8 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
 {
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip _shootSound;
 
     enum States
     {
@@ -46,6 +49,9 @@ public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
             _spriteRenderer.flipX = !(_spriteRenderer.flipX);
             ChangeState(States.Walk);
         }
+
+        //audioSource
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -122,6 +128,9 @@ public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
 
         if (collision.gameObject.TryGetComponent<CarManager>(out var carManager))
         {
+            //audioSource
+            _audioSource.PlayOneShot(_shootSound);
+
             ChangeState(States.Die);
             carManager.PlayerHit(this);
         }

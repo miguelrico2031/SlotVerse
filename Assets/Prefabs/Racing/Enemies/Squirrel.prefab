@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b55b4d1a726af469e2a5652204c11d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shootSound: {fileID: 8300000, guid: 6153d6b286b74964696beccb96354155, type: 3}
   _bullet: {fileID: -391516978100560762, guid: 1dcff5ea23ce1344ea61f39b54f2bd37, type: 3}
   _walkSpeed: 30
   _minShootTime: 2
