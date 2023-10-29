@@ -1446,7 +1446,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.494
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1474,7 +1474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e25a655e22f77649bec5ad346b14e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VolumeSlider: {fileID: 0}
+  VolumeSlider: {fileID: 1251402825894066656}
 --- !u!1 &5576247139143855294
 GameObject:
   m_ObjectHideFlags: 0
