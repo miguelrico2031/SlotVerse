@@ -15181,9 +15181,9 @@ MonoBehaviour:
   _hedgehogPrefab: {fileID: 8478088304499046958, guid: 369488c8548fff94a8f969e36116903a, type: 3}
   _monkeyPrefab: {fileID: 345563762933516038, guid: dbebd93118ff8cb42a7b5fc153f6f52c, type: 3}
   _squirrelPrefab: {fileID: 2967898053186576493, guid: 479370665ba78814cadaa338f0151d13, type: 3}
-  _initialEnemiesPerWave: 2
+  _initialEnemiesPerWave: 4
   _enemiesPerWaveIncrement: 1
-  _initialSecondsPerWave: 20
+  _initialSecondsPerWave: 15
   _secondsPerWaveIncrement: 0
   _minSpawnCoords: {x: -20, y: -20}
   _maxSpawnCoords: {x: 20, y: 20}
@@ -15203,7 +15203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectToPool: {fileID: 0}
-  AmountToPool: 20
+  AmountToPool: 40
   _parent: {fileID: 902057076}
   _instantiateOnEmptyPool: 0
   _initializeExternally: 1
@@ -28422,7 +28422,6 @@ MonoBehaviour:
   _stats: {fileID: 11400000, guid: dc8f71d61220e6048968c442a1d405d0, type: 2}
   _takeDamageSound: {fileID: 8300000, guid: d6f4d725d33079d47957da3b79c289f6, type: 3}
   _deathMusic: {fileID: 8300000, guid: 2621a7ae5fcaa2949bf1397b1e71df1f, type: 3}
-  _deathSound: {fileID: 0}
 --- !u!95 &1198157905
 Animator:
   serializedVersion: 5

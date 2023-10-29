@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Monkey Stats
   m_EditorClassIdentifier: 
   Health: 3
-  Damage: 1
+  Damage: 2
   MoveSpeed: 75
   NextWaypointDistance: 0.2
   KnockbackForce: 8

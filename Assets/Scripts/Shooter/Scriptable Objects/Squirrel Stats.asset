@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 3
   Damage: 1
-  MoveSpeed: 75
+  MoveSpeed: 60
   NextWaypointDistance: 0.2
   KnockbackForce: 8
   KnockbackDuration: 0.7
