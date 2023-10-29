@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Game Info
   m_EditorClassIdentifier: 
   GameMode: 1
-  NPC: 1
+  NPC: 0
   Setting: 1

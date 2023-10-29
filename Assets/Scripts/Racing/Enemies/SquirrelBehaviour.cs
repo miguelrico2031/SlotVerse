@@ -18,6 +18,8 @@ public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
     [SerializeField] private float _walkSpeed = 45;
     [SerializeField] private float _minShootTime = 0.5f;
     [SerializeField] private float _maxShootTime = 2.5f;
+    [SerializeField] private float _startingShootTime = 1.75f;
+    [SerializeField] private float _shootSpeedIncrease = 0.00025f;
     [SerializeField] private float _bulletSpeed = 8.0f;
     [SerializeField] private float _bulletOffset = 1.0f;
     [SerializeField] private float _destructionTime = 5.0f;
@@ -29,6 +31,7 @@ public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
     private Collider _collider;
+    [SerializeField] private float _currentShootTime;
 
     void Awake()
     {
@@ -39,6 +42,8 @@ public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _collider = GetComponent<Collider>();
         _audioSource = GetComponent<AudioSource>();
+
+        _currentShootTime = _startingShootTime;
 
         SelectRandomWalkDirection();
 
@@ -62,11 +67,15 @@ public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
         var direction = Camera.main.transform.forward;
         direction.y = 0;
         _rb.rotation = Quaternion.LookRotation(direction, Vector3.up);
+
+        _currentShootTime = Mathf.Max(_minShootTime, _currentShootTime);
+
+        if (_currentShootTime > _minShootTime) _currentShootTime -= _shootSpeedIncrease;
     }
 
     private IEnumerator WalkForRandomSecondsThenShoot()
     {
-        float secondsToWait = Random.Range(_minShootTime, _maxShootTime);
+        float secondsToWait = Random.Range(_currentShootTime, _maxShootTime);
         yield return new WaitForSeconds(secondsToWait);
 
         ChangeState(States.Shoot);
@@ -148,6 +157,6 @@ public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
 
     private void DestroyThisGameObject() { Destroy(this); }
 
-    public int GetDamage() => 0; //da�o al jugador al chocaar con el
+    public int GetDamage() => 0; //daño al jugador al chocar con el
     public GameObject GetGameObject() => gameObject;
 }
