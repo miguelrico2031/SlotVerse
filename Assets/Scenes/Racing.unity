@@ -470,6 +470,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6136432349110819145, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6136432349110819145, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
       propertyPath: far clip plane
       value: 50
       objectReference: {fileID: 0}
