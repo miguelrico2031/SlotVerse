@@ -28,6 +28,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7322863043291465712, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
+      propertyPath: _futuristicPrefab
+      value: 
+      objectReference: {fileID: 3950632976803590395}
     - target: {fileID: 8170300698375377338, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

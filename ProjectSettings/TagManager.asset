@@ -10,6 +10,7 @@ TagManager:
   - EnemySpawner
   - Wall
   - Bullet
+  - Car
   layers:
   - Default
   - TransparentFX
@@ -22,10 +23,10 @@ TagManager:
   - Obstacle
   - EnemyBullet
   - PlayerBullet
-  - RacingWall
+  - Pause
   - 
   - Squirrel
-  - 
+  - RacingWall
   - 
   - 
   - 
@@ -46,4 +47,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Pause
+    uniqueID: 801932013
     locked: 0

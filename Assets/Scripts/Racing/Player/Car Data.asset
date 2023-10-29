@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de6f807d5321cd84faa7a2be075d7197, type: 3}
-  m_Name: Game Info
+  m_Script: {fileID: 11500000, guid: d04e0295b4f4837469f57caa8522cf3b, type: 3}
+  m_Name: Car Data
   m_EditorClassIdentifier: 
-  GameMode: 1
-  NPC: 0
-  Setting: 2
+  Health: 100

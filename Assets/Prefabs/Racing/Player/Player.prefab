@@ -42,7 +42,7 @@ Camera:
   m_GameObject: {fileID: 1037532483443614072}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.28261837, g: 0.4405309, b: 0.6886792, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -65,7 +65,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 50
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -164,9 +164,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc4f676a4bcd8144adf653dfd2d2d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  PlayerDie:
+    m_PersistentCalls:
+      m_Calls: []
   CurrentRoad: {fileID: 0}
-  _maxHealth: 100
+  DamageByWall: 20
+  _playerStats: {fileID: 11400000, guid: 293c309299b6eb2498a49882e7ef0458, type: 2}
   _currentHealth: 0
+  _explosionAnimator: {fileID: 3057174981937524122}
   _gameInfo: {fileID: 11400000, guid: 1184bb5c90a032d44b48aa6aa88a64bf, type: 2}
   _futuristicPrefab: {fileID: 3950632976803590395, guid: 0a4191c39cd32984194641f701a5354d, type: 3}
   _halloweenPrefab: {fileID: 3950632976803590395, guid: 13c13f56091cf3b4f8d01821063a3c22, type: 3}
