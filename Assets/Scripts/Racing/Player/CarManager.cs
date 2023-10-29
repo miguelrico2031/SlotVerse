@@ -126,7 +126,7 @@ public class CarManager : MonoBehaviour, IPlayerManager
         _carMovement.StopCar();
 
         _explosionAnimator.SetTrigger("Die");
-        Invoke(nameof(FinishDeath), 1f);
+        Invoke(nameof(FinishDeath), 2f);
     }
 
     public void FinishDeath() => PlayerDie.Invoke();
