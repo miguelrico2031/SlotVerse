@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4256019105965406204}
-  - component: {fileID: 3161595563041646399}
+  - component: {fileID: -1720561065777087142}
   - component: {fileID: 3627373022080859604}
   - component: {fileID: 3048805923904792380}
   - component: {fileID: 2993376997899885629}
@@ -37,7 +37,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3161595563041646399
+--- !u!114 &-1720561065777087142
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -51,9 +51,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shootSound: {fileID: 8300000, guid: 2c30e7138fb484a4cbcba6cebe3e194f, type: 3}
   SlowPlayerSpeed: 25
-  _walkSpeed: 50
-  _minWalkBoost: 20
-  _maxWalkBoost: 35
+  _walkSpeed: 60
+  _minWalkBoost: 40
+  _maxWalkBoost: 65
   _spikeDamage: 35
   _destructionTime: 5
 --- !u!95 &3627373022080859604

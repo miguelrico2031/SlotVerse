@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3717993923201457668}
-  - component: {fileID: 9103792144475120395}
+  - component: {fileID: 7462058635651847356}
   - component: {fileID: 2367188939652982794}
   - component: {fileID: 4610014071349007760}
   - component: {fileID: 1402761627313330584}
@@ -37,7 +37,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9103792144475120395
+--- !u!114 &7462058635651847356
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -51,10 +51,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shootSound: {fileID: 8300000, guid: 6153d6b286b74964696beccb96354155, type: 3}
   _bullet: {fileID: -391516978100560762, guid: 1dcff5ea23ce1344ea61f39b54f2bd37, type: 3}
-  _walkSpeed: 30
-  _minShootTime: 2
-  _maxShootTime: 5
-  _bulletSpeed: 10
+  _walkSpeed: 45
+  _minShootTime: 0.5
+  _maxShootTime: 2.5
+  _bulletSpeed: 8
   _bulletOffset: 1
   _destructionTime: 5
 --- !u!95 &2367188939652982794
