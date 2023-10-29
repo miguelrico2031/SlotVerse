@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class HedgehogBehaviour : MonoBehaviour
+public class HedgehogBehaviour : MonoBehaviour, IRacingEnemy
 {
 
     enum States
@@ -10,10 +10,16 @@ public class HedgehogBehaviour : MonoBehaviour
         Die
     }
 
-    [SerializeField] private float _walkSpeed = 25;
+    public float SlowPlayerSpeed = 25;
+
+    [SerializeField] private float _walkSpeed = 30;
+    [SerializeField] private float _minWalkBoost = 20;
+    [SerializeField] private int _maxWalkBoost = 35;
+    [SerializeField] private int _spikeDamage = 35;
     [SerializeField] private float _destructionTime = 5.0f;
 
     private Vector3 _direction;
+    private float _walkBoost;
     private States _currentState;
     private Rigidbody _rb;
     private Animator _animator;
@@ -28,7 +34,19 @@ public class HedgehogBehaviour : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _collider = GetComponent<Collider>();
 
-        ChangeState(States.Walk);
+        float walkRandomDir = Random.value;
+        if (walkRandomDir <= 0.5)
+        {
+            ChangeState(States.Walk);
+        }
+        else
+        {
+            _direction *= -1;
+            _spriteRenderer.flipX = !(_spriteRenderer.flipX);
+            ChangeState(States.Walk);
+        }
+
+        _walkBoost = Random.Range(_minWalkBoost, _maxWalkBoost);
     }
 
     // Update is called once per frame
@@ -37,7 +55,7 @@ public class HedgehogBehaviour : MonoBehaviour
         switch (_currentState)
         {
             case States.Walk:
-                _rb.velocity = _direction * _walkSpeed * Time.fixedDeltaTime;
+                _rb.velocity = _direction * (_walkSpeed + _walkBoost) * Time.fixedDeltaTime;
                 break;
             case States.Die:
                 break;
@@ -51,9 +69,9 @@ public class HedgehogBehaviour : MonoBehaviour
             case States.Walk:
                 break;
             case States.Die:
+                _collider.enabled = false;
                 _rb.velocity = Vector3.zero;
                 _animator.SetTrigger("Dead");
-                _collider.enabled = false;
 
                 Invoke(nameof(DestroyThisGameObject), _destructionTime);
                 break;
@@ -77,11 +95,15 @@ public class HedgehogBehaviour : MonoBehaviour
             _direction *= -1;
         }
 
-        if (collision.gameObject.tag == "Player")
+        if (collision.collider.TryGetComponent<CarManager>(out var carManager))
         {
+            carManager.PlayerHit(this);
             ChangeState(States.Die);
         }
     }
 
     private void DestroyThisGameObject() { Destroy(this); }
+
+    public int GetDamage() => _spikeDamage; //daño al jugador al chocaar con el
+    public GameObject GetGameObject() => gameObject;
 }

@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class MonkeyBehaviour : MonoBehaviour
+public class MonkeyBehaviour : MonoBehaviour, IRacingEnemy
 {
 
     enum States
@@ -20,6 +20,8 @@ public class MonkeyBehaviour : MonoBehaviour
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
 
+    private int _damageToPlayer = 0;
+
     void Awake()
     {
         _direction = transform.right;
@@ -36,9 +38,11 @@ public class MonkeyBehaviour : MonoBehaviour
         switch (_currentState)
         {
             case States.Walk:
+                _rb.constraints = ~RigidbodyConstraints.FreezePosition;
                 _rb.velocity = _direction * _walkSpeed * Time.fixedDeltaTime;
                 break;
             case States.Stop:
+                _rb.constraints = RigidbodyConstraints.FreezePosition;
                 break;
         }
     }
@@ -70,7 +74,17 @@ public class MonkeyBehaviour : MonoBehaviour
 
     private void OnAnimationExit()
     {
-        ChangeState(States.Walk);
+        float walkRandomDir = Random.value;
+        if (walkRandomDir <= 0.5)
+        {
+            ChangeState(States.Walk);
+        }
+        else
+        {
+            _direction *= -1;
+            _spriteRenderer.flipX = !(_spriteRenderer.flipX);
+            ChangeState(States.Walk);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -86,7 +100,11 @@ public class MonkeyBehaviour : MonoBehaviour
         {
             ChangeState(States.Stop);
 
-            carManager.TakeDamage(carManager.Health);
+            _damageToPlayer = carManager.Health;
+            carManager.PlayerHit(this);
         }
     }
+
+    public int GetDamage() => _damageToPlayer; //daño al jugador al chocar con el
+    public GameObject GetGameObject() => gameObject;
 }

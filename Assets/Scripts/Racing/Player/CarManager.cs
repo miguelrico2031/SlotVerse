@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -7,11 +8,18 @@ using UnityEngine;
 public class CarManager : MonoBehaviour
 {
     public Road CurrentRoad;
+    public int DamageByWall = 20;
 
     public int Health { get { return _currentHealth; } }
+    public bool IsAlive { get; private set; }
 
     [SerializeField] private int _maxHealth = 100;
+    [SerializeField] private int _currentHealth;
+
+    [SerializeField] private Animator _explosionAnimator;
+
     [SerializeField] private GameInfo _gameInfo;
+
     [SerializeField] private GameObject _futuristicPrefab;
     [SerializeField] private GameObject _halloweenPrefab;
     [SerializeField] private GameObject _beachPrefab;
@@ -20,16 +28,16 @@ public class CarManager : MonoBehaviour
     [SerializeField] private RuntimeAnimatorController _halloweenAnim;
     [SerializeField] private RuntimeAnimatorController _beachAnim;
 
+    private CarMovement _carMovement;
     private Animator _animator;
-    private Animator _explosionAnimator;
     private int x;
 
-    private int _currentHealth;
 
     private void Awake()
     {
+        IsAlive = true;
+        _carMovement = GetComponent<CarMovement>();
         _animator = GetComponent<Animator>();
-        _explosionAnimator = GetComponentInChildren<Animator>();
 
         switch (_gameInfo.Setting)
         {
@@ -57,32 +65,55 @@ public class CarManager : MonoBehaviour
         //oncollision
     }
 
-    private void OnCollisionEnter(Collision collision)
+
+    //chocamos melee con un enemigo
+    public void PlayerHit(IRacingEnemy enemy)
     {
-        //Si es un muro resta x
-        //Si es enemigo resta enemigo.daño
+        TakeDamage(enemy.GetDamage());
 
-        if(collision.collider.TryGetComponent<SquirrelBehaviour>(out var s))
+        if(enemy.GetGameObject().TryGetComponent<SquirrelBehaviour>(out var s))
         {
-
             GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             GetComponent<Rigidbody>().velocity = Vector3.zero;
+        } 
+        else if (enemy.GetGameObject().TryGetComponent<MonkeyBehaviour>(out var m))
+        {
+            _carMovement.Bounce(-_carMovement.transform.forward);
         }
+        else if (enemy.GetGameObject().TryGetComponent<HedgehogBehaviour>(out var h))
+        {
+            GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            
+            if(IsAlive) _carMovement.SlowDown(h.SlowPlayerSpeed);
+        }
+
     }
 
-    public void setX(int value) { x = value; }
+    public void SetX(int value) { x = value; }
 
     public void TakeDamage(int value) {
 
-        _explosionAnimator.SetBool("Damage", true);
         _currentHealth -=  value;
-        _explosionAnimator.SetBool("Damage", false);
 
-        if (_currentHealth <= 0)
+        if (_currentHealth <= 0) Die();
+        else if(value > 0)
         {
-            Debug.Log("Tas matao xaval");
-            _explosionAnimator.SetBool("Dead", true);
-            //Muerte
+            _explosionAnimator.SetBool("Damage", true);
+            Invoke(nameof(OnFinishDamageAnimation), .1f);
         }
+    }
+
+    private void Die()
+    {
+        IsAlive = false;
+        _carMovement.StopCar();
+
+        _explosionAnimator.SetTrigger("Die");
+    }
+
+    private void OnFinishDamageAnimation()
+    {
+        _explosionAnimator.SetBool("Damage", false);
     }
 }

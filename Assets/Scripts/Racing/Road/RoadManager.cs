@@ -16,6 +16,7 @@ public class RoadManager : MonoBehaviour
     [SerializeField] private Material _halloweenMaterial;
     [SerializeField] private Material _beachMaterial;
 
+    private Camera _cam;
     private RoadSpawner _spawner;
     private List<Road> _roads;
     private Road _currentRoad;
@@ -24,6 +25,8 @@ public class RoadManager : MonoBehaviour
 
     private void Awake()
     {
+        _cam = Camera.main;
+
         if (!Instance) Instance = this;
         else Destroy(this);
 
@@ -35,14 +38,17 @@ public class RoadManager : MonoBehaviour
         switch (_gameInfo.Setting)
         {
             case Setting.Futuristic:
+                _cam.backgroundColor = new Color(0.368f, 0.227f, 0.592f);
                 _floor.GetComponent<Renderer>().material = _futuristicMaterial;
                 break;
 
             case Setting.Halloween:
+                _cam.backgroundColor = new Color(0.368f, 0.290f, 0.372f);
                 _floor.GetComponent<Renderer>().material = _halloweenMaterial;
                 break;
 
             case Setting.Beach:
+                _cam.backgroundColor = new Color(0.239f, 0.666f, 0.862f);
                 _floor.GetComponent<Renderer>().material = _beachMaterial;
                 break;
         }
