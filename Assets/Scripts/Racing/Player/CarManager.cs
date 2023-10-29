@@ -101,6 +101,7 @@ public class CarManager : MonoBehaviour, IPlayerManager
 
     public void TakeDamage(int value) 
     {
+        if(!IsAlive) return;
         //audiosource
         _audioSource.PlayOneShot(_crashSound);
 
@@ -118,6 +119,7 @@ public class CarManager : MonoBehaviour, IPlayerManager
 
     private void Die()
     {
+        if (!IsAlive) return;
         //audioSource
         _audioSource.PlayOneShot(_deathMusic);
         _audioSource.PlayOneShot(_explodeSound);

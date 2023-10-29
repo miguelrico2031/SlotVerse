@@ -51,6 +51,10 @@ public class MonkeyBehaviour : MonoBehaviour, IRacingEnemy
                 _rb.constraints = RigidbodyConstraints.FreezePosition;
                 break;
         }
+
+        var direction = Camera.main.transform.forward;
+        direction.y = 0;
+        _rb.rotation = Quaternion.LookRotation(direction, Vector3.up);
     }
 
     private IEnumerator WalkForRandomSecondsThenStop()

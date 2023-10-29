@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7817984354007819346}
   - component: {fileID: 5643646475262983997}
   - component: {fileID: 6322326130705957779}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Monkey
   m_TagString: Enemy
   m_Icon: {fileID: 0}

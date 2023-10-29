@@ -56,6 +56,10 @@ public class HedgehogBehaviour : MonoBehaviour, IRacingEnemy
             case States.Die:
                 break;
         }
+
+        var direction = Camera.main.transform.forward;
+        direction.y = 0;
+        _rb.rotation = Quaternion.LookRotation(direction, Vector3.up);
     }
 
     private void ChangeState(States newState)

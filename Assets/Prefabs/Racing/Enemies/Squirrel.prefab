@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1402761627313330584}
   - component: {fileID: 8890172330870117768}
   - component: {fileID: 4824255455034588254}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Squirrel
   m_TagString: Enemy
   m_Icon: {fileID: 0}

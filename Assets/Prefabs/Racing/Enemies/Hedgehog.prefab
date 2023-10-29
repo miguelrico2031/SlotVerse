@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2993376997899885629}
   - component: {fileID: 5258786117017072248}
   - component: {fileID: 8769469946247351203}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hedgehog
   m_TagString: Enemy
   m_Icon: {fileID: 0}

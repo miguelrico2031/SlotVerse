@@ -14,6 +14,13 @@ public class RacingBullet : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
     }
 
+    private void FixedUpdate()
+    {
+        var direction = -Camera.main.transform.forward;
+        direction.y = 0;
+        _rb.rotation = Quaternion.LookRotation(direction, Vector3.up);
+    }
+
     public void FireBullet(float bulletSpeed)
     {
         _rb.velocity = transform.forward * bulletSpeed;

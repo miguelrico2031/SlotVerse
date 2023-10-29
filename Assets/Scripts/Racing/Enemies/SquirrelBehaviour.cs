@@ -22,7 +22,7 @@ public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
     [SerializeField] private float _bulletOffset = 1.0f;
     [SerializeField] private float _destructionTime = 5.0f;
 
-    private Vector3 _direction;
+    private Vector3 _direction, _forward;
     private States _currentState;
     private Rigidbody _rb;
     private Rigidbody _bulletRb;
@@ -33,6 +33,7 @@ public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
     void Awake()
     {
         _direction = -transform.right;
+        _forward = transform.forward;
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -42,6 +43,7 @@ public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
         SelectRandomWalkDirection();
 
     }
+
 
     // Update is called once per frame
     void FixedUpdate()
@@ -56,6 +58,10 @@ public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
             case States.Die:
                 break;
         }
+
+        var direction = Camera.main.transform.forward;
+        direction.y = 0;
+        _rb.rotation = Quaternion.LookRotation(direction, Vector3.up);
     }
 
     private IEnumerator WalkForRandomSecondsThenShoot()
@@ -97,7 +103,7 @@ public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
         _audioSource.PlayOneShot(_shootSound);
 
         var bullet =
-            Instantiate(_bullet, transform.position - transform.forward * _bulletOffset, Quaternion.LookRotation(-transform.forward));
+            Instantiate(_bullet, transform.position - _forward * _bulletOffset, Quaternion.LookRotation(-_forward));
         bullet.FireBullet(_bulletSpeed);
     }
 
