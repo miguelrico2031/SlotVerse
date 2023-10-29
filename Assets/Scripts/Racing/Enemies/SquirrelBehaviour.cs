@@ -18,7 +18,7 @@ public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
     [SerializeField] private float _walkSpeed = 45;
     [SerializeField] private float _minShootTime = 0.5f;
     [SerializeField] private float _maxShootTime = 2.5f;
-    [SerializeField] private float _startingShootTime = 1.75f;
+    [SerializeField] private float _startingMinShootTime = 1.75f;
     [SerializeField] private float _shootSpeedIncrease = 0.00025f;
     [SerializeField] private float _bulletSpeed = 8.0f;
     [SerializeField] private float _bulletOffset = 1.0f;
@@ -43,7 +43,7 @@ public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
         _collider = GetComponent<Collider>();
         _audioSource = GetComponent<AudioSource>();
 
-        _currentShootTime = _startingShootTime;
+        _currentShootTime = _startingMinShootTime;
 
         SelectRandomWalkDirection();
 
@@ -71,6 +71,7 @@ public class SquirrelBehaviour : MonoBehaviour, IRacingEnemy
         _currentShootTime = Mathf.Max(_minShootTime, _currentShootTime);
 
         if (_currentShootTime > _minShootTime) _currentShootTime -= _shootSpeedIncrease;
+        if (_maxShootTime > _startingMinShootTime) _maxShootTime -= _shootSpeedIncrease;
     }
 
     private IEnumerator WalkForRandomSecondsThenShoot()

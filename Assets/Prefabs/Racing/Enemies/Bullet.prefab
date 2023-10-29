@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletDamage: 1
-  _destructionTime: 10
+  _destructionTime: 6
 --- !u!212 &8233775061262154426
 SpriteRenderer:
   m_ObjectHideFlags: 0
