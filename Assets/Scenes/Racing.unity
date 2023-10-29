@@ -968,6 +968,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f950a07053e417a4eb47173d6294a654, type: 3}
+--- !u!114 &1946970908 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2792541777055922259, guid: f950a07053e417a4eb47173d6294a654, type: 3}
+  m_PrefabInstance: {fileID: 1946970907}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66d6a5bad35867d48b0b75d91c8d3423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2086543119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,7 +1091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7322863043291465712, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
       propertyPath: PlayerDie.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7322863043291465712, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
       propertyPath: PlayerDamaged.m_PersistentCalls.m_Calls.Array.size
@@ -1099,6 +1110,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7322863043291465712, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
+      propertyPath: PlayerDie.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322863043291465712, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
       propertyPath: PlayerDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1449755056}
@@ -1110,6 +1125,10 @@ PrefabInstance:
       propertyPath: PlayerDie.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 65425245}
+    - target: {fileID: 7322863043291465712, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
+      propertyPath: PlayerDie.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1946970908}
     - target: {fileID: 7322863043291465712, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
       propertyPath: PlayerDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
@@ -1127,6 +1146,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7322863043291465712, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
+      propertyPath: PlayerDie.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322863043291465712, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
       propertyPath: PlayerDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1449755056}
@@ -1141,6 +1164,10 @@ PrefabInstance:
     - target: {fileID: 7322863043291465712, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
       propertyPath: PlayerDie.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: DeathScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322863043291465712, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
+      propertyPath: PlayerDie.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: OnPlayerDie
       objectReference: {fileID: 0}
     - target: {fileID: 7322863043291465712, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
       propertyPath: PlayerDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -1163,6 +1190,10 @@ PrefabInstance:
       value: DeathMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7322863043291465712, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
+      propertyPath: PlayerDie.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: Music, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322863043291465712, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
       propertyPath: PlayerDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: HealthBar, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -1176,6 +1207,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7322863043291465712, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
       propertyPath: PlayerDie.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322863043291465712, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}
+      propertyPath: PlayerDie.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7322863043291465712, guid: 2aa1400100585814ca1fd02f373a8c2c, type: 3}

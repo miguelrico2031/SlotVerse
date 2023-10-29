@@ -38,6 +38,7 @@ public class DeathMenu : MonoBehaviour
 
     private void SetDeathScreen()
     {
+        Cursor.visible = true;
         Time.timeScale = 0f;
         _deathMenuPanel.gameObject.SetActive(true);
 

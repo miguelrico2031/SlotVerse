@@ -46,6 +46,8 @@ public class SlotController : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.visible = true;
+
         //inicalizar los 3 objetos railes en el array a partir de los rigidbodies
         _rails = new Rail[]
         {
@@ -222,7 +224,9 @@ public class SlotController : MonoBehaviour
         Debug.Log(_gameInfo.NPC.ToString());
         Debug.Log(_gameInfo.Setting.ToString());
 
-        if(_gameInfo.GameMode == GameMode.Shooter) SceneManager.LoadScene("Shooter");
+        Cursor.visible = false;
+
+        if (_gameInfo.GameMode == GameMode.Shooter) SceneManager.LoadScene("Shooter");
         if (_gameInfo.GameMode == GameMode.Racing) SceneManager.LoadScene("Racing");
 
     }

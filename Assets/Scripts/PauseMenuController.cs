@@ -42,6 +42,7 @@ public class PauseMenuController : MonoBehaviour
     {
 
         isPaused = !isPaused;
+        Cursor.visible = isPaused;
 
         //pausar juego y mostrar panel
         if (isPaused)
