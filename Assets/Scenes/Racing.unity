@@ -899,6 +899,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ccd51ddb73d6e249bfce66c54625706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1946970907
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 649403017961231731, guid: f950a07053e417a4eb47173d6294a654, type: 3}
+      propertyPath: m_Name
+      value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 2792541777055922259, guid: f950a07053e417a4eb47173d6294a654, type: 3}
+      propertyPath: _beachMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 8b918e395708f1740b8abf09f0d5c976, type: 3}
+    - target: {fileID: 2792541777055922259, guid: f950a07053e417a4eb47173d6294a654, type: 3}
+      propertyPath: _halloweenMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: ce72ad0a27fea5744bae34c3b3e65dcb, type: 3}
+    - target: {fileID: 2792541777055922259, guid: f950a07053e417a4eb47173d6294a654, type: 3}
+      propertyPath: _futuristicMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 5965cf291863e054caa3f9449eb389e7, type: 3}
+    - target: {fileID: 3973823359994394624, guid: f950a07053e417a4eb47173d6294a654, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973823359994394624, guid: f950a07053e417a4eb47173d6294a654, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973823359994394624, guid: f950a07053e417a4eb47173d6294a654, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973823359994394624, guid: f950a07053e417a4eb47173d6294a654, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973823359994394624, guid: f950a07053e417a4eb47173d6294a654, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973823359994394624, guid: f950a07053e417a4eb47173d6294a654, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973823359994394624, guid: f950a07053e417a4eb47173d6294a654, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973823359994394624, guid: f950a07053e417a4eb47173d6294a654, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973823359994394624, guid: f950a07053e417a4eb47173d6294a654, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973823359994394624, guid: f950a07053e417a4eb47173d6294a654, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f950a07053e417a4eb47173d6294a654, type: 3}
 --- !u!1 &2086543119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,3 +1248,4 @@ SceneRoots:
   - {fileID: 1333235660}
   - {fileID: 351765324}
   - {fileID: 1134543875}
+  - {fileID: 1946970907}
