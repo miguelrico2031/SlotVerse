@@ -22,7 +22,7 @@ public class MonkeyBehaviour : MonoBehaviour
 
     void Awake()
     {
-        _direction = -transform.right;
+        _direction = transform.right;
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -75,16 +75,18 @@ public class MonkeyBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-
-        if (collision.gameObject.tag == "Wall")
+        if (collision.gameObject.layer == LayerMask.NameToLayer("RacingWall"))
         {
-            _spriteRenderer.flipX = !(_spriteRenderer.flipX);
+            _spriteRenderer.flipX = !_spriteRenderer.flipX;
+
             _direction *= -1;
         }
 
-        if (collision.gameObject.tag == "Player")
+        if (collision.collider.TryGetComponent<CarManager>(out var carManager))
         {
             ChangeState(States.Stop);
+
+            carManager.TakeDamage(carManager.Health);
         }
     }
 }

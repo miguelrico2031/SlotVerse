@@ -6,11 +6,11 @@ using UnityEngine;
 
 public class CarManager : MonoBehaviour
 {
-
-
     public Road CurrentRoad;
 
-    [SerializeField] private int Health = 100;
+    public int Health { get { return _currentHealth; } }
+
+    [SerializeField] private int _maxHealth = 100;
     [SerializeField] private GameInfo _gameInfo;
     [SerializeField] private GameObject _futuristicPrefab;
     [SerializeField] private GameObject _halloweenPrefab;
@@ -23,6 +23,8 @@ public class CarManager : MonoBehaviour
     private Animator _animator;
     private Animator _explosionAnimator;
     private int x;
+
+    private int _currentHealth;
 
     private void Awake()
     {
@@ -43,6 +45,8 @@ public class CarManager : MonoBehaviour
                 _animator.runtimeAnimatorController = _beachAnim;
                 break;
         }
+
+        _currentHealth = _maxHealth;
     }
 
     // Update is called once per frame
@@ -57,6 +61,13 @@ public class CarManager : MonoBehaviour
     {
         //Si es un muro resta x
         //Si es enemigo resta enemigo.daño
+
+        if(collision.collider.TryGetComponent<SquirrelBehaviour>(out var s))
+        {
+
+            GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+        }
     }
 
     public void setX(int value) { x = value; }
@@ -64,10 +75,10 @@ public class CarManager : MonoBehaviour
     public void TakeDamage(int value) {
 
         _explosionAnimator.SetBool("Damage", true);
-        Health -=  value;
+        _currentHealth -=  value;
         _explosionAnimator.SetBool("Damage", false);
 
-        if (Health <= 0)
+        if (_currentHealth <= 0)
         {
             Debug.Log("Tas matao xaval");
             _explosionAnimator.SetBool("Dead", true);

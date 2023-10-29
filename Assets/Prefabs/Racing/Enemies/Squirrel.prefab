@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3061014871684112679, guid: d7f6a670417d7e44aac69c68edc143e5, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3586843305277149894, guid: d7f6a670417d7e44aac69c68edc143e5, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -152,9 +156,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b55b4d1a726af469e2a5652204c11d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bullet: {fileID: -391516978100560762, guid: 1dcff5ea23ce1344ea61f39b54f2bd37, type: 3}
   _walkSpeed: 20
   _minShootTime: 3
   _maxShootTime: 8
+  _bulletSpeed: 10
+  _bulletOffset: 1
   _destructionTime: 5
 --- !u!54 &8552857306403917573
 Rigidbody:

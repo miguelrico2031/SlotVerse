@@ -68,6 +68,15 @@ public class RoadManager : MonoBehaviour
             {
                 newRoad.PreviousRoad = _roads[previousIndex];
             }
+
+            if (_roads.Count < 3) continue;
+
+            var spawner = newRoad.GetComponentInChildren<RacingEnemySpawner>();
+
+            if (spawner != null)
+            {
+                spawner.SpawnEnemy();
+            }
         }
 
         _currentRoad = _roads[0];
@@ -102,8 +111,9 @@ public class RoadManager : MonoBehaviour
 
         newRoad.PreviousRoad = _roads[newRoadIndex - 1];
 
+
         //comprobaar en cual carretera tenemos que spawnear
-        int tempIndex = 4;
+        int tempIndex = 2;
         //indice hardcodeado + indice de carreter donde esta el jugador = indice de la carretera donde hay q spawnear enemigo(s)
         int spawnIndex = tempIndex + newRoadIndex;
 
@@ -116,7 +126,6 @@ public class RoadManager : MonoBehaviour
                 spawner.SpawnEnemy();
             }
         }
-        
     }
 
     private Road SpawnNextRoad()

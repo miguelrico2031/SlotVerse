@@ -22,7 +22,7 @@ public class HedgehogBehaviour : MonoBehaviour
 
     void Awake()
     {
-        _direction = -transform.right;
+        _direction = transform.right;
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -49,7 +49,6 @@ public class HedgehogBehaviour : MonoBehaviour
         switch (newState)
         {
             case States.Walk:
-                _animator.SetBool("Shooting", false);
                 break;
             case States.Die:
                 _rb.velocity = Vector3.zero;

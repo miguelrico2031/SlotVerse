@@ -4,12 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Car
   - Road
   - Enemy
   - Floor
   - EnemySpawner
   - Wall
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -22,9 +22,9 @@ TagManager:
   - Obstacle
   - EnemyBullet
   - PlayerBullet
+  - RacingWall
   - 
-  - 
-  - 
+  - Squirrel
   - 
   - 
   - 
